@@ -15,6 +15,8 @@
 | Stream Inspector · 直播拉流调试 | https://tliens.github.io/stream-inspector/ | stream-inspector |
 | Audio Inspector · 在线音频分析 | https://tliens.github.io/audio-inspector/ | audio-inspector |
 | PicSqueeze · 图片压缩 | https://tliens.github.io/picsqueeze/ | picsqueeze |
+| ShareForge · 分享图生成器 | https://tliens.github.io/shareforge/ | shareforge |
+| X热榜 · X/Twitter 博主人气排行 | https://tliens.github.io/xhot/ | xhot |
 | 群星闪耀 · 影响世界的人 | https://tliens.github.io/world-shapers/ | world-shapers |
 
 ## 说明

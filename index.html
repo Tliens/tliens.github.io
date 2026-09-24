@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tliens · 作品集 — 免费在线开发者工具与作品合集</title>
-<meta name="description" content="独立开发者 Tliens 的作品集：AI 大模型排行榜、Token 计数器、JSON 格式化、SSE 调试器、直播拉流调试、音频分析、图片压缩等免费在线工具。全部纯前端运行，无需注册，数据不出浏览器。">
+<meta name="description" content="独立开发者 Tliens 的作品集：AI 大模型排行榜、Token 计数器、JSON 格式化、SSE 调试器、直播拉流调试、音频分析、图片压缩、分享图生成器等免费在线工具。全部纯前端运行，无需注册，数据不出浏览器。">
 <meta name="author" content="Tliens">
 <link rel="canonical" href="https://tliens.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tliens · 作品集">
 <meta property="og:title" content="Tliens · 作品集 — 免费在线开发者工具与作品合集">
-<meta property="og:description" content="AI 排行榜、Token 计数器、JSON 格式化、SSE 调试器、直播拉流调试、音频分析、图片压缩 —— 全部纯前端、免费开源。">
+<meta property="og:description" content="AI 排行榜、Token 计数器、JSON 格式化、SSE 调试器、直播拉流调试、音频分析、图片压缩、分享图生成器 —— 全部纯前端、免费开源。">
 <meta property="og:url" content="https://tliens.github.io/">
 <meta property="og:image" content="https://tliens.github.io/og-image.png">
 <meta property="og:locale" content="zh_CN">
@@ -123,9 +123,71 @@
     nav a .txt{display:none}
     nav a{padding:7px 10px}
   }
+  #galaxy{position:fixed;inset:0;z-index:-1;pointer-events:none}
+  @media (prefers-reduced-motion:reduce){#galaxy{display:none}}
 </style>
 </head>
 <body>
+
+<canvas id="galaxy" aria-hidden="true"></canvas>
+<script type="module">
+const canvas = document.getElementById('galaxy');
+try {
+  const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js');
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setSize(innerWidth, innerHeight, false);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 100);
+  camera.position.set(0, 4.2, 11.5);
+  camera.lookAt(0, 0, 0);
+
+  /* 螺旋星系粒子 */
+  const COUNT = 15000, ARMS = 4, RADIUS = 9;
+  const pos = new Float32Array(COUNT * 3), col = new Float32Array(COUNT * 3);
+  const cIn = new THREE.Color('#5b9dff'), cOut = new THREE.Color('#a78bfa'), cCore = new THREE.Color('#e8edf7');
+  const tmp = new THREE.Color();
+  for (let i = 0; i < COUNT; i++) {
+    const r = Math.pow(Math.random(), 1.7) * RADIUS;
+    const arm = (i % ARMS) / ARMS * Math.PI * 2;
+    const spin = r * 0.55;
+    const spread = Math.pow(Math.random() - 0.5, 3) * (1.6 + r * 0.12);
+    const a = arm + spin + spread;
+    pos[i * 3]     = Math.cos(a) * r + (Math.random() - 0.5) * 0.35;
+    pos[i * 3 + 1] = Math.pow(Math.random() - 0.5, 3) * Math.max(0.25, 1.5 - r * 0.13);
+    pos[i * 3 + 2] = Math.sin(a) * r + (Math.random() - 0.5) * 0.35;
+    tmp.copy(Math.random() < 0.5 ? cIn : cOut).lerp(cCore, Math.max(0, 0.75 - r / RADIUS));
+    const b = 0.5 + Math.random() * 0.5;
+    col[i * 3] = tmp.r * b; col[i * 3 + 1] = tmp.g * b; col[i * 3 + 2] = tmp.b * b;
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+  const mat = new THREE.PointsMaterial({
+    size: 0.038, vertexColors: true, transparent: true, opacity: 0.62,
+    depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true
+  });
+  const galaxy = new THREE.Points(geo, mat);
+  galaxy.position.set(0, -2.4, -1.5);
+  scene.add(galaxy);
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth / innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight, false);
+  });
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let last = 0;
+  renderer.setAnimationLoop(t => {
+    if (t - last < 33) return;           /* ~30fps 足够 */
+    last = t;
+    galaxy.rotation.y = t * 0.00004;
+    renderer.render(scene, camera);
+  });
+  if (reduced) renderer.setAnimationLoop(null);
+} catch (e) { canvas.remove(); }
+</script>
 
 <header class="top">
   <div class="wrap">
@@ -150,7 +212,7 @@
       <h1>你好，我是 <span class="g">Tliens</span></h1>
       <p class="sub">独立开发者，专注做<b>免费、纯前端</b>的在线工具。所有工具都在你的浏览器本地运行 —— 无需注册，数据永不上传。</p>
       <div class="badges">
-        <span>📦 8 个在线作品</span>
+        <span>📦 10 个在线作品</span>
         <span>🔒 100% 本地运行</span>
         <span>💰 完全免费</span>
         <span>📖 开源</span>
@@ -257,6 +319,30 @@
             <div class="card-title">PicSqueeze <span class="en">图片压缩</span><span class="arrow">↗</span></div>
             <p class="card-desc">免费在线图片压缩：批量 20 张，WebAssembly 本地处理，照片永不上传，100% 隐私。</p>
             <div class="tags"><span>图片压缩</span><span>WebAssembly</span><span>隐私</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="https://tliens.github.io/shareforge/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <div class="ph" style="background:linear-gradient(135deg,#1e1b3a,#12101f)">🎨</div>
+            <img src="https://tliens.github.io/shareforge/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">ShareForge <span class="en">分享图生成器</span><span class="arrow">↗</span></div>
+            <p class="card-desc">免费社交分享图生成器：为 X、微信、OG、Instagram 快速做出精美分享图，纯浏览器本地处理。</p>
+            <div class="tags"><span>OG Image</span><span>社交媒体</span><span>模板</span></div>
+          </div>
+        </a>
+
+        <a class="card" href="https://tliens.github.io/xhot/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <div class="ph" style="background:linear-gradient(135deg,#0e2338,#0a1420)">🔥</div>
+            <img src="https://tliens.github.io/xhot/og-image.png" alt="X热榜" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">X热榜 <span class="en">X Hot List</span><span class="arrow">↗</span></div>
+            <p class="card-desc">X / Twitter 博主每周人气排行：多分类榜单、粉丝数据与主页直达，每周更新（部分分类含 18+ 内容）。</p>
+            <div class="tags"><span>X / Twitter</span><span>榜单</span><span>每周更新</span></div>
           </div>
         </a>
 
