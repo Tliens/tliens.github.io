@@ -14,6 +14,7 @@
 | JSON Lens · JSON 工具箱 | https://jsonlens.kuige.me/ | jsonlens |
 | SSE Inspector · SSE 调试器 | https://sse-inspector.kuige.me/ | sse-inspector |
 | Stream Inspector · 直播拉流调试 | https://stream-inspector.kuige.me/ | stream-inspector |
+| 魁歌建站 · 零基础 9 步建站教程 | https://fast-site.kuige.me/ | fast-site |
 | Audio Inspector · 在线音频分析 | https://audio-inspector.kuige.me/ | audio-inspector |
 | PicSqueeze · 图片压缩 | https://picsqueeze.kuige.me/ | picsqueeze |
 | ShareForge · 分享图生成器 | https://shareforge.kuige.me/ | shareforge |
