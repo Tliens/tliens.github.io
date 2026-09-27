@@ -1,26 +1,26 @@
-# tliens.github.io — Tliens 作品集主页
+# kuige.me — Tliens 作品集主页
 
 独立开发者 [Tliens](https://github.com/Tliens) 的作品聚合主页，展示所有免费在线工具与作品。
 
-**线上地址：** https://tliens.github.io/
+**线上地址：** https://kuige.me/
 
 ## 收录的作品
 
 | 作品 | 地址 | 仓库 |
 |---|---|---|
-| AI Rank · 大模型排行榜 | https://tliens.github.io/ai-model-rank/ | ai-model-rank |
-| AI Hot Board · AI 热榜 | https://tliens.github.io/ai-hot-board/ | ai-hot-board |
-| TokenLens · Token 计数器 | https://tliens.github.io/TokenLens/ | TokenLens |
-| JSON Lens · JSON 工具箱 | https://tliens.github.io/jsonlens/ | jsonlens |
-| SSE Inspector · SSE 调试器 | https://tliens.github.io/sse-inspector/ | sse-inspector |
-| Stream Inspector · 直播拉流调试 | https://tliens.github.io/stream-inspector/ | stream-inspector |
-| Audio Inspector · 在线音频分析 | https://tliens.github.io/audio-inspector/ | audio-inspector |
-| PicSqueeze · 图片压缩 | https://tliens.github.io/picsqueeze/ | picsqueeze |
-| ShareForge · 分享图生成器 | https://tliens.github.io/shareforge/ | shareforge |
-| 灵感卡片 InspoCard · 文字卡片生成器 | https://tliens.github.io/inspo-card/ | inspo-card |
-| X热榜 · X/Twitter 博主人气排行 | https://tliens.github.io/xhot/ | xhot |
-| Indie Gems · 独立开发者作品收录 | https://tliens.github.io/indie-gems/ | indie-gems |
-| 群星闪耀 · 影响世界的人 | https://tliens.github.io/world-shapers/ | world-shapers |
+| AI Rank · 大模型排行榜 | https://ai-model-rank.kuige.me/ | ai-model-rank |
+| AI Hot Board · AI 热榜 | https://ai-hot-board.kuige.me/ | ai-hot-board |
+| TokenLens · Token 计数器 | https://tokenlens.kuige.me/ | TokenLens |
+| JSON Lens · JSON 工具箱 | https://jsonlens.kuige.me/ | jsonlens |
+| SSE Inspector · SSE 调试器 | https://sse-inspector.kuige.me/ | sse-inspector |
+| Stream Inspector · 直播拉流调试 | https://stream-inspector.kuige.me/ | stream-inspector |
+| Audio Inspector · 在线音频分析 | https://audio-inspector.kuige.me/ | audio-inspector |
+| PicSqueeze · 图片压缩 | https://picsqueeze.kuige.me/ | picsqueeze |
+| ShareForge · 分享图生成器 | https://shareforge.kuige.me/ | shareforge |
+| 灵感卡片 InspoCard · 文字卡片生成器 | https://kuige.me/inspo-card/ | inspo-card |
+| X热榜 · X/Twitter 博主人气排行 | https://xhot.kuige.me/ | xhot |
+| Indie Gems · 独立开发者作品收录 | https://indie-gems.kuige.me/ | indie-gems |
+| 群星闪耀 · 影响世界的人 | https://world-shapers.kuige.me/ | world-shapers |
 
 ## 说明
 
