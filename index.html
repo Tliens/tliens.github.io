@@ -129,12 +129,20 @@
   .card-desc{font-size:13.5px;color:var(--muted);flex:1}
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags span{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+  .card.hide{display:none}
+
+  /* ---------- 分类筛选 ---------- */
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 30px}
+  .filters button{font:inherit;font-size:13px;color:var(--muted);background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s;letter-spacing:.02em}
+  .filters button:hover{color:var(--ink);border-color:var(--line-hi);transform:translateY(-1px)}
+  .filters button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 6px 20px rgba(91,157,255,.32)}
 
   /* ---------- App 卡片 ---------- */
   .apps .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
   .app{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.22s;position:relative;overflow:hidden}
   .app:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:0 18px 44px rgba(0,0,0,.45)}
   .app .icon{flex:none;width:72px;height:72px;border-radius:17px;display:grid;place-items:center;font-size:36px;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+  .app img.icon{object-fit:cover;background:#fff}
   .app h3{font-size:17.5px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .app .award{font-size:10.5px;font-weight:700;color:#0b0e16;background:linear-gradient(135deg,#ffd76a,#ffb347);border-radius:5px;padding:2px 7px;letter-spacing:.04em}
   .app p{font-size:13px;color:var(--muted);margin-top:6px}
@@ -369,11 +377,18 @@ try {
       <div class="sec-head reveal">
         <div class="kicker">01 · Online Tools</div>
         <h2 data-en="Online Tools">在线工具矩阵</h2>
-        <p data-en="13 free tool sites covering AI rankings, debugging, media processing, creation and directories. All run purely in the browser — no sign-up, your data never leaves the device.">13 个免费工具站，覆盖 AI 排行、调试、媒体处理、创作与收录等场景。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
+        <p data-en="13 free tool sites across four categories. All run purely in the browser — no sign-up, your data never leaves the device.">13 个免费工具站，按场景分为四类。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
+      </div>
+      <div class="filters reveal" id="filters">
+        <button class="active" data-filter="all" data-en="All · 13">全部 · 13</button>
+        <button data-filter="ai" data-en="AI &amp; Data · 3">AI · 数据 · 3</button>
+        <button data-filter="dev" data-en="Dev &amp; Debugging · 3">开发调试 · 3</button>
+        <button data-filter="media" data-en="Media &amp; Creation · 4">媒体创作 · 4</button>
+        <button data-filter="rank" data-en="Rankings &amp; Directories · 3">榜单收录 · 3</button>
       </div>
       <div class="grid">
 
-        <a class="card reveal" href="https://tliens.github.io/ai-model-rank/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="ai" href="https://tliens.github.io/ai-model-rank/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#1a2340,#101726)">🏆</div>
             <img src="https://tliens.github.io/ai-model-rank/og-image.png" alt="AI Rank" loading="lazy" onerror="this.remove()">
@@ -385,7 +400,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/ai-hot-board/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="ai" href="https://tliens.github.io/ai-hot-board/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#3a2e12,#1d180a)">💰</div>
             <img src="https://tliens.github.io/ai-hot-board/og-image.png" alt="AI Hot Board" loading="lazy" onerror="this.remove()">
@@ -397,7 +412,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/TokenLens/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="ai" href="https://tliens.github.io/TokenLens/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#12303a,#0e1a26)">🔢</div>
             <img src="https://tliens.github.io/TokenLens/og-image.png" alt="TokenLens" loading="lazy" onerror="this.remove()">
@@ -409,7 +424,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/jsonlens/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="dev" href="https://tliens.github.io/jsonlens/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#26321c,#131b12)">🧬</div>
             <img src="https://tliens.github.io/jsonlens/og-image.png" alt="JSON Lens" loading="lazy" onerror="this.remove()">
@@ -421,7 +436,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/sse-inspector/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="dev" href="https://tliens.github.io/sse-inspector/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#3a1a2a,#1c1017)">📡</div>
             <img src="https://tliens.github.io/sse-inspector/og-image.png" alt="SSE Inspector" loading="lazy" onerror="this.remove()">
@@ -433,7 +448,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/stream-inspector/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="dev" href="https://tliens.github.io/stream-inspector/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#1c2a3a,#10161f)">📺</div>
             <img src="https://tliens.github.io/stream-inspector/og-image.png" alt="Stream Inspector" loading="lazy" onerror="this.remove()">
@@ -445,7 +460,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/audio-inspector/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="media" href="https://tliens.github.io/audio-inspector/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#2a1a3a,#151020)">🔊</div>
             <img src="https://tliens.github.io/audio-inspector/og-image.png" alt="Audio Inspector" loading="lazy" onerror="this.remove()">
@@ -457,7 +472,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/picsqueeze/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="media" href="https://tliens.github.io/picsqueeze/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#3a2a12,#1d160a)">🗜️</div>
             <img src="https://tliens.github.io/picsqueeze/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
@@ -469,7 +484,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/shareforge/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="media" href="https://tliens.github.io/shareforge/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#1e1b3a,#12101f)">🎨</div>
             <img src="https://tliens.github.io/shareforge/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
@@ -481,7 +496,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/inspo-card/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="media" href="https://tliens.github.io/inspo-card/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#3a1e2c,#1c0f1a)">🃏</div>
             <img src="https://tliens.github.io/inspo-card/og-image.png" alt="灵感卡片 InspoCard" loading="lazy" onerror="this.remove()">
@@ -493,7 +508,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/xhot/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="rank" href="https://tliens.github.io/xhot/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#0e2338,#0a1420)">🔥</div>
             <img src="https://tliens.github.io/xhot/og-image.png" alt="X热榜" loading="lazy" onerror="this.remove()">
@@ -505,7 +520,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/indie-gems/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="rank" href="https://tliens.github.io/indie-gems/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#141b3a,#0d1020)">💎</div>
             <img src="https://tliens.github.io/indie-gems/og-image.png" alt="Indie Gems" loading="lazy" onerror="this.remove()">
@@ -517,7 +532,7 @@ try {
           </div>
         </a>
 
-        <a class="card reveal" href="https://tliens.github.io/world-shapers/" target="_blank" rel="noopener">
+        <a class="card reveal" data-cat="rank" href="https://tliens.github.io/world-shapers/" target="_blank" rel="noopener">
           <div class="thumb">
             <div class="ph" style="background:linear-gradient(135deg,#2b2416,#171308)">✦</div>
           </div>
@@ -542,7 +557,7 @@ try {
       </div>
       <div class="grid">
         <a class="app reveal" href="https://apps.apple.com/cn/app/id6447693393" target="_blank" rel="noopener">
-          <div class="icon" style="background:linear-gradient(135deg,#f6b73c,#e5507a)">🃏</div>
+          <img class="icon" src="app-inspo-icon.png" alt="灵感卡片 App 图标" loading="lazy">
           <div style="flex:1">
             <h3 data-en='灵感卡片 · Creative Notes <span class="award">PAID TOP 1</span>'>灵感卡片 · 创意笔记 <span class="award">付费榜 TOP 1</span></h3>
             <p data-en="Card-based creative notes. Hit #1 paid on the App Store Reference chart and #36 overall; a 2025 limited-free event brought 5,000+ downloads in a single day and a top-3 spot on the free charts.">卡片式创意笔记工具。曾登 App Store 参考类付费榜第一、总榜第 36；2025 年一次限免活动单日下载 5000+、冲进免费榜前三。</p>
@@ -551,7 +566,7 @@ try {
           <span class="go">↗</span>
         </a>
         <a class="app reveal" href="https://apps.apple.com/cn/app/id1505020317" target="_blank" rel="noopener">
-          <div class="icon" style="background:linear-gradient(135deg,#5b9dff,#30c3a8)">✅</div>
+          <img class="icon" src="app-todo-icon.png" alt="超级待办 App 图标" loading="lazy">
           <div style="flex:1">
             <h3 data-en="超级待办 · Home-Screen Widgets">超级待办 · 桌面小组件</h3>
             <p data-en="An interactive home-screen widget todo app — your tasks live right on the iOS desktop, so the day ahead is always one glance away.">桌面可交互小组件待办应用，把待办事项直接铺在 iOS 桌面上，一眼看清今天要做什么。</p>
@@ -726,6 +741,17 @@ const nio = new IntersectionObserver(es => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => nio.observe(el));
+
+/* 工具分类筛选 */
+const filterBtns = document.querySelectorAll('#filters button');
+filterBtns.forEach(btn => btn.addEventListener('click', () => {
+  filterBtns.forEach(b => b.classList.toggle('active', b === btn));
+  const f = btn.dataset.filter;
+  document.querySelectorAll('.works .card').forEach(card => {
+    const show = f === 'all' || card.dataset.cat === f;
+    card.classList.toggle('hide', !show);
+  });
+}));
 
 /* 中英双语切换 */
 const langBtn = document.getElementById('langBtn');
