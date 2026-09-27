@@ -9,6 +9,7 @@
 | 作品 | 地址 | 仓库 |
 |---|---|---|
 | AI Rank · 大模型排行榜 | https://tliens.github.io/ai-model-rank/ | ai-model-rank |
+| AI Hot Board · AI 热榜 | https://tliens.github.io/ai-hot-board/ | ai-hot-board |
 | TokenLens · Token 计数器 | https://tliens.github.io/TokenLens/ | TokenLens |
 | JSON Lens · JSON 工具箱 | https://tliens.github.io/jsonlens/ | jsonlens |
 | SSE Inspector · SSE 调试器 | https://tliens.github.io/sse-inspector/ | sse-inspector |
@@ -16,7 +17,9 @@
 | Audio Inspector · 在线音频分析 | https://tliens.github.io/audio-inspector/ | audio-inspector |
 | PicSqueeze · 图片压缩 | https://tliens.github.io/picsqueeze/ | picsqueeze |
 | ShareForge · 分享图生成器 | https://tliens.github.io/shareforge/ | shareforge |
+| 灵感卡片 InspoCard · 文字卡片生成器 | https://tliens.github.io/inspo-card/ | inspo-card |
 | X热榜 · X/Twitter 博主人气排行 | https://tliens.github.io/xhot/ | xhot |
+| Indie Gems · 独立开发者作品收录 | https://tliens.github.io/indie-gems/ | indie-gems |
 | 群星闪耀 · 影响世界的人 | https://tliens.github.io/world-shapers/ | world-shapers |
 
 ## 说明
