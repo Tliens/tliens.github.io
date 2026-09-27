@@ -71,6 +71,8 @@
   nav.side a{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;transition:.18s}
   nav.side a:hover{color:var(--ink);border-color:var(--line-hi);background:var(--bg-soft)}
   nav.side a svg{width:14px;height:14px;fill:currentColor}
+  nav.side .lang{display:inline-flex;align-items:center;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:transparent;cursor:pointer;font-family:inherit;transition:.18s}
+  nav.side .lang:hover{color:var(--ink);border-color:var(--line-hi);background:var(--bg-soft)}
 
   /* ---------- Hero ---------- */
   .hero{text-align:center;padding:108px 0 64px}
@@ -300,14 +302,15 @@ try {
   <div class="wrap">
     <a class="brand" href="#top"><span class="logo">T</span>Tliens</a>
     <nav class="mid">
-      <a href="#works">在线工具</a>
-      <a href="#apps">App</a>
-      <a href="#oss">开源</a>
-      <a href="#writing">写作</a>
-      <a href="#about">关于</a>
-      <a href="#contact">联系</a>
+      <a href="#works" data-en="Tools">在线工具</a>
+      <a href="#apps" data-en="Apps">App</a>
+      <a href="#oss" data-en="Open Source">开源</a>
+      <a href="#writing" data-en="Writing">写作</a>
+      <a href="#about" data-en="About">关于</a>
+      <a href="#contact" data-en="Contact">联系</a>
     </nav>
     <nav class="side">
+      <button class="lang" id="langBtn" type="button" aria-label="切换语言 / Switch language">EN</button>
       <a href="https://github.com/Tliens" target="_blank" rel="noopener" title="GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
         <span class="txt">GitHub</span>
@@ -326,21 +329,21 @@ try {
   <section class="hero">
     <div class="wrap">
       <div class="kicker">Independent Developer · Beijing</div>
-      <h1>你好，我是 <span class="g">Tliens</span></h1>
-      <p class="sub"><b>iOS 工程师 · 独立开发者 · 写作者</b>。写代码 9 年+，做出过 App Store 分类付费榜第一的应用，也做了一整排<b>免费、纯前端</b>的在线工具 —— 开箱即用，数据永不上传。</p>
+      <h1 data-en='Hi, I&#39;m <span class="g">Tliens</span>'>你好，我是 <span class="g">Tliens</span></h1>
+      <p class="sub" data-en="<b>iOS Engineer · Indie Developer · Writer</b>. Ten years of code — shipped a <b>#1 paid</b> App Store app and a full suite of <b>free, pure front-end</b> web tools — ready out of the box, data never leaves your device."><b>iOS 工程师 · 独立开发者 · 写作者</b>。写代码 10 年，做出过 App Store 分类付费榜第一的应用，也做了一整排<b>免费、纯前端</b>的在线工具 —— 开箱即用，数据永不上传。</p>
       <div class="badges">
-        <span>📦 13 个在线工具</span>
-        <span>📱 2 款上架 App</span>
-        <span>📦 130+ 开源仓库</span>
-        <span>✍️ 4 个平台写作</span>
+        <span data-en="📦 13 web tools">📦 13 个在线工具</span>
+        <span data-en="📱 2 apps on the App Store">📱 2 款上架 App</span>
+        <span data-en="📦 130+ open-source repos">📦 130+ 开源仓库</span>
+        <span data-en="✍️ Writing on 3 platforms">✍️ 3 个平台写作</span>
       </div>
       <div class="ctas">
         <a class="btn primary" href="https://x.com/shi_kui8457" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          关注我的 X (Twitter)
+          <span data-en="Follow me on X (Twitter)">关注我的 X (Twitter)</span>
         </a>
         <a class="btn ghost" href="#works">
-          逛逛作品
+          <span data-en="Explore my work">逛逛作品</span>
           <span style="font-size:13px">↓</span>
         </a>
       </div>
@@ -352,10 +355,10 @@ try {
   <section class="stats reveal">
     <div class="wrap">
       <div class="grid">
-        <div class="stat"><div class="num" data-count="13">0</div><div class="lab">免费在线工具</div></div>
+        <div class="stat"><div class="num" data-count="13">0</div><div class="lab" data-en="Free web tools">免费在线工具</div></div>
         <div class="stat"><div class="num"><i>★ </i><span data-count="486">0</span></div><div class="lab">SpeedySwift Stars</div></div>
-        <div class="stat"><div class="num"><span data-count="132">0</span><i>+</i></div><div class="lab">GitHub 开源仓库</div></div>
-        <div class="stat"><div class="num"><span data-count="17">0</span><i>w+</i></div><div class="lab">技术文章累计阅读</div></div>
+        <div class="stat"><div class="num"><span data-count="132">0</span><i>+</i></div><div class="lab" data-en="GitHub repositories">GitHub 开源仓库</div></div>
+        <div class="stat"><div class="num"><span data-count="17">0</span><i>w+</i></div><div class="lab" data-en="Total article reads">技术文章累计阅读</div></div>
       </div>
     </div>
   </section>
@@ -365,8 +368,8 @@ try {
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="kicker">01 · Online Tools</div>
-        <h2>在线工具矩阵</h2>
-        <p>13 个免费工具站，覆盖 AI 排行、调试、媒体处理、创作与收录等场景。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
+        <h2 data-en="Online Tools">在线工具矩阵</h2>
+        <p data-en="13 free tool sites covering AI rankings, debugging, media processing, creation and directories. All run purely in the browser — no sign-up, your data never leaves the device.">13 个免费工具站，覆盖 AI 排行、调试、媒体处理、创作与收录等场景。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
       </div>
       <div class="grid">
 
@@ -376,9 +379,9 @@ try {
             <img src="https://tliens.github.io/ai-model-rank/og-image.png" alt="AI Rank" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">AI Rank <span class="en">大模型排行榜</span><span class="arrow">↗</span></div>
-            <p class="card-desc">实时对比 LMArena 盲测评分、API 价格与上下文窗口，多维度切换排行，支持模型对比。</p>
-            <div class="tags"><span>LLM</span><span>数据对比</span><span>中英双语</span></div>
+            <div class="card-title">AI Rank <span class="en" data-en="LLM Leaderboard">大模型排行榜</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Compare LMArena blind-test scores, API pricing and context windows in real time — multi-dimension rankings with side-by-side model comparison.">实时对比 LMArena 盲测评分、API 价格与上下文窗口，多维度切换排行，支持模型对比。</p>
+            <div class="tags"><span>LLM</span><span data-en="Data comparison">数据对比</span><span data-en="Bilingual">中英双语</span></div>
           </div>
         </a>
 
@@ -388,9 +391,9 @@ try {
             <img src="https://tliens.github.io/ai-hot-board/og-image.png" alt="AI Hot Board" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">AI Hot Board <span class="en">AI 热榜</span><span class="arrow">↗</span></div>
-            <p class="card-desc">AI 搞钱动态、大模型发布与优惠福利实时聚合，每 5 分钟自动刷新，中英双语。</p>
-            <div class="tags"><span>AI 资讯</span><span>实时刷新</span><span>中英双语</span></div>
+            <div class="card-title">AI Hot Board <span class="en" data-en="AI Trending">AI 热榜</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Live aggregator of AI money-making news, model releases and deals — auto-refreshed every 5 minutes, in Chinese and English.">AI 搞钱动态、大模型发布与优惠福利实时聚合，每 5 分钟自动刷新，中英双语。</p>
+            <div class="tags"><span data-en="AI news">AI 资讯</span><span data-en="Live refresh">实时刷新</span><span data-en="Bilingual">中英双语</span></div>
           </div>
         </a>
 
@@ -400,9 +403,9 @@ try {
             <img src="https://tliens.github.io/TokenLens/og-image.png" alt="TokenLens" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">TokenLens <span class="en">Token 计数器</span><span class="arrow">↗</span></div>
-            <p class="card-desc">基于 js-tiktoken 的 Token 计数与大模型成本对比，支持 o200k / cl100k，精确估算 API 费用。</p>
-            <div class="tags"><span>Token</span><span>成本估算</span><span>tiktoken</span></div>
+            <div class="card-title">TokenLens <span class="en" data-en="Token counter">Token 计数器</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Token counting and LLM cost comparison built on js-tiktoken, supporting o200k / cl100k for accurate API cost estimates.">基于 js-tiktoken 的 Token 计数与大模型成本对比，支持 o200k / cl100k，精确估算 API 费用。</p>
+            <div class="tags"><span>Token</span><span data-en="Cost estimates">成本估算</span><span>tiktoken</span></div>
           </div>
         </a>
 
@@ -412,9 +415,9 @@ try {
             <img src="https://tliens.github.io/jsonlens/og-image.png" alt="JSON Lens" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">JSON Lens <span class="en">JSON 工具箱</span><span class="arrow">↗</span></div>
-            <p class="card-desc">JSON 格式化、校验、树形查看，支持 Unescape 与 JSONPath 查询，大文件也流畅。</p>
-            <div class="tags"><span>JSON</span><span>格式化</span><span>JSONPath</span></div>
+            <div class="card-title">JSON Lens <span class="en" data-en="JSON toolkit">JSON 工具箱</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Format, validate and explore JSON as a tree, with Unescape and JSONPath queries — smooth even on large files.">JSON 格式化、校验、树形查看，支持 Unescape 与 JSONPath 查询，大文件也流畅。</p>
+            <div class="tags"><span>JSON</span><span data-en="Formatting">格式化</span><span>JSONPath</span></div>
           </div>
         </a>
 
@@ -424,9 +427,9 @@ try {
             <img src="https://tliens.github.io/sse-inspector/og-image.png" alt="SSE Inspector" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">SSE Inspector <span class="en">SSE 调试器</span><span class="arrow">↗</span></div>
-            <p class="card-desc">在线 Server-Sent Events 调试器：连接 SSE 端点，实时查看事件流、请求头与原始帧。</p>
-            <div class="tags"><span>SSE</span><span>调试</span><span>EventSource</span></div>
+            <div class="card-title">SSE Inspector <span class="en" data-en="SSE debugger">SSE 调试器</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Online Server-Sent Events debugger: connect to an endpoint and watch event streams, headers and raw frames in real time.">在线 Server-Sent Events 调试器：连接 SSE 端点，实时查看事件流、请求头与原始帧。</p>
+            <div class="tags"><span>SSE</span><span data-en="Debugging">调试</span><span>EventSource</span></div>
           </div>
         </a>
 
@@ -436,9 +439,9 @@ try {
             <img src="https://tliens.github.io/stream-inspector/og-image.png" alt="Stream Inspector" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">Stream Inspector <span class="en">直播拉流调试</span><span class="arrow">↗</span></div>
-            <p class="card-desc">在线直播拉流调试器，支持 HLS · HTTP-FLV · DASH · WebRTC，快速定位拉流问题。</p>
-            <div class="tags"><span>直播</span><span>HLS</span><span>WebRTC</span></div>
+            <div class="card-title">Stream Inspector <span class="en" data-en="Live stream debugger">直播拉流调试</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Online live-stream playback debugger with HLS · HTTP-FLV · DASH · WebRTC support — pinpoint pull-stream issues fast.">在线直播拉流调试器，支持 HLS · HTTP-FLV · DASH · WebRTC，快速定位拉流问题。</p>
+            <div class="tags"><span data-en="Live">直播</span><span>HLS</span><span>WebRTC</span></div>
           </div>
         </a>
 
@@ -448,9 +451,9 @@ try {
             <img src="https://tliens.github.io/audio-inspector/og-image.png" alt="Audio Inspector" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">Audio Inspector <span class="en">在线音频分析</span><span class="arrow">↗</span></div>
-            <p class="card-desc">音频文件分析：波形可视化、文件头 / 元数据检查、格式识别与在线压缩。</p>
-            <div class="tags"><span>音频</span><span>Web Audio</span><span>压缩</span></div>
+            <div class="card-title">Audio Inspector <span class="en" data-en="Audio analysis">在线音频分析</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Audio file analysis: waveform visualization, header / metadata inspection, format detection and in-browser compression.">音频文件分析：波形可视化、文件头 / 元数据检查、格式识别与在线压缩。</p>
+            <div class="tags"><span data-en="Audio">音频</span><span>Web Audio</span><span data-en="Compression">压缩</span></div>
           </div>
         </a>
 
@@ -460,9 +463,9 @@ try {
             <img src="https://tliens.github.io/picsqueeze/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">PicSqueeze <span class="en">图片压缩</span><span class="arrow">↗</span></div>
-            <p class="card-desc">免费在线图片压缩：批量 20 张，WebAssembly 本地处理，照片永不上传，100% 隐私。</p>
-            <div class="tags"><span>图片压缩</span><span>WebAssembly</span><span>隐私</span></div>
+            <div class="card-title">PicSqueeze <span class="en" data-en="Image compression">图片压缩</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Free online image compression: batch up to 20, processed locally with WebAssembly — photos never uploaded, 100% private.">免费在线图片压缩：批量 20 张，WebAssembly 本地处理，照片永不上传，100% 隐私。</p>
+            <div class="tags"><span data-en="Compression">图片压缩</span><span>WebAssembly</span><span data-en="Privacy">隐私</span></div>
           </div>
         </a>
 
@@ -472,9 +475,9 @@ try {
             <img src="https://tliens.github.io/shareforge/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">ShareForge <span class="en">分享图生成器</span><span class="arrow">↗</span></div>
-            <p class="card-desc">免费社交分享图生成器：为 X、微信、OG、Instagram 快速做出精美分享图，纯浏览器本地处理。</p>
-            <div class="tags"><span>OG Image</span><span>社交媒体</span><span>模板</span></div>
+            <div class="card-title">ShareForge <span class="en" data-en="Share image generator">分享图生成器</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Free social share-image generator: craft polished images for X, WeChat, OG and Instagram — rendered locally in your browser.">免费社交分享图生成器：为 X、微信、OG、Instagram 快速做出精美分享图，纯浏览器本地处理。</p>
+            <div class="tags"><span>OG Image</span><span data-en="Social media">社交媒体</span><span data-en="Templates">模板</span></div>
           </div>
         </a>
 
@@ -484,9 +487,9 @@ try {
             <img src="https://tliens.github.io/inspo-card/og-image.png" alt="灵感卡片 InspoCard" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">灵感卡片 <span class="en">InspoCard</span><span class="arrow">↗</span></div>
-            <p class="card-desc">把文字一键变成精美卡片图：14 套模板、10 套配色、竖排与长图拆分 —— 付费榜 Top1 应用《灵感卡片》同款网页版。</p>
-            <div class="tags"><span>文字卡片</span><span>模板配色</span><span>本地渲染</span></div>
+            <div class="card-title" data-en='灵感卡片 <span class="en">Quote card maker</span><span class="arrow">↗</span>'>灵感卡片 <span class="en">InspoCard</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Turn text into beautiful card images in one click: 14 templates, 10 color schemes, vertical text and long-image splitting — the web edition of the #1 paid app 灵感卡片.">把文字一键变成精美卡片图：14 套模板、10 套配色、竖排与长图拆分 —— 付费榜 Top1 应用《灵感卡片》同款网页版。</p>
+            <div class="tags"><span data-en="Text cards">文字卡片</span><span data-en="Templates">模板配色</span><span data-en="Local render">本地渲染</span></div>
           </div>
         </a>
 
@@ -497,8 +500,8 @@ try {
           </div>
           <div class="body">
             <div class="card-title">X热榜 <span class="en">X Hot List</span><span class="arrow">↗</span></div>
-            <p class="card-desc">X / Twitter 博主每周人气排行：多分类榜单、粉丝数据与主页直达，每周更新（部分分类含 18+ 内容）。</p>
-            <div class="tags"><span>X / Twitter</span><span>榜单</span><span>每周更新</span></div>
+            <p class="card-desc" data-en="Weekly popularity ranking of X / Twitter creators: multi-category charts, follower stats and one-tap profile links, refreshed weekly (some categories contain 18+ content).">X / Twitter 博主每周人气排行：多分类榜单、粉丝数据与主页直达，每周更新（部分分类含 18+ 内容）。</p>
+            <div class="tags"><span>X / Twitter</span><span data-en="Rankings">榜单</span><span data-en="Weekly updates">每周更新</span></div>
           </div>
         </a>
 
@@ -508,9 +511,9 @@ try {
             <img src="https://tliens.github.io/indie-gems/og-image.png" alt="Indie Gems" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">Indie Gems <span class="en">独立开发者作品收录</span><span class="arrow">↗</span></div>
-            <p class="card-desc">手工精选的独立开发者作品目录：App、游戏、工具与社区，覆盖全球 solo 开发者，可免费申请收录。</p>
-            <div class="tags"><span>作品目录</span><span>独立开发</span><span>免费收录</span></div>
+            <div class="card-title">Indie Gems <span class="en" data-en="Indie product directory">独立开发者作品收录</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="A hand-curated directory of independent developer products: apps, games, tools and communities from solo devs worldwide — free to submit.">手工精选的独立开发者作品目录：App、游戏、工具与社区，覆盖全球 solo 开发者，可免费申请收录。</p>
+            <div class="tags"><span data-en="Directory">作品目录</span><span data-en="Indie dev">独立开发</span><span data-en="Free submission">免费收录</span></div>
           </div>
         </a>
 
@@ -519,9 +522,9 @@ try {
             <div class="ph" style="background:linear-gradient(135deg,#2b2416,#171308)">✦</div>
           </div>
           <div class="body">
-            <div class="card-title">群星闪耀 <span class="en">影响世界的人</span><span class="arrow">↗</span></div>
-            <p class="card-desc">人物学习百科：群星闪耀 · 影响世界的人，跨领域人物与史实，仅供学习参考。</p>
-            <div class="tags"><span>人物</span><span>历史</span><span>Wiki</span></div>
+            <div class="card-title">群星闪耀 <span class="en" data-en="People who shaped the world">影响世界的人</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="A learning encyclopedia of the people who shaped the world — figures and history across fields, for study and reference.">人物学习百科：群星闪耀 · 影响世界的人，跨领域人物与史实，仅供学习参考。</p>
+            <div class="tags"><span data-en="People">人物</span><span data-en="History">历史</span><span>Wiki</span></div>
           </div>
         </a>
 
@@ -534,25 +537,25 @@ try {
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="kicker">02 · iOS Apps</div>
-        <h2>上架应用</h2>
-        <p>独立完成设计、开发与运营的 iOS 应用。其中《灵感卡片》曾登 App Store 参考类付费榜第一、总榜第 36。</p>
+        <h2 data-en="iOS Apps">上架应用</h2>
+        <p data-en="iOS apps designed, built and operated solo. 灵感卡片 (InspoCard) reached #1 paid on the App Store Reference chart and #36 overall.">独立完成设计、开发与运营的 iOS 应用。其中《灵感卡片》曾登 App Store 参考类付费榜第一、总榜第 36。</p>
       </div>
       <div class="grid">
         <a class="app reveal" href="https://apps.apple.com/cn/app/id6447693393" target="_blank" rel="noopener">
           <div class="icon" style="background:linear-gradient(135deg,#f6b73c,#e5507a)">🃏</div>
           <div style="flex:1">
-            <h3>灵感卡片 · 创意笔记 <span class="award">付费榜 TOP 1</span></h3>
-            <p>卡片式创意笔记工具。曾登 App Store 参考类付费榜第一、总榜第 36；2025 年一次限免活动单日下载 5000+、冲进免费榜前三。</p>
-            <div class="meta"><span>App Store</span><span>Swift</span><span>效率 · 参考</span></div>
+            <h3 data-en='灵感卡片 · Creative Notes <span class="award">PAID TOP 1</span>'>灵感卡片 · 创意笔记 <span class="award">付费榜 TOP 1</span></h3>
+            <p data-en="Card-based creative notes. Hit #1 paid on the App Store Reference chart and #36 overall; a 2025 limited-free event brought 5,000+ downloads in a single day and a top-3 spot on the free charts.">卡片式创意笔记工具。曾登 App Store 参考类付费榜第一、总榜第 36；2025 年一次限免活动单日下载 5000+、冲进免费榜前三。</p>
+            <div class="meta"><span>App Store</span><span>Swift</span><span data-en="Productivity · Reference">效率 · 参考</span></div>
           </div>
           <span class="go">↗</span>
         </a>
         <a class="app reveal" href="https://apps.apple.com/cn/app/id1505020317" target="_blank" rel="noopener">
           <div class="icon" style="background:linear-gradient(135deg,#5b9dff,#30c3a8)">✅</div>
           <div style="flex:1">
-            <h3>超级待办 · 桌面小组件</h3>
-            <p>桌面可交互小组件待办应用，把待办事项直接铺在 iOS 桌面上，一眼看清今天要做什么。</p>
-            <div class="meta"><span>App Store</span><span>WidgetKit</span><span>效率 · 工具</span></div>
+            <h3 data-en="超级待办 · Home-Screen Widgets">超级待办 · 桌面小组件</h3>
+            <p data-en="An interactive home-screen widget todo app — your tasks live right on the iOS desktop, so the day ahead is always one glance away.">桌面可交互小组件待办应用，把待办事项直接铺在 iOS 桌面上，一眼看清今天要做什么。</p>
+            <div class="meta"><span>App Store</span><span>WidgetKit</span><span data-en="Productivity · Utilities">效率 · 工具</span></div>
           </div>
           <span class="go">↗</span>
         </a>
@@ -565,8 +568,8 @@ try {
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="kicker">03 · Open Source</div>
-        <h2>开源项目</h2>
-        <p>GitHub 130+ 仓库。本页所有在线工具同样开源，欢迎 Fork 与自部署。</p>
+        <h2 data-en="Open Source">开源项目</h2>
+        <p data-en="130+ repositories on GitHub. Every web tool on this page is open source too — forks and self-hosting welcome.">GitHub 130+ 仓库。本页所有在线工具同样开源，欢迎 Fork 与自部署。</p>
       </div>
       <div class="grid">
         <a class="repo reveal" href="https://github.com/Tliens/SpeedySwift" target="_blank" rel="noopener">
@@ -575,7 +578,7 @@ try {
             SpeedySwift
             <span class="star"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26 6.6.56-5 4.36 1.5 6.45L12 16.9 5.99 19.63l1.5-6.45-5-4.36 6.6-.56z"/></svg>486</span>
           </div>
-          <p>iOS 应用开发加速库：把常用能力封装成开箱即用的 Swift 扩展，少写样板代码。</p>
+          <p data-en="An iOS development accelerator: everyday capabilities wrapped as ready-to-use Swift extensions — write less boilerplate.">iOS 应用开发加速库：把常用能力封装成开箱即用的 Swift 扩展，少写样板代码。</p>
           <span class="lang">Swift</span>
         </a>
         <a class="repo reveal" href="https://github.com/Tliens" target="_blank" rel="noopener">
@@ -583,16 +586,16 @@ try {
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
             猫大人 Tab
           </div>
-          <p>Chrome 新标签页插件：用 AI 辅助开发并开源，把萌系猫大人放上每一个新标签页。</p>
+          <p data-en="A Chrome new-tab extension built with AI assistance and open source — an adorable cat on every new tab.">Chrome 新标签页插件：用 AI 辅助开发并开源，把萌系猫大人放上每一个新标签页。</p>
           <span class="lang">JavaScript</span>
         </a>
         <a class="repo reveal" href="https://github.com/Tliens" target="_blank" rel="noopener">
           <div class="rt">
             <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-            工具站源码
-            <span class="star">13 站全开源</span>
+            <span data-en="Tool site sources">工具站源码</span>
+            <span class="star" data-en="13 sites open-source">13 站全开源</span>
           </div>
-          <p>本页每一个在线工具都是独立仓库，单文件、零依赖，Fork 即可自部署。</p>
+          <p data-en="Every web tool on this page lives in its own repo — single file, zero dependencies, fork to self-deploy.">本页每一个在线工具都是独立仓库，单文件、零依赖，Fork 即可自部署。</p>
           <span class="lang">JavaScript · HTML</span>
         </a>
       </div>
@@ -604,37 +607,30 @@ try {
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="kicker">04 · Writing</div>
-        <h2>写作与内容</h2>
-        <p>写技术、写产品、也写小说。公众号每周更新，知乎回答被收藏的次数几乎和点赞一样多。</p>
+        <h2 data-en="Writing">写作与内容</h2>
+        <p data-en="Tech and product writing. The newsletter updates weekly, and my Zhihu answers get bookmarked almost as often as they are upvoted.">写技术、写产品。公众号每周更新，知乎回答被收藏的次数几乎和点赞一样多。</p>
       </div>
       <div class="grid">
         <a class="wcard reveal linkable" href="https://www.zhihu.com/people/quinn-63-11" target="_blank" rel="noopener">
           <span class="em">💬</span>
-          <h3>知乎 · 魁in</h3>
-          <span class="st">93 回答 · 460+ 赞同 · 400+ 收藏</span>
-          <p>技术干货向回答与文章，读者爱点「收藏」是最大的褒奖。</p>
-          <span class="ext">去逛逛 ↗</span>
+          <h3 data-en="Zhihu · 魁in">知乎 · 魁in</h3>
+          <span class="st" data-en="93 answers · 460+ upvotes · 400+ bookmarks">93 回答 · 460+ 赞同 · 400+ 收藏</span>
+          <p data-en="Practical, technical answers and articles — a reader hitting bookmark is the best compliment.">技术干货向回答与文章，读者爱点「收藏」是最大的褒奖。</p>
+          <span class="ext" data-en="Visit ↗">去逛逛 ↗</span>
         </a>
         <div class="wcard reveal">
           <span class="em">📝</span>
-          <h3>掘金 · AI机器人</h3>
-          <span class="st">17.2w+ 阅读 · 2000+ 粉丝</span>
-          <p>iOS 技术长文，多篇附完整 Demo 源码。</p>
+          <h3 data-en="Juejin · AI机器人">掘金 · AI机器人</h3>
+          <span class="st" data-en="172k+ reads · 2,000+ followers">17.2w+ 阅读 · 2000+ 粉丝</span>
+          <p data-en="In-depth iOS long-forms, many with full demo source code.">iOS 技术长文，多篇附完整 Demo 源码。</p>
           <span class="ext">juejin.cn</span>
         </div>
         <div class="wcard reveal">
           <span class="em">📢</span>
-          <h3>公众号 · 独立开发者基地</h3>
-          <span class="st">每周更新</span>
-          <p>独立开发实战：机器月报、GitHub 周报、做产品的过程记录。微信搜索关注。</p>
+          <h3 data-en="WeChat · 独立开发者基地">公众号 · 独立开发者基地</h3>
+          <span class="st" data-en="Weekly updates">每周更新</span>
+          <p data-en="Indie dev in practice: AI monthly reports, GitHub weekly and build logs. Search 独立开发者基地 on WeChat to follow.">独立开发实战：机器月报、GitHub 周报、做产品的过程记录。微信搜索关注。</p>
           <span class="ext">独立开发者基地</span>
-        </div>
-        <div class="wcard reveal">
-          <span class="em">📚</span>
-          <h3>番茄小说 · 签约作者</h3>
-          <span class="st">2 部签约作品 · 20w+ 字</span>
-          <p>《陆沉世界》《隐形富豪之暴富人生》—— 写作的目的就是写作。</p>
-          <span class="ext">fanqienovel.com</span>
         </div>
       </div>
     </div>
@@ -645,27 +641,27 @@ try {
     <div class="wrap">
       <div class="sec-head reveal">
         <div class="kicker">05 · About</div>
-        <h2>关于我</h2>
+        <h2 data-en="About Me">关于我</h2>
       </div>
       <div class="cols">
         <div class="bio reveal">
-          <p><b>常驻北京的独立开发者，写 iOS 已 9 年+</b>。主业之外保持高频的「副本生活」：做 App、写开源库、造在线工具、写公众号、写小说 —— 有些是为了热爱，有些是为了探索。</p>
-          <p>技术栈不止 iOS：<b>Swift / JavaScript / Python / Go</b> 都能用，Web、后端、AI 应用都在射程内。信奉「好的东西首先要让别人知道」，所以坚持免费 + 开源。</p>
+          <p data-en="<b>An indie developer based in Beijing, 10 years of iOS</b>. Beyond the day job I keep a high-frequency side-quest life: shipping apps, open-source libraries, web tools and a newsletter — some for love, some for exploration."><b>常驻北京的独立开发者，写 iOS 已 10 年</b>。主业之外保持高频的「副本生活」：做 App、写开源库、造在线工具、写公众号 —— 有些是为了热爱，有些是为了探索。</p>
+          <p data-en="Beyond iOS: Swift / JavaScript / Python / Go are all in the toolkit, covering web, back end and AI apps. I believe good work deserves an audience — that is why everything here stays free + open source.">技术栈不止 iOS：<b>Swift / JavaScript / Python / Go</b> 都能用，Web、后端、AI 应用都在射程内。信奉「好的东西首先要让别人知道」，所以坚持免费 + 开源。</p>
           <div class="motto">
-            <div class="t">认识自己、找到自己、接受自己、养育自己、成为自己。</div>
-            <div class="s">—— 写在每一篇博客的题记</div>
+            <div class="t" data-en="Know yourself, find yourself, accept yourself, nurture yourself, become yourself.">认识自己、找到自己、接受自己、养育自己、成为自己。</div>
+            <div class="s" data-en="— the epigraph of every blog post">—— 写在每一篇博客的题记</div>
           </div>
           <div class="skills">
-            <span>Swift</span><span>iOS · WidgetKit</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>Go</span><span>Three.js</span><span>WebAssembly</span><span>AI 应用</span><span>产品设计</span><span>独立开发</span>
+            <span>Swift</span><span>iOS · WidgetKit</span><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>Go</span><span>Three.js</span><span>WebAssembly</span><span data-en="AI apps">AI 应用</span><span data-en="Product design">产品设计</span><span data-en="Indie dev">独立开发</span>
           </div>
         </div>
         <div class="tl reveal">
-          <h3>副本日志</h3>
-          <div class="node"><b>iOS 工程师 · 北京</b><span>9 年+ 主业深耕，架构与性能优化</span></div>
-          <div class="node"><b>独立开发上架</b><span>《灵感卡片》登 App Store 参考类付费榜 Top1</span></div>
-          <div class="node"><b>开源之路</b><span>SpeedySwift 486★ · GitHub 130+ 仓库</span></div>
-          <div class="node"><b>工具站矩阵</b><span>2026 · 13 个免费在线工具陆续上线</span></div>
-          <div class="node"><b>内容进行时</b><span>公众号周更 · 知乎 · 掘金 · 小说签约作者</span></div>
+          <h3 data-en="Side Quest Log">副本日志</h3>
+          <div class="node"><b data-en="iOS Engineer · Beijing">iOS 工程师 · 北京</b><span data-en="10 years deep — architecture & performance">10 年 主业深耕，架构与性能优化</span></div>
+          <div class="node"><b data-en="Indie apps shipped">独立开发上架</b><span data-en="灵感卡片 hit #1 paid in App Store Reference">《灵感卡片》登 App Store 参考类付费榜 Top1</span></div>
+          <div class="node"><b data-en="Open source">开源之路</b><span data-en="SpeedySwift 486★ · 130+ GitHub repos">SpeedySwift 486★ · GitHub 130+ 仓库</span></div>
+          <div class="node"><b data-en="Web tool suite">工具站矩阵</b><span data-en="2026 · 13 free web tools and counting">2026 · 13 个免费在线工具陆续上线</span></div>
+          <div class="node"><b data-en="Content in progress">内容进行时</b><span data-en="Weekly newsletter · Zhihu · Juejin">公众号周更 · 知乎 · 掘金</span></div>
         </div>
       </div>
     </div>
@@ -675,8 +671,8 @@ try {
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="kicker">06 · Contact</div>
-      <h2 style="margin-top:16px">来找我玩</h2>
-      <p class="sub">合作、交流，或者只是打个招呼 —— 这些地方都能找到我。</p>
+      <h2 style="margin-top:16px" data-en="Say Hello">来找我玩</h2>
+      <p class="sub" data-en="Work together, ask questions, or just say hi — you can find me on any of these.">合作、交流，或者只是打个招呼 —— 这些地方都能找到我。</p>
       <div class="chips">
         <a class="chip" href="https://x.com/shi_kui8457" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -688,9 +684,9 @@ try {
         </a>
         <a class="chip" href="https://www.zhihu.com/people/quinn-63-11" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
-          知乎 <span class="cn">魁in</span>
+          <span data-en="Zhihu">知乎</span> <span class="cn">魁in</span>
         </a>
-        <span class="chip">📢 公众号 <span class="cn">独立开发者基地</span></span>
+        <span class="chip">📢 <span data-en="WeChat Account">公众号</span> <span class="cn">独立开发者基地</span></span>
       </div>
     </div>
   </section>
@@ -698,8 +694,8 @@ try {
 
 <footer>
   <div class="wrap">
-    <div class="motto-line">认识自己 · 找到自己 · 接受自己 · 养育自己 · 成为自己</div>
-    <span>© 2026 Tliens · 独立开发者</span>
+    <div class="motto-line" data-en="Know yourself · Find yourself · Accept yourself · Nurture yourself · Become yourself">认识自己 · 找到自己 · 接受自己 · 养育自己 · 成为自己</div>
+    <span data-en="© 2026 Tliens · Indie Developer">© 2026 Tliens · 独立开发者</span>
     <div class="links">
       <a href="https://github.com/Tliens" target="_blank" rel="noopener">GitHub</a>
       <a href="https://x.com/shi_kui8457" target="_blank" rel="noopener">X (Twitter)</a>
@@ -730,6 +726,28 @@ const nio = new IntersectionObserver(es => {
   });
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => nio.observe(el));
+
+/* 中英双语切换 */
+const langBtn = document.getElementById('langBtn');
+const LANG_TITLE = {
+  zh: 'Tliens · 独立开发者 — 在线工具 · App · 开源 · 写作',
+  en: 'Tliens · Indie Developer — Online Tools · Apps · Open Source · Writing'
+};
+let curLang = 'zh';
+try { curLang = localStorage.getItem('tliens-lang') || 'zh'; } catch (e) {}
+function applyLang(lang) {
+  curLang = lang;
+  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+  document.title = LANG_TITLE[lang];
+  document.querySelectorAll('[data-en]').forEach(el => {
+    if (el.dataset.zh === undefined) el.dataset.zh = el.innerHTML;
+    el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.zh;
+  });
+  langBtn.textContent = lang === 'en' ? '中文' : 'EN';
+  try { localStorage.setItem('tliens-lang', lang); } catch (e) {}
+}
+langBtn.addEventListener('click', () => applyLang(curLang === 'en' ? 'zh' : 'en'));
+applyLang(curLang);
 </script>
 
 </body>
