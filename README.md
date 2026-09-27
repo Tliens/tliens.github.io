@@ -1,6 +1,6 @@
-# kuige.me — Tliens 作品集主页
+# kuige.me — 魁歌 KuiGe 主页
 
-独立开发者 [Tliens](https://github.com/Tliens) 的作品聚合主页，展示所有免费在线工具与作品。
+独立开发者 [魁歌 KuiGe](https://kuige.me/)（GitHub：[Tliens](https://github.com/Tliens)）的官方主页，展示所有免费在线工具与作品。
 
 **线上地址：** https://kuige.me/
 
