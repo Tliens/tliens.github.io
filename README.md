@@ -17,9 +17,9 @@
 | Audio Inspector · 在线音频分析 | https://audio-inspector.kuige.me/ | audio-inspector |
 | PicSqueeze · 图片压缩 | https://picsqueeze.kuige.me/ | picsqueeze |
 | ShareForge · 分享图生成器 | https://shareforge.kuige.me/ | shareforge |
-| 灵感卡片 InspoCard · 文字卡片生成器 | https://kuige.me/inspo-card/ | inspo-card |
 | X热榜 · X/Twitter 博主人气排行 | https://xhot.kuige.me/ | xhot |
 | Indie Gems · 独立开发者作品收录 | https://indie-gems.kuige.me/ | indie-gems |
+| GitHub Gems · 宝藏开源项目导航 | https://github-gems.kuige.me/ | github-gems |
 | 群星闪耀 · 影响世界的人 | https://world-shapers.kuige.me/ | world-shapers |
 
 ## 说明
