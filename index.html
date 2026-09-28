@@ -62,20 +62,20 @@
       "description": "14 个免费纯前端在线工具，无需注册，数据不出浏览器",
       "numberOfItems": 13,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1,  "url": "https://ai-model-rank.kuige.me/",       "name": "AI Rank — 大模型排行榜" },
-        { "@type": "ListItem", "position": 2,  "url": "https://tokenlens.kuige.me/",           "name": "TokenLens — Token 计数器" },
-        { "@type": "ListItem", "position": 3,  "url": "https://jsonlens.kuige.me/",            "name": "JSON Lens — JSON 工具箱" },
-        { "@type": "ListItem", "position": 4,  "url": "https://sse-inspector.kuige.me/",       "name": "SSE Inspector — SSE 调试器" },
-        { "@type": "ListItem", "position": 5,  "url": "https://stream-inspector.kuige.me/",    "name": "Stream Inspector — 流媒体调试工具箱" },
-        { "@type": "ListItem", "position": 6,  "url": "https://fast-site.kuige.me/",           "name": "魁歌建站指南 — 零基础建站教程" },
-        { "@type": "ListItem", "position": 7,  "url": "https://picsqueeze.kuige.me/",          "name": "PicSqueeze — 在线图片压缩" },
-        { "@type": "ListItem", "position": 8,  "url": "https://shareforge.kuige.me/",          "name": "ShareForge — 分享图生成器" },
-        { "@type": "ListItem", "position": 9,  "url": "https://rednote-formatter.kuige.me/",   "name": "Rednote Formatter — 小红书文案排版" },
-        { "@type": "ListItem", "position": 10, "url": "https://indie-gems.kuige.me/",          "name": "Indie Gems — 独立开发者作品收录" },
-        { "@type": "ListItem", "position": 11, "url": "https://github-gems.kuige.me/",         "name": "GitHub Gems — 宝藏开源项目导航" },
-        { "@type": "ListItem", "position": 12, "url": "https://xhot.kuige.me/",                "name": "X热榜 — X/Twitter 博主排名" },
-        { "@type": "ListItem", "position": 13, "url": "https://world-shapers.kuige.me/",       "name": "群星闪耀 — 影响世界的人" },
-        { "@type": "ListItem", "position": 14, "url": "https://markgone.kuige.me/",             "name": "MarkGone — 图片在线去水印" }
+        { "@type": "ListItem", "position": 1,  "url": "https://fast-site.kuige.me/",           "name": "魁歌建站指南 — 零基础建站教程" },
+        { "@type": "ListItem", "position": 2,  "url": "https://shareforge.kuige.me/",          "name": "ShareForge — 分享图生成器" },
+        { "@type": "ListItem", "position": 3,  "url": "https://github-gems.kuige.me/",         "name": "GitHub Gems — 宝藏开源项目导航" },
+        { "@type": "ListItem", "position": 4,  "url": "https://xhot.kuige.me/",                "name": "X热榜 — X/Twitter 博主排名" },
+        { "@type": "ListItem", "position": 5,  "url": "https://markgone.kuige.me/",             "name": "MarkGone — 图片在线去水印" }
+        { "@type": "ListItem", "position": 6,  "url": "https://picsqueeze.kuige.me/",          "name": "PicSqueeze — 在线图片压缩" },
+        { "@type": "ListItem", "position": 7,  "url": "https://indie-gems.kuige.me/",          "name": "Indie Gems — 独立开发者作品收录" },
+        { "@type": "ListItem", "position": 8,  "url": "https://jsonlens.kuige.me/",            "name": "JSON Lens — JSON 工具箱" },
+        { "@type": "ListItem", "position": 9,  "url": "https://ai-model-rank.kuige.me/",       "name": "AI Rank — 大模型排行榜" },
+        { "@type": "ListItem", "position": 10, "url": "https://rednote-formatter.kuige.me/",   "name": "Rednote Formatter — 小红书文案排版" },
+        { "@type": "ListItem", "position": 11, "url": "https://tokenlens.kuige.me/",           "name": "TokenLens — Token 计数器" },
+        { "@type": "ListItem", "position": 12, "url": "https://stream-inspector.kuige.me/",    "name": "Stream Inspector — 流媒体调试工具箱" },
+        { "@type": "ListItem", "position": 13, "url": "https://sse-inspector.kuige.me/",       "name": "SSE Inspector — SSE 调试器" },
+        { "@type": "ListItem", "position": 14, "url": "https://world-shapers.kuige.me/",       "name": "群星闪耀 — 影响世界的人" },
       ]
     },
     {
@@ -126,19 +126,34 @@
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
     line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
+  html[data-theme="dark"] body{
+    background-image:radial-gradient(900px 420px at 50% -160px,rgba(91,157,255,.11),transparent 70%),radial-gradient(700px 380px at 85% 8%,rgba(167,139,250,.08),transparent 70%);
+    background-repeat:no-repeat;
+  }
   html[data-theme="light"] body{
     background-image:radial-gradient(900px 420px at 50% -160px,rgba(91,157,255,.14),transparent 70%),radial-gradient(700px 380px at 85% 8%,rgba(167,139,250,.12),transparent 70%);
     background-repeat:no-repeat;
   }
-  html[data-theme="light"] #galaxy{display:none}
   a{color:inherit;text-decoration:none}
   ::selection{background:rgba(91,157,255,.35)}
   .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
   section{position:relative}
 
-  /* ---------- 星系画布 ---------- */
-  #galaxy{position:fixed;inset:0;z-index:-1;pointer-events:none}
-  @media (prefers-reduced-motion:reduce){#galaxy{display:none}}
+  /* ---------- 星空（纯 CSS，零 JS 零请求） ---------- */
+  body::before{
+    content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:
+      radial-gradient(1px 1px at 22px 34px, rgba(255,255,255,.85), transparent),
+      radial-gradient(1px 1px at 118px 92px, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.4px 1.4px at 187px 41px, rgba(205,218,255,.75), transparent),
+      radial-gradient(1px 1px at 61px 141px, rgba(255,255,255,.4), transparent),
+      radial-gradient(1.4px 1.4px at 152px 168px, rgba(167,139,250,.65), transparent),
+      radial-gradient(1px 1px at 233px 118px, rgba(255,255,255,.45), transparent),
+      radial-gradient(1px 1px at 80px 8px, rgba(167,139,250,.5), transparent);
+    background-size:260px 200px;
+  }
+  html[data-theme="light"] body::before{display:none}
+  @media (prefers-reduced-motion:reduce){body::before{background-repeat:repeat}}
 
   /* ---------- 导航 ---------- */
   header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:var(--header-bg);border-bottom:1px solid var(--line)}
@@ -211,6 +226,8 @@
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags span{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
   .card.hide{display:none}
+  .rankb{position:absolute;top:10px;left:10px;z-index:2;font-size:11px;font-weight:800;letter-spacing:.05em;color:#fff;background:rgba(8,12,22,.55);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.22);border-radius:7px;padding:2px 8px;font-variant-numeric:tabular-nums}
+  .rankb.top{background:var(--grad);border-color:transparent;box-shadow:0 4px 16px rgba(91,157,255,.45)}
 
   /* ---------- 分类筛选 ---------- */
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 30px}
@@ -322,93 +339,6 @@
 </head>
 <body>
 
-<canvas id="galaxy" aria-hidden="true"></canvas>
-<script type="module">
-/* 星系背景：仅在夜间模式下按需加载 three.js（日间 CSS 隐藏星系，省 ~1.2MB 下载） */
-const canvas = document.getElementById('galaxy');
-let galaxyStarted = false;
-async function initGalaxy() {
-  if (galaxyStarted) return;
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { galaxyStarted = true; return; }
-  if (document.documentElement.dataset.theme === 'light') return;  /* 等日间切夜间时再初始化 */
-  galaxyStarted = true;
-  try {
-    const THREE = await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js');
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-  renderer.setSize(innerWidth, innerHeight, false);
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 100);
-  camera.position.set(0, 4.2, 11.5);
-  camera.lookAt(0, 0, 0);
-
-  /* 螺旋星系粒子 */
-  const COUNT = 15000, ARMS = 4, RADIUS = 9;
-  const pos = new Float32Array(COUNT * 3), col = new Float32Array(COUNT * 3);
-  const cIn = new THREE.Color('#5b9dff'), cOut = new THREE.Color('#a78bfa'), cCore = new THREE.Color('#e8edf7');
-  const tmp = new THREE.Color();
-  for (let i = 0; i < COUNT; i++) {
-    const r = Math.pow(Math.random(), 1.7) * RADIUS;
-    const arm = (i % ARMS) / ARMS * Math.PI * 2;
-    const spin = r * 0.55;
-    const spread = Math.pow(Math.random() - 0.5, 3) * (1.6 + r * 0.12);
-    const a = arm + spin + spread;
-    pos[i * 3]     = Math.cos(a) * r + (Math.random() - 0.5) * 0.35;
-    pos[i * 3 + 1] = Math.pow(Math.random() - 0.5, 3) * Math.max(0.25, 1.5 - r * 0.13);
-    pos[i * 3 + 2] = Math.sin(a) * r + (Math.random() - 0.5) * 0.35;
-    tmp.copy(Math.random() < 0.5 ? cIn : cOut).lerp(cCore, Math.max(0, 0.75 - r / RADIUS));
-    const b = 0.5 + Math.random() * 0.5;
-    col[i * 3] = tmp.r * b; col[i * 3 + 1] = tmp.g * b; col[i * 3 + 2] = tmp.b * b;
-  }
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
-  const mat = new THREE.PointsMaterial({
-    size: 0.038, vertexColors: true, transparent: true, opacity: 0.62,
-    depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true
-  });
-  const galaxy = new THREE.Points(geo, mat);
-  galaxy.position.set(0, -2.4, -1.5);
-  scene.add(galaxy);
-
-  /* 远景尘埃层：慢速反向旋转，增加纵深 */
-  const dust = new THREE.Points(geo.clone(), new THREE.PointsMaterial({
-    size: 0.018, vertexColors: true, transparent: true, opacity: 0.28,
-    depthWrite: false, blending: THREE.AdditiveBlending
-  }));
-  dust.position.set(1.5, -1.2, -6);
-  dust.scale.set(1.7, 1.7, 1.7);
-  scene.add(dust);
-
-  let mx = 0;
-  addEventListener('pointermove', e => { mx = (e.clientX / innerWidth - 0.5) * 2; }, { passive: true });
-  addEventListener('resize', () => {
-    camera.aspect = innerWidth / innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(innerWidth, innerHeight, false);
-  });
-
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let last = 0;
-  renderer.setAnimationLoop(t => {
-    if (t - last < 33) return;           /* ~30fps 足够 */
-    last = t;
-    if (document.documentElement.dataset.theme === 'light') return;  /* 日间模式星系隐藏 */
-    galaxy.rotation.y = t * 0.00004;
-    dust.rotation.y = -t * 0.000018;
-    /* 鼠标视差 + 滚动视差 */
-    camera.position.x += (mx * 0.9 - camera.position.x) * 0.03;
-    galaxy.position.y = -1.9 - scrollY * 0.001;
-    dust.position.y = -1.2 + scrollY * 0.0006;
-    renderer.render(scene, camera);
-  });
-  if (reduced) renderer.setAnimationLoop(null);
-  } catch (e) { canvas.remove(); }
-}
-window.__initGalaxy = initGalaxy;
-if (document.documentElement.dataset.theme !== 'light') initGalaxy();
-</script>
-
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><img class="logo" src="/logo.png" alt="魁歌 logo">魁歌</a>
@@ -493,68 +423,8 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
       </div>
       <div class="grid">
 
-        <a class="card reveal" data-cat="ai" href="https://ai-model-rank.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#1a2340,#101726)">🏆</div>
-            <img src="https://ai-model-rank.kuige.me/og-image.png" alt="AI Rank" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">AI Rank <span class="en" data-en="LLM Leaderboard">大模型排行榜</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Compare LMArena blind-test scores, API pricing and context windows in real time — with a built-in AI Hot Board of live money / models / deals news.">实时对比 LMArena 盲测评分、API 价格与上下文窗口，多维度排行与模型对比；内置 AI 热榜：搞钱 · 大模型 · 优惠资讯实时聚合。</p>
-            <div class="tags"><span>LLM</span><span data-en="Data comparison">数据对比</span><span data-en="AI news">热榜资讯</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="ai" href="https://tokenlens.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#12303a,#0e1a26)">🔢</div>
-            <img src="https://tokenlens.kuige.me/og-image.png" alt="TokenLens" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">TokenLens <span class="en" data-en="Token counter">Token 计数器</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Token counting and LLM cost comparison built on js-tiktoken, supporting o200k / cl100k for accurate API cost estimates.">基于 js-tiktoken 的 Token 计数与大模型成本对比，支持 o200k / cl100k，精确估算 API 费用。</p>
-            <div class="tags"><span>Token</span><span data-en="Cost estimates">成本估算</span><span>tiktoken</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="dev" href="https://jsonlens.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#26321c,#131b12)">🧬</div>
-            <img src="https://jsonlens.kuige.me/og-image.png" alt="JSON Lens" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">JSON Lens <span class="en" data-en="JSON toolkit">JSON 工具箱</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Format, validate and explore JSON as a tree, with Unescape and JSONPath queries — smooth even on large files.">JSON 格式化、校验、树形查看，支持 Unescape 与 JSONPath 查询，大文件也流畅。</p>
-            <div class="tags"><span>JSON</span><span data-en="Formatting">格式化</span><span>JSONPath</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="dev" href="https://sse-inspector.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#3a1a2a,#1c1017)">📡</div>
-            <img src="https://sse-inspector.kuige.me/og-image.png" alt="SSE Inspector" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">SSE Inspector <span class="en" data-en="SSE debugger">SSE 调试器</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Online Server-Sent Events debugger: connect to an endpoint and watch event streams, headers and raw frames in real time.">在线 Server-Sent Events 调试器：连接 SSE 端点，实时查看事件流、请求头与原始帧。</p>
-            <div class="tags"><span>SSE</span><span data-en="Debugging">调试</span><span>EventSource</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="dev" href="https://stream-inspector.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#1c2a3a,#10161f)">🧰</div>
-            <img src="https://stream-inspector.kuige.me/og-image.png" alt="Stream Inspector 工具箱" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">Stream Inspector <span class="en" data-en="Streaming debug toolbox">流媒体调试工具箱</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Streaming debug toolbox: live pull-stream debugging (HLS · HTTP-FLV · DASH · WebRTC) plus audio analysis — waveform, header inspection, format detection and compression, all in one place.">流媒体调试工具箱：直播拉流调试（HLS · HTTP-FLV · DASH · WebRTC）+ 音频分析（波形、文件头解析、格式识别、压缩），一站搞定。</p>
-            <div class="tags"><span data-en="Live">直播</span><span data-en="Audio">音频</span><span>WebRTC</span></div>
-          </div>
-        </a>
-
         <a class="card reveal" data-cat="dev" href="https://fast-site.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
+          <div class="thumb"><span class="rankb rankb top">#1</span>
             <div class="ph" style="background:linear-gradient(135deg,#141b2e,#0d1320)">🚀</div>
             <img src="https://fast-site.kuige.me/og-image.png" alt="魁歌建站" loading="lazy" onerror="this.remove()">
           </div>
@@ -565,20 +435,8 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
           </div>
         </a>
 
-        <a class="card reveal" data-cat="media" href="https://picsqueeze.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#3a2a12,#1d160a)">🗜️</div>
-            <img src="https://picsqueeze.kuige.me/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">PicSqueeze <span class="en" data-en="Image compression">图片压缩</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Free online image compression: batch up to 20, processed locally with WebAssembly — photos never uploaded, 100% private.">免费在线图片压缩：批量 20 张，WebAssembly 本地处理，照片永不上传，100% 隐私。</p>
-            <div class="tags"><span data-en="Compression">图片压缩</span><span>WebAssembly</span><span data-en="Privacy">隐私</span></div>
-          </div>
-        </a>
-
         <a class="card reveal" data-cat="media" href="https://shareforge.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
+          <div class="thumb"><span class="rankb rankb top">#2</span>
             <div class="ph" style="background:linear-gradient(135deg,#1e1b3a,#12101f)">🎨</div>
             <img src="https://shareforge.kuige.me/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
           </div>
@@ -589,44 +447,8 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
           </div>
         </a>
 
-        <a class="card reveal" data-cat="media" href="https://rednote-formatter.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#3a1218,#1f0a0d)">📋</div>
-            <img src="https://rednote-formatter.kuige.me/og-image.png" alt="Rednote Formatter" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">Rednote Formatter <span class="en" data-en="Copy formatter">文案排版</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Free text formatter for Rednote (Xiaohongshu) & WeChat Moments: emoji dividers, smart line breaks, hashtag generator, centered layout — 100% local.">小红书/朋友圈文案排版：emoji 分隔、智能分段、话题标签生成、居中排版防折叠，纯本地处理不上传。</p>
-            <div class="tags"><span data-en="Xiaohongshu">小红书</span><span data-en="Moments">朋友圈</span><span data-en="Hashtags">话题标签</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="media" href="https://markgone.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#0b1626,#123245)">🌀</div>
-            <img src="https://markgone.kuige.me/og-image.png" alt="MarkGone" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">MarkGone <span class="en" data-en="Online watermark remover">图片在线去水印</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="Brush or rectangle to mark the watermark, the inpainting engine rebuilds the background — three quality tiers, batch mode with up to 50 parallel tasks, ZIP download. 100% local, images never leave your device.">涂抹或框选标记水印，修复算法重建背景 —— 三档质量、批量最高 50 并发、ZIP 打包下载。纯本地处理，图片不上传。</p>
-            <div class="tags"><span data-en="Watermark remover">去水印</span><span data-en="Batch · 50 parallel">批量 · 50 并发</span><span data-en="100% local">纯本地</span></div>
-          </div>
-        </a>
-
-        <a class="card reveal" data-cat="rank" href="https://indie-gems.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#141b3a,#0d1020)">💎</div>
-            <img src="https://indie-gems.kuige.me/og-image.png" alt="Indie Gems" loading="lazy" onerror="this.remove()">
-          </div>
-          <div class="body">
-            <div class="card-title">Indie Gems <span class="en" data-en="Indie product directory">独立开发者作品收录</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="A hand-curated directory of independent developer products: apps, games, tools and communities from solo devs worldwide — free to submit.">手工精选的独立开发者作品目录：App、游戏、工具与社区，覆盖全球 solo 开发者，可免费申请收录。</p>
-            <div class="tags"><span data-en="Directory">作品目录</span><span data-en="Indie dev">独立开发</span><span data-en="Free submission">免费收录</span></div>
-          </div>
-        </a>
-
         <a class="card reveal" data-cat="rank" href="https://github-gems.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
+          <div class="thumb"><span class="rankb rankb top">#3</span>
             <div class="ph" style="background:linear-gradient(135deg,#0d2117,#0a1610)">🧭</div>
             <img src="https://github-gems.kuige.me/og-image.png" alt="GitHub Gems" loading="lazy" onerror="this.remove()">
           </div>
@@ -637,19 +459,8 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
           </div>
         </a>
 
-        <a class="card reveal" data-cat="rank" href="https://world-shapers.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
-            <div class="ph" style="background:linear-gradient(135deg,#2b2416,#171308)">✦</div>
-          </div>
-          <div class="body">
-            <div class="card-title">群星闪耀 <span class="en" data-en="People who shaped the world">影响世界的人</span><span class="arrow">↗</span></div>
-            <p class="card-desc" data-en="A learning encyclopedia of the people who shaped the world — figures and history across fields, for study and reference.">人物学习百科：群星闪耀 · 影响世界的人，跨领域人物与史实，仅供学习参考。</p>
-            <div class="tags"><span data-en="People">人物</span><span data-en="History">历史</span><span>Wiki</span></div>
-          </div>
-        </a>
-
         <a class="card reveal" data-cat="rank" href="https://xhot.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb">
+          <div class="thumb"><span class="rankb rankb">#4</span>
             <div class="ph" style="background:linear-gradient(135deg,#1a1622,#0d0a14)">🔥</div>
             <img src="https://xhot.kuige.me/og-image.png" alt="X Hot List" loading="lazy" onerror="this.remove()">
           </div>
@@ -657,6 +468,125 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
             <div class="card-title">X热榜 <span class="en" data-en="X/Twitter creator rankings">X/Twitter 博主排名</span><span class="arrow">↗</span></div>
             <p class="card-desc" data-en="X (Twitter) creator directory for Chinese-speaking users: follower leaderboards plus themed tabs — indie dev, AI, open source, cosplay and more — searchable and shareable.">X/Twitter 博主人气导航：粉丝总榜 + 独立开发、AI、开源大神、COS 等主题榜，支持搜索与一键分享，收录可自助提交。</p>
             <div class="tags"><span data-en="Creator directory">博主导航</span><span data-en="Leaderboards">粉丝榜</span><span data-en="Free submission">免费收录</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="media" href="https://markgone.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#5</span>
+            <div class="ph" style="background:linear-gradient(135deg,#0b1626,#123245)">🌀</div>
+            <img src="https://markgone.kuige.me/og-image.png" alt="MarkGone" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">MarkGone <span class="en" data-en="Online watermark remover">图片在线去水印</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Brush or rectangle to mark the watermark, the inpainting engine rebuilds the background — three quality tiers, batch mode with up to 50 parallel tasks, ZIP download. 100% local, images never leave your device.">涂抹或框选标记水印，修复算法重建背景 —— 三档质量、批量最高 50 并发、ZIP 打包下载。纯本地处理，图片不上传。</p>
+            <div class="tags"><span data-en="Watermark remover">去水印</span><span data-en="Batch · 50 parallel">批量 · 50 并发</span><span data-en="100% local">纯本地</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="media" href="https://picsqueeze.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#6</span>
+            <div class="ph" style="background:linear-gradient(135deg,#3a2a12,#1d160a)">🗜️</div>
+            <img src="https://picsqueeze.kuige.me/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">PicSqueeze <span class="en" data-en="Image compression">图片压缩</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Free online image compression: batch up to 20, processed locally with WebAssembly — photos never uploaded, 100% private.">免费在线图片压缩：批量 20 张，WebAssembly 本地处理，照片永不上传，100% 隐私。</p>
+            <div class="tags"><span data-en="Compression">图片压缩</span><span>WebAssembly</span><span data-en="Privacy">隐私</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="rank" href="https://indie-gems.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#7</span>
+            <div class="ph" style="background:linear-gradient(135deg,#141b3a,#0d1020)">💎</div>
+            <img src="https://indie-gems.kuige.me/og-image.png" alt="Indie Gems" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">Indie Gems <span class="en" data-en="Indie product directory">独立开发者作品收录</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="A hand-curated directory of independent developer products: apps, games, tools and communities from solo devs worldwide — free to submit.">手工精选的独立开发者作品目录：App、游戏、工具与社区，覆盖全球 solo 开发者，可免费申请收录。</p>
+            <div class="tags"><span data-en="Directory">作品目录</span><span data-en="Indie dev">独立开发</span><span data-en="Free submission">免费收录</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="dev" href="https://jsonlens.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#8</span>
+            <div class="ph" style="background:linear-gradient(135deg,#26321c,#131b12)">🧬</div>
+            <img src="https://jsonlens.kuige.me/og-image.png" alt="JSON Lens" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">JSON Lens <span class="en" data-en="JSON toolkit">JSON 工具箱</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Format, validate and explore JSON as a tree, with Unescape and JSONPath queries — smooth even on large files.">JSON 格式化、校验、树形查看，支持 Unescape 与 JSONPath 查询，大文件也流畅。</p>
+            <div class="tags"><span>JSON</span><span data-en="Formatting">格式化</span><span>JSONPath</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="ai" href="https://ai-model-rank.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#9</span>
+            <div class="ph" style="background:linear-gradient(135deg,#1a2340,#101726)">🏆</div>
+            <img src="https://ai-model-rank.kuige.me/og-image.png" alt="AI Rank" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">AI Rank <span class="en" data-en="LLM Leaderboard">大模型排行榜</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Compare LMArena blind-test scores, API pricing and context windows in real time — with a built-in AI Hot Board of live money / models / deals news.">实时对比 LMArena 盲测评分、API 价格与上下文窗口，多维度排行与模型对比；内置 AI 热榜：搞钱 · 大模型 · 优惠资讯实时聚合。</p>
+            <div class="tags"><span>LLM</span><span data-en="Data comparison">数据对比</span><span data-en="AI news">热榜资讯</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="media" href="https://rednote-formatter.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#10</span>
+            <div class="ph" style="background:linear-gradient(135deg,#3a1218,#1f0a0d)">📋</div>
+            <img src="https://rednote-formatter.kuige.me/og-image.png" alt="Rednote Formatter" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">Rednote Formatter <span class="en" data-en="Copy formatter">文案排版</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Free text formatter for Rednote (Xiaohongshu) & WeChat Moments: emoji dividers, smart line breaks, hashtag generator, centered layout — 100% local.">小红书/朋友圈文案排版：emoji 分隔、智能分段、话题标签生成、居中排版防折叠，纯本地处理不上传。</p>
+            <div class="tags"><span data-en="Xiaohongshu">小红书</span><span data-en="Moments">朋友圈</span><span data-en="Hashtags">话题标签</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="ai" href="https://tokenlens.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#11</span>
+            <div class="ph" style="background:linear-gradient(135deg,#12303a,#0e1a26)">🔢</div>
+            <img src="https://tokenlens.kuige.me/og-image.png" alt="TokenLens" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">TokenLens <span class="en" data-en="Token counter">Token 计数器</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Token counting and LLM cost comparison built on js-tiktoken, supporting o200k / cl100k for accurate API cost estimates.">基于 js-tiktoken 的 Token 计数与大模型成本对比，支持 o200k / cl100k，精确估算 API 费用。</p>
+            <div class="tags"><span>Token</span><span data-en="Cost estimates">成本估算</span><span>tiktoken</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="dev" href="https://stream-inspector.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#12</span>
+            <div class="ph" style="background:linear-gradient(135deg,#1c2a3a,#10161f)">🧰</div>
+            <img src="https://stream-inspector.kuige.me/og-image.png" alt="Stream Inspector 工具箱" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">Stream Inspector <span class="en" data-en="Streaming debug toolbox">流媒体调试工具箱</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Streaming debug toolbox: live pull-stream debugging (HLS · HTTP-FLV · DASH · WebRTC) plus audio analysis — waveform, header inspection, format detection and compression, all in one place.">流媒体调试工具箱：直播拉流调试（HLS · HTTP-FLV · DASH · WebRTC）+ 音频分析（波形、文件头解析、格式识别、压缩），一站搞定。</p>
+            <div class="tags"><span data-en="Live">直播</span><span data-en="Audio">音频</span><span>WebRTC</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="dev" href="https://sse-inspector.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#13</span>
+            <div class="ph" style="background:linear-gradient(135deg,#3a1a2a,#1c1017)">📡</div>
+            <img src="https://sse-inspector.kuige.me/og-image.png" alt="SSE Inspector" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">SSE Inspector <span class="en" data-en="SSE debugger">SSE 调试器</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Online Server-Sent Events debugger: connect to an endpoint and watch event streams, headers and raw frames in real time.">在线 Server-Sent Events 调试器：连接 SSE 端点，实时查看事件流、请求头与原始帧。</p>
+            <div class="tags"><span>SSE</span><span data-en="Debugging">调试</span><span>EventSource</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="rank" href="https://world-shapers.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb"><span class="rankb rankb">#14</span>
+            <div class="ph" style="background:linear-gradient(135deg,#2b2416,#171308)">✦</div>
+          </div>
+          <div class="body">
+            <div class="card-title">群星闪耀 <span class="en" data-en="People who shaped the world">影响世界的人</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="A learning encyclopedia of the people who shaped the world — figures and history across fields, for study and reference.">人物学习百科：群星闪耀 · 影响世界的人，跨领域人物与史实，仅供学习参考。</p>
+            <div class="tags"><span data-en="People">人物</span><span data-en="History">历史</span><span>Wiki</span></div>
           </div>
         </a>
 
@@ -973,7 +903,6 @@ function applyTheme() {
   themeBtn.textContent = THEME_LABEL[s];
   themeBtn.title = THEME_TITLE[s];
   if (metaTheme) metaTheme.content = t === 'light' ? '#eef2f9' : '#070a11';
-  if (t === 'dark' && window.__initGalaxy) window.__initGalaxy();  /* 日间省流量未加载，切夜间再补 */
 }
 themeBtn.addEventListener('click', () => {
   const next = THEME_ORDER[(THEME_ORDER.indexOf(themeSetting()) + 1) % 3];
