@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070a11" id="metaTheme">
+<script>
+/* 主题预置：日 / 夜 / 自动，首屏渲染前定好配色，避免闪色 */
+(function(){try{var s=localStorage.getItem('kuige-theme')||'auto';var t=s==='auto'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();
+</script>
 <title>魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作</title>
 <meta name="description" content="独立开发者魁歌（KuiGe）：13 个免费纯前端在线工具、App Store 参考类付费榜 Top1 应用《灵感卡片》、SpeedySwift 等开源项目、公众号《独立开发者基地》与多平台写作。全部开箱即用，数据不出浏览器。">
 <meta name="author" content="魁歌 KuiGe">
@@ -18,7 +23,8 @@
 <meta name="twitter:title" content="魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作">
 <meta name="twitter:description" content="13 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作。">
 <meta name="twitter:image" content="https://kuige.me/og-image.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b9dff'/%3E%3Cstop offset='1' stop-color='%23a78bfa'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial,sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,12 +43,25 @@
 </script>
 <style>
   :root{
-    --bg:#070a11; --bg-soft:#0d1220; --card:rgba(255,255,255,.028); --card-solid:#101728;
-    --line:#1e2840; --line-hi:#31425f;
-    --ink:#eaeffc; --muted:#93a2bd; --dim:#5a6a88;
     --acc:#5b9dff; --acc2:#a78bfa;
     --grad:linear-gradient(135deg,#5b9dff,#a78bfa);
     --serif:"Noto Serif SC","Songti SC","STSong","SimSun",serif;
+  }
+  html[data-theme="dark"]{
+    --bg:#070a11; --bg-soft:#0d1220; --card:rgba(255,255,255,.028); --card-solid:#101728;
+    --line:#1e2840; --line-hi:#31425f;
+    --ink:#eaeffc; --muted:#93a2bd; --dim:#5a6a88;
+    --header-bg:rgba(7,10,17,.72); --hover-bg:rgba(255,255,255,.05); --soft-bg:rgba(255,255,255,.02);
+    --shadow-card:0 20px 48px rgba(0,0,0,.5),0 0 0 1px rgba(91,157,255,.12);
+    --shadow-soft:0 18px 44px rgba(0,0,0,.45);
+  }
+  html[data-theme="light"]{
+    --bg:#eef2f9; --bg-soft:#ffffff; --card:rgba(255,255,255,.8); --card-solid:#ffffff;
+    --line:#dbe3f0; --line-hi:#b9c8e2;
+    --ink:#1c2432; --muted:#51607a; --dim:#8593ab;
+    --header-bg:rgba(248,250,254,.8); --hover-bg:rgba(20,40,90,.06); --soft-bg:rgba(20,40,90,.045);
+    --shadow-card:0 20px 48px rgba(30,50,100,.14),0 0 0 1px rgba(91,157,255,.1);
+    --shadow-soft:0 18px 44px rgba(30,50,100,.12);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -51,6 +70,11 @@
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
     line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
+  html[data-theme="light"] body{
+    background-image:radial-gradient(900px 420px at 50% -160px,rgba(91,157,255,.14),transparent 70%),radial-gradient(700px 380px at 85% 8%,rgba(167,139,250,.12),transparent 70%);
+    background-repeat:no-repeat;
+  }
+  html[data-theme="light"] #galaxy{display:none}
   a{color:inherit;text-decoration:none}
   ::selection{background:rgba(91,157,255,.35)}
   .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
@@ -61,13 +85,13 @@
   @media (prefers-reduced-motion:reduce){#galaxy{display:none}}
 
   /* ---------- 导航 ---------- */
-  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,10,17,.72);border-bottom:1px solid var(--line)}
+  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:var(--header-bg);border-bottom:1px solid var(--line)}
   .top .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16.5px;letter-spacing:.3px}
-  .brand .logo{width:30px;height:30px;border-radius:9px;background:var(--grad);display:grid;place-items:center;color:#fff;font-size:16px;font-weight:900;box-shadow:0 4px 18px rgba(91,157,255,.4)}
+  .brand .logo{width:30px;height:30px;border-radius:9px;display:block;box-shadow:0 4px 14px rgba(0,0,0,.22)}
   nav.mid{display:flex;gap:2px}
   nav.mid a{font-size:13.5px;color:var(--muted);padding:7px 13px;border-radius:999px;transition:.18s}
-  nav.mid a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+  nav.mid a:hover{color:var(--ink);background:var(--hover-bg)}
   nav.side{display:flex;gap:8px}
   nav.side a{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;transition:.18s}
   nav.side a:hover{color:var(--ink);border-color:var(--line-hi);background:var(--bg-soft)}
@@ -85,13 +109,13 @@
   .hero .sub{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:17px}
   .hero .sub b{color:var(--ink)}
   .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
-  .badges span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:999px;padding:5px 13px}
+  .badges span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--soft-bg);border-radius:999px;padding:5px 13px}
   .ctas{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
   .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:13px;font-size:15px;font-weight:700;transition:.2s}
   .btn svg{width:17px;height:17px;fill:currentColor}
   .btn.primary{background:var(--grad);color:#fff;box-shadow:0 10px 32px rgba(91,157,255,.35)}
   .btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(91,157,255,.5)}
-  .btn.ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.03)}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink);background:var(--soft-bg)}
   .btn.ghost:hover{border-color:var(--line-hi);transform:translateY(-2px)}
   .scroll-hint{margin-top:58px;color:var(--dim);font-size:12px;letter-spacing:.24em;animation:bob 2.4s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(7px);opacity:1}}
@@ -117,7 +141,7 @@
     display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
     border-radius:16px;overflow:hidden;transition:.22s;
   }
-  .card:hover{transform:translateY(-5px);border-color:var(--line-hi);box-shadow:0 20px 48px rgba(0,0,0,.5),0 0 0 1px rgba(91,157,255,.12)}
+  .card:hover{transform:translateY(-5px);border-color:var(--line-hi);box-shadow:var(--shadow-card)}
   .thumb{position:relative;aspect-ratio:1200/630;background:var(--bg-soft);overflow:hidden}
   .thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-size:52px}
   .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
@@ -134,14 +158,14 @@
 
   /* ---------- 分类筛选 ---------- */
   .filters{display:flex;flex-wrap:wrap;gap:10px;margin:-8px 0 30px}
-  .filters button{font:inherit;font-size:13px;color:var(--muted);background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s;letter-spacing:.02em}
+  .filters button{font:inherit;font-size:13px;color:var(--muted);background:var(--soft-bg);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s;letter-spacing:.02em}
   .filters button:hover{color:var(--ink);border-color:var(--line-hi);transform:translateY(-1px)}
   .filters button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 6px 20px rgba(91,157,255,.32)}
 
   /* ---------- App 卡片 ---------- */
   .apps .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
   .app{display:flex;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:.22s;position:relative;overflow:hidden}
-  .app:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+  .app:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
   .app .icon{flex:none;width:72px;height:72px;border-radius:17px;display:grid;place-items:center;font-size:36px;box-shadow:0 10px 26px rgba(0,0,0,.4)}
   .app img.icon{object-fit:cover;background:#fff}
   .app h3{font-size:17.5px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -155,7 +179,7 @@
   /* ---------- 开源 ---------- */
   .oss .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
   .repo{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.22s;display:flex;flex-direction:column;gap:8px}
-  .repo:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+  .repo:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
   .repo .rt{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16.5px}
   .repo .rt svg{width:19px;height:19px;fill:var(--muted)}
   .repo .star{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:13px;color:#ffd76a;font-weight:700}
@@ -167,7 +191,7 @@
   /* ---------- 写作 ---------- */
   .writing .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
   .wcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.22s;display:flex;flex-direction:column;gap:6px;position:relative}
-  .wcard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:0 18px 44px rgba(0,0,0,.45)}
+  .wcard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
   .wcard .em{font-size:24px}
   .wcard h3{font-size:15.5px;font-weight:800}
   .wcard .st{font-size:12.5px;color:var(--acc2);font-weight:700}
@@ -184,7 +208,7 @@
   .motto .t{font-family:var(--serif);font-size:16.5px;letter-spacing:.06em;color:var(--ink)}
   .motto .s{margin-top:4px;font-size:12px;color:var(--dim)}
   .skills{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
-  .skills span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:999px;padding:5px 13px;transition:.15s}
+  .skills span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--soft-bg);border-radius:999px;padding:5px 13px;transition:.15s}
   .skills span:hover{color:var(--ink);border-color:var(--line-hi)}
   .tl{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;position:relative}
   .tl h3{font-size:15px;font-weight:800;color:var(--muted);letter-spacing:.1em;margin-bottom:20px}
@@ -199,7 +223,7 @@
   .contact h2{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.5px}
   .contact .sub{margin:12px auto 0;max-width:520px;color:var(--muted);font-size:15px}
   .contact .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
-  .chip{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:14px;color:var(--ink);transition:.2s}
+  .chip{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:var(--soft-bg);font-size:14px;color:var(--ink);transition:.2s}
   .chip:hover{transform:translateY(-2px);border-color:var(--line-hi);box-shadow:0 10px 28px rgba(0,0,0,.4)}
   .chip svg{width:16px;height:16px;fill:var(--muted)}
   .chip .cn{color:var(--dim);font-size:12px}
@@ -295,6 +319,7 @@ try {
   renderer.setAnimationLoop(t => {
     if (t - last < 33) return;           /* ~30fps 足够 */
     last = t;
+    if (document.documentElement.dataset.theme === 'light') return;  /* 日间模式星系隐藏 */
     galaxy.rotation.y = t * 0.00004;
     dust.rotation.y = -t * 0.000018;
     /* 鼠标视差 + 滚动视差 */
@@ -309,7 +334,7 @@ try {
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="logo">魁</span>魁歌</a>
+    <a class="brand" href="#top"><img class="logo" src="/logo.png" alt="魁歌 logo">魁歌</a>
     <nav class="mid">
       <a href="#works" data-en="Tools">在线工具</a>
       <a href="#apps" data-en="Apps">App</a>
@@ -319,6 +344,7 @@ try {
       <a href="#contact" data-en="Contact">联系</a>
     </nav>
     <nav class="side">
+      <button class="lang" id="themeBtn" type="button" title="主题：自动（点击切换）">🌗</button>
       <button class="lang" id="langBtn" type="button" aria-label="切换语言 / Switch language">EN</button>
       <a href="https://github.com/Tliens" target="_blank" rel="noopener" title="GitHub">
         <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -617,14 +643,14 @@ try {
       <div class="grid">
         <a class="wcard reveal linkable" href="https://www.zhihu.com/people/quinn-63-11" target="_blank" rel="noopener">
           <span class="em">💬</span>
-          <h3 data-en="Zhihu · 魁in">知乎 · 魁in</h3>
+          <h3 data-en="Zhihu · 魁歌">知乎 · 魁歌</h3>
           <span class="st" data-en="93 answers · 460+ upvotes · 400+ bookmarks">93 回答 · 460+ 赞同 · 400+ 收藏</span>
           <p data-en="Practical, technical answers and articles — a reader hitting bookmark is the best compliment.">技术干货向回答与文章，读者爱点「收藏」是最大的褒奖。</p>
           <span class="ext" data-en="Visit ↗">去逛逛 ↗</span>
         </a>
         <div class="wcard reveal">
           <span class="em">📝</span>
-          <h3 data-en="Juejin · AI机器人">掘金 · AI机器人</h3>
+          <h3 data-en="Juejin · 魁歌">掘金 · 魁歌</h3>
           <span class="st" data-en="172k+ reads · 2,000+ followers">17.2w+ 阅读 · 2000+ 粉丝</span>
           <p data-en="In-depth iOS long-forms, many with full demo source code.">iOS 技术长文，多篇附完整 Demo 源码。</p>
           <span class="ext">juejin.cn</span>
@@ -688,7 +714,7 @@ try {
         </a>
         <a class="chip" href="https://www.zhihu.com/people/quinn-63-11" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
-          <span data-en="Zhihu">知乎</span> <span class="cn">魁in</span>
+          <span data-en="Zhihu">知乎</span> <span class="cn">魁歌</span>
         </a>
         <span class="chip">📢 <span data-en="WeChat Account">公众号</span> <span class="cn">独立开发者基地</span></span>
       </div>
@@ -763,6 +789,30 @@ function applyLang(lang) {
 }
 langBtn.addEventListener('click', () => applyLang(curLang === 'en' ? 'zh' : 'en'));
 applyLang(curLang);
+
+/* 主题：自动 / 日间 / 夜间 三态切换 */
+const themeBtn = document.getElementById('themeBtn');
+const metaTheme = document.getElementById('metaTheme');
+const THEME_ORDER = ['auto', 'light', 'dark'];
+const THEME_LABEL = { auto: '🌗', light: '☀️', dark: '🌙' };
+const THEME_TITLE = { auto: '主题：跟随系统（点击切换日间）', light: '主题：日间（点击切换夜间）', dark: '主题：夜间（点击切回自动）' };
+const mqlLight = window.matchMedia('(prefers-color-scheme: light)');
+function themeSetting() { try { return localStorage.getItem('kuige-theme') || 'auto'; } catch (e) { return 'auto'; } }
+function applyTheme() {
+  const s = themeSetting();
+  const t = s === 'auto' ? (mqlLight.matches ? 'light' : 'dark') : s;
+  document.documentElement.dataset.theme = t;
+  themeBtn.textContent = THEME_LABEL[s];
+  themeBtn.title = THEME_TITLE[s];
+  if (metaTheme) metaTheme.content = t === 'light' ? '#eef2f9' : '#070a11';
+}
+themeBtn.addEventListener('click', () => {
+  const next = THEME_ORDER[(THEME_ORDER.indexOf(themeSetting()) + 1) % 3];
+  try { localStorage.setItem('kuige-theme', next); } catch (e) {}
+  applyTheme();
+});
+mqlLight.addEventListener('change', () => { if (themeSetting() === 'auto') applyTheme(); });
+applyTheme();
 </script>
 
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "948f2535a9dd4775a436c677b3c950e4"}'></script><!-- End Cloudflare Web Analytics --></body>
