@@ -207,22 +207,8 @@
   .sec-head h2{font-size:clamp(24px,3.4vw,32px);font-weight:900;letter-spacing:-.4px}
   .sec-head p{margin-top:8px;color:var(--muted);font-size:14.5px;max-width:640px}
 
-  /* ---------- 工具卡片：横向轮播（2 排 × 3 列一屏） ---------- */
-  .works .grid{
-    display:grid;grid-auto-flow:column;
-    grid-template-rows:repeat(2,auto);
-    grid-auto-columns:calc((100% - 36px)/3);
-    gap:18px;
-    overflow-x:auto;overflow-y:hidden;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    /* 给 hover 上浮与阴影留出裁切余量，再负边距抵消保持对齐 */
-    padding:10px 6px 26px;margin:-10px -6px -26px;
-    scrollbar-width:none;
-  }
-  .works .grid::-webkit-scrollbar{display:none}
-  .works .card{scroll-snap-align:start}
-  .works .grid:focus-visible{outline:2px solid var(--acc);outline-offset:4px;border-radius:16px}
+  /* ---------- 工具卡片 ---------- */
+  .works .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
   .card{
     display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);
     border-radius:16px;overflow:hidden;transition:.22s;
@@ -249,14 +235,6 @@
   .filters button{font:inherit;font-size:13px;color:var(--muted);background:var(--soft-bg);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s;letter-spacing:.02em}
   .filters button:hover{color:var(--ink);border-color:var(--line-hi);transform:translateY(-1px)}
   .filters button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 6px 20px rgba(91,157,255,.32)}
-  .car-nav{margin-left:auto;display:flex;gap:8px}
-  .car-nav button{
-    width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
-    background:var(--soft-bg);color:var(--ink);font-size:17px;line-height:1;cursor:pointer;
-    display:grid;place-items:center;transition:.18s;font-family:inherit;
-  }
-  .car-nav button:hover:not(:disabled){border-color:var(--line-hi);transform:translateY(-1px)}
-  .car-nav button:disabled{opacity:.32;cursor:default}
 
   /* ---------- App 卡片 ---------- */
   .apps .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
@@ -352,10 +330,6 @@
     nav.mid{display:none}
     .about .cols{grid-template-columns:1fr}
     .stats .grid{grid-template-columns:repeat(2,1fr)}
-    .works .grid{grid-auto-columns:calc((100% - 18px)/2)}
-  }
-  @media (max-width:640px){
-    .works .grid{grid-auto-columns:76%}
   }
   @media (max-width:560px){
     .hero{padding:72px 0 44px}
@@ -447,12 +421,8 @@
         <button data-filter="dev" data-en="Dev &amp; Debugging · 4">开发调试 · 4</button>
         <button data-filter="media" data-en="Media &amp; Creation · 5">媒体创作 · 5</button>
         <button data-filter="rank" data-en="Rankings &amp; Directories · 4">榜单收录 · 4</button>
-        <div class="car-nav">
-          <button id="wPrev" type="button" aria-label="上一组工具">‹</button>
-          <button id="wNext" type="button" aria-label="下一组工具">›</button>
-        </div>
       </div>
-      <div class="grid" tabindex="0" aria-label="在线工具列表，可左右滚动浏览">
+      <div class="grid">
 
         <a class="card reveal" data-cat="dev" href="https://fast-site.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb rankb top">#1</span>
@@ -864,10 +834,8 @@ const nio = new IntersectionObserver(es => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => nio.observe(el));
 
-/* 工具分类筛选（仅限带 data-filter 的分类按钮，避开轮播箭头） */
-const filterBtns = document.querySelectorAll('#filters button[data-filter]');
-const wGrid = document.querySelector('.works .grid');
-const prefersReduce = matchMedia('(prefers-reduced-motion: reduce)');
+/* 工具分类筛选 */
+const filterBtns = document.querySelectorAll('#filters button');
 filterBtns.forEach(btn => btn.addEventListener('click', () => {
   filterBtns.forEach(b => b.classList.toggle('active', b === btn));
   const f = btn.dataset.filter;
@@ -875,38 +843,7 @@ filterBtns.forEach(btn => btn.addEventListener('click', () => {
     const show = f === 'all' || card.dataset.cat === f;
     card.classList.toggle('hide', !show);
   });
-  /* 筛选后回到起点并刷新箭头状态 */
-  wGrid.scrollTo({ left: 0, behavior: prefersReduce.matches ? 'auto' : 'smooth' });
-  requestAnimationFrame(wUpdate);
-  setTimeout(wUpdate, 120);
 }));
-
-/* 工具矩阵横向轮播：箭头按吸附点翻页（一次一屏 3 列）+ 端点置灰 */
-const wPrev = document.getElementById('wPrev'), wNext = document.getElementById('wNext');
-function wStep() {
-  const card = wGrid.querySelector('.works .card:not(.hide)');
-  if (!card) return wGrid.clientWidth;
-  const gap = parseFloat(getComputedStyle(wGrid).columnGap) || 18;
-  return card.getBoundingClientRect().width + gap;
-}
-function wPage(dir) {
-  const st = wStep();
-  const idx = Math.round(wGrid.scrollLeft / st);
-  const max = wGrid.scrollWidth - wGrid.clientWidth;
-  const target = Math.max(0, Math.min((idx + dir * 3) * st, max));
-  /* 吸附容器上 smooth 会被 mandatory snap 打断，翻页用瞬时跳转 */
-  wGrid.scrollTo({ left: target, behavior: "instant" });
-}
-function wUpdate() {
-  const max = wGrid.scrollWidth - wGrid.clientWidth - 10;  /* 阈值计入 6px 内边距 */
-  wPrev.disabled = wGrid.scrollLeft <= 8;
-  wNext.disabled = wGrid.scrollLeft >= max;
-}
-wPrev.addEventListener('click', () => wPage(-1));
-wNext.addEventListener('click', () => wPage(1));
-wGrid.addEventListener('scroll', () => requestAnimationFrame(wUpdate), { passive: true });
-addEventListener('resize', wUpdate);
-wUpdate();
 /* 计数自动校准：HTML 里手写的数字是给爬虫的预填，这里按实际卡片数纠偏，防增删卡片后漂移 */
 (function() {
   const n = { all: 0, ai: 0, dev: 0, media: 0, rank: 0 };
