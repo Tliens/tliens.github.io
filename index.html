@@ -74,7 +74,8 @@
         { "@type": "ListItem", "position": 10, "url": "https://indie-gems.kuige.me/",          "name": "Indie Gems — 独立开发者作品收录" },
         { "@type": "ListItem", "position": 11, "url": "https://github-gems.kuige.me/",         "name": "GitHub Gems — 宝藏开源项目导航" },
         { "@type": "ListItem", "position": 12, "url": "https://xhot.kuige.me/",                "name": "X热榜 — X/Twitter 博主排名" },
-        { "@type": "ListItem", "position": 13, "url": "https://world-shapers.kuige.me/",       "name": "群星闪耀 — 影响世界的人" }
+        { "@type": "ListItem", "position": 13, "url": "https://world-shapers.kuige.me/",       "name": "群星闪耀 — 影响世界的人" },
+        { "@type": "ListItem", "position": 14, "url": "https://markgone.kuige.me/",             "name": "MarkGone — 图片在线去水印" }
       ]
     },
     {
@@ -82,7 +83,7 @@
       "@id": "https://kuige.me/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "魁歌是谁？",
-          "acceptedAnswer": { "@type": "Answer", "text": "魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 13 个免费在线工具与 SpeedySwift 等开源项目。" } },
+          "acceptedAnswer": { "@type": "Answer", "text": "魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 14 个免费在线工具与 SpeedySwift 等开源项目。" } },
         { "@type": "Question", "name": "kuige.me 上有哪些免费在线工具？",
           "acceptedAnswer": { "@type": "Answer", "text": "共 13 个纯前端工具站，分四类：AI·数据（AI Rank 大模型排行榜、TokenLens Token 计数器）；开发调试（JSON Lens、SSE Inspector、Stream Inspector、魁歌建站指南）；媒体创作（PicSqueeze 图片压缩、ShareForge 分享图生成器、Rednote Formatter 文案排版）；榜单收录（Indie Gems、GitHub Gems、X热榜、群星闪耀）。" } },
         { "@type": "Question", "name": "这些工具收费吗？数据安全吗？",
@@ -444,7 +445,7 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
       <h1 data-en='Hi, I&#39;m <span class="g">KuiGe</span>'>你好，我是 <span class="g">魁歌</span></h1>
       <p class="sub" data-en="<b>iOS Engineer · Indie Developer · Writer</b>. Ten years of code — shipped a <b>#1 paid</b> App Store app and a full suite of <b>free, pure front-end</b> web tools — ready out of the box, data never leaves your device."><b>iOS 工程师 · 独立开发者 · 写作者</b>。写代码 10 年，做出过 App Store 分类付费榜第一的应用，也做了一整排<b>免费、纯前端</b>的在线工具 —— 开箱即用，数据永不上传。</p>
       <div class="badges">
-        <span data-en="📦 13 web tools">📦 13 个在线工具</span>
+        <span data-en="📦 14 web tools">📦 14 个在线工具</span>
         <span data-en="📱 2 apps on the App Store">📱 2 款上架 App</span>
         <span data-en="📦 130+ open-source repos">📦 130+ 开源仓库</span>
         <span data-en="✍️ Writing on 3 platforms">✍️ 3 个平台写作</span>
@@ -481,13 +482,13 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
       <div class="sec-head reveal">
         <div class="kicker">01 · Online Tools</div>
         <h2 data-en="Online Tools">在线工具矩阵</h2>
-        <p data-en="13 free tool sites across four categories. All run purely in the browser — no sign-up, your data never leaves the device.">13 个免费工具站，按场景分为四类。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
+        <p data-en="14 free tool sites across four categories. All run purely in the browser — no sign-up, your data never leaves the device.">14 个免费工具站，按场景分为四类。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
       </div>
       <div class="filters reveal" id="filters">
-        <button class="active" data-filter="all" data-en="All · 13">全部 · 13</button>
+        <button class="active" data-filter="all" data-en="All · 14">全部 · 14</button>
         <button data-filter="ai" data-en="AI &amp; Data · 2">AI · 数据 · 2</button>
         <button data-filter="dev" data-en="Dev &amp; Debugging · 4">开发调试 · 4</button>
-        <button data-filter="media" data-en="Media &amp; Creation · 3">媒体创作 · 3</button>
+        <button data-filter="media" data-en="Media &amp; Creation · 4">媒体创作 · 4</button>
         <button data-filter="rank" data-en="Rankings &amp; Directories · 4">榜单收录 · 4</button>
       </div>
       <div class="grid">
@@ -597,6 +598,18 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
             <div class="card-title">Rednote Formatter <span class="en" data-en="Copy formatter">文案排版</span><span class="arrow">↗</span></div>
             <p class="card-desc" data-en="Free text formatter for Rednote (Xiaohongshu) & WeChat Moments: emoji dividers, smart line breaks, hashtag generator, centered layout — 100% local.">小红书/朋友圈文案排版：emoji 分隔、智能分段、话题标签生成、居中排版防折叠，纯本地处理不上传。</p>
             <div class="tags"><span data-en="Xiaohongshu">小红书</span><span data-en="Moments">朋友圈</span><span data-en="Hashtags">话题标签</span></div>
+          </div>
+        </a>
+
+        <a class="card reveal" data-cat="media" href="https://markgone.kuige.me/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <div class="ph" style="background:linear-gradient(135deg,#0b1626,#123245)">🌀</div>
+            <img src="https://markgone.kuige.me/og-image.png" alt="MarkGone" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="body">
+            <div class="card-title">MarkGone <span class="en" data-en="Online watermark remover">图片在线去水印</span><span class="arrow">↗</span></div>
+            <p class="card-desc" data-en="Brush or rectangle to mark the watermark, the inpainting engine rebuilds the background — three quality tiers, batch mode with up to 50 parallel tasks, ZIP download. 100% local, images never leave your device.">涂抹或框选标记水印，修复算法重建背景 —— 三档质量、批量最高 50 并发、ZIP 打包下载。纯本地处理，图片不上传。</p>
+            <div class="tags"><span data-en="Watermark remover">去水印</span><span data-en="Batch · 50 parallel">批量 · 50 并发</span><span data-en="100% local">纯本地</span></div>
           </div>
         </a>
 
@@ -779,7 +792,7 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
           <div class="node"><b data-en="iOS Engineer · Beijing">iOS 工程师 · 北京</b><span data-en="10 years deep — architecture & performance">10 年 主业深耕，架构与性能优化</span></div>
           <div class="node"><b data-en="Indie apps shipped">独立开发上架</b><span data-en="灵感卡片 hit #1 paid in App Store Reference">《灵感卡片》登 App Store 参考类付费榜 Top1</span></div>
           <div class="node"><b data-en="Open source">开源之路</b><span data-en="SpeedySwift 486★ · 130+ GitHub repos">SpeedySwift 486★ · GitHub 130+ 仓库</span></div>
-          <div class="node"><b data-en="Web tool suite">工具站矩阵</b><span data-en="2026 · 13 free web tools and counting">2026 · 13 个免费在线工具陆续上线</span></div>
+          <div class="node"><b data-en="Web tool suite">工具站矩阵</b><span data-en="2026 · 14 free web tools and counting">2026 · 14 个免费在线工具陆续上线</span></div>
           <div class="node"><b data-en="Content in progress">内容进行时</b><span data-en="Weekly newsletter · Zhihu · Juejin">公众号周更 · 知乎 · 掘金</span></div>
         </div>
       </div>
@@ -796,7 +809,7 @@ if (document.documentElement.dataset.theme !== 'light') initGalaxy();
       <div class="faq-list reveal">
         <details open>
           <summary data-en="Who is KuiGe?">魁歌是谁？</summary>
-          <p data-en="KuiGe (GitHub @Tliens) is an iOS engineer and indie developer based in Beijing — 10 years of code, a #1-paid App Store app (InspoCard), and now 13 free online tools plus open-source projects like SpeedySwift.">魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 13 个免费在线工具与 SpeedySwift 等开源项目。</p>
+          <p data-en="KuiGe (GitHub @Tliens) is an iOS engineer and indie developer based in Beijing — 10 years of code, a #1-paid App Store app (InspoCard), and now 13 free online tools plus open-source projects like SpeedySwift.">魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 14 个免费在线工具与 SpeedySwift 等开源项目。</p>
         </details>
         <details>
           <summary data-en="What free online tools are on kuige.me?">kuige.me 上有哪些免费在线工具？</summary>
@@ -910,8 +923,8 @@ const LANG_META = {
   },
   en: {
     title: 'KuiGe 魁歌 · Indie Developer — Online Tools · Apps · Open Source · Writing',
-    desc: 'Indie developer KuiGe (Beijing): 13 free pure front-end online tools, a #1-paid App Store app, SpeedySwift (486 stars) and 130+ open-source repos. No sign-up, no upload — your data never leaves the browser.',
-    ogDesc: '13 free online tools · #1 paid App Store app · 486-star open-source repo · writing across platforms — know yourself, become yourself.',
+    desc: 'Indie developer KuiGe (Beijing): 14 free pure front-end online tools, a #1-paid App Store app, SpeedySwift (486 stars) and 130+ open-source repos. No sign-up, no upload — your data never leaves the browser.',
+    ogDesc: '14 free online tools · #1 paid App Store app · 486-star open-source repo · writing across platforms — know yourself, become yourself.',
     locale: 'en_US'
   }
 };
