@@ -9,7 +9,7 @@
 (function(){try{var s=localStorage.getItem('kuige-theme')||'auto';var t=s==='auto'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();
 </script>
 <title>魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作</title>
-<meta name="description" content="独立开发者魁歌（KuiGe）：15 个免费纯前端在线工具、App Store 参考类付费榜 Top1 应用《灵感卡片》、SpeedySwift 等开源项目、公众号《独立开发者基地》与多平台写作。全部开箱即用，数据不出浏览器。">
+<meta name="description" content="独立开发者魁歌（KuiGe）：16 个免费纯前端在线工具、App Store 参考类付费榜 Top1 应用《灵感卡片》、SpeedySwift 等开源项目、公众号《独立开发者基地》与多平台写作。全部开箱即用，数据不出浏览器。">
 <meta name="author" content="魁歌 KuiGe">
 <link rel="canonical" href="https://kuige.me/">
 <link rel="alternate" hreflang="zh" href="https://kuige.me/">
@@ -18,13 +18,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="魁歌 KuiGe · 独立开发者">
 <meta property="og:title" content="魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作">
-<meta property="og:description" content="15 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作 —— 认识自己，成为自己。">
+<meta property="og:description" content="16 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作 —— 认识自己，成为自己。">
 <meta property="og:url" content="https://kuige.me/">
 <meta property="og:image" content="https://kuige.me/og-image.png">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作">
-<meta name="twitter:description" content="15 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作。">
+<meta name="twitter:description" content="16 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作。">
 <meta name="twitter:image" content="https://kuige.me/og-image.png">
 <link rel="icon" type="image/png" href="/logo.png">
 <link rel="apple-touch-icon" href="/logo.png">
@@ -59,8 +59,8 @@
       "@type": "ItemList",
       "@id": "https://kuige.me/#tools",
       "name": "魁歌的免费在线工具矩阵",
-      "description": "15 个免费纯前端在线工具，无需注册，数据不出浏览器",
-      "numberOfItems": 13,
+      "description": "16 个免费纯前端在线工具，无需注册，数据不出浏览器",
+      "numberOfItems": 16,
       "itemListElement": [
         { "@type": "ListItem", "position": 1,  "url": "https://fast-site.kuige.me/",           "name": "魁歌建站指南 — 零基础建站教程" },
         { "@type": "ListItem", "position": 2,  "url": "https://shareforge.kuige.me/",          "name": "ShareForge — 分享图生成器" },
@@ -85,9 +85,9 @@
       "@id": "https://kuige.me/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "魁歌是谁？",
-          "acceptedAnswer": { "@type": "Answer", "text": "魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 15 个免费在线工具与 SpeedySwift 等开源项目。" } },
+          "acceptedAnswer": { "@type": "Answer", "text": "魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 16 个免费在线工具与 SpeedySwift 等开源项目。" } },
         { "@type": "Question", "name": "kuige.me 上有哪些免费在线工具？",
-          "acceptedAnswer": { "@type": "Answer", "text": "共 13 个纯前端工具站，分四类：AI·数据（AI Rank 大模型排行榜、TokenLens Token 计数器）；开发调试（JSON Lens、SSE Inspector、Stream Inspector、魁歌建站指南）；媒体创作（PicSqueeze 图片压缩、ShareForge 分享图生成器、Rednote Formatter 文案排版）；榜单收录（Indie Gems、GitHub Gems、X热榜、群星闪耀）。" } },
+          "acceptedAnswer": { "@type": "Answer", "text": "共 16 个纯前端工具站，分四类：AI·数据（AI Rank、TokenLens）；开发调试（JSON Lens、SSE Inspector、Stream Inspector、魁歌建站指南）；媒体创作（PicSqueeze、ShareForge、Rednote Formatter、MarkGone、PhotoGems、VidGone）；榜单收录（Indie Gems、GitHub Gems、X热榜、群星闪耀）。" } },
         { "@type": "Question", "name": "这些工具收费吗？数据安全吗？",
           "acceptedAnswer": { "@type": "Answer", "text": "全部免费、无需注册。所有工具纯前端运行，你的文件与文本只在本地浏览器处理，永不上传服务器。" } },
         { "@type": "Question", "name": "工具开源吗？可以自部署吗？",
@@ -179,7 +179,8 @@
   .kicker::after{background:linear-gradient(90deg,var(--line-hi),transparent)}
   .hero h1{margin-top:22px;font-size:clamp(38px,7vw,66px);font-weight:900;letter-spacing:-1px;line-height:1.15}
   .hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(122,140,255,.35))}
-  .hero .sub{max-width:640px;margin:20px auto 0;color:var(--muted);font-size:17px}
+  .hero .tagline{margin-top:16px;font-family:var(--serif);font-size:clamp(15px,2.2vw,19px);letter-spacing:.14em;color:var(--muted)}
+  .hero .sub{max-width:640px;margin:14px auto 0;color:var(--muted);font-size:17px}
   .hero .sub b{color:var(--ink)}
   .badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
   .badges span{font-size:12.5px;color:var(--muted);border:1px solid var(--line);background:var(--soft-bg);border-radius:999px;padding:5px 13px}
@@ -236,6 +237,12 @@
   .filters button{font:inherit;font-size:13px;color:var(--muted);background:var(--soft-bg);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s;letter-spacing:.02em}
   .filters button:hover{color:var(--ink);border-color:var(--line-hi);transform:translateY(-1px)}
   .filters button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 6px 20px rgba(91,157,255,.32)}
+
+  .wgrid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .chipn{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--acc);border:1px solid var(--line);background:var(--soft-bg);border-radius:6px;padding:2px 9px}
+  .works .grid.folded .card:nth-child(n+7){display:none}
+  .morewrap{display:flex;justify-content:center;margin:26px 0 8px}
+  .morewrap .btn{padding:11px 26px;font-size:14px}
 
   /* ---------- App 卡片 ---------- */
   .apps .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
@@ -345,13 +352,11 @@
   <div class="wrap">
     <a class="brand" href="#top"><img class="logo" src="/logo.png" alt="魁歌 logo">魁歌</a>
     <nav class="mid">
-      <a href="#works" data-en="Tools">在线工具</a>
-      <a href="#apps" data-en="Apps">App</a>
-      <a href="#oss" data-en="Open Source">开源</a>
+      <a href="#now" data-en="Now">正在做</a>
+      <a href="#works" data-en="Work">作品</a>
       <a href="#writing" data-en="Writing">写作</a>
       <a href="#about" data-en="About">关于</a>
       <a href="#faq" data-en="FAQ">FAQ</a>
-      <a href="#contact" data-en="Contact">联系</a>
     </nav>
     <nav class="side">
       <button class="lang" id="themeBtn" type="button" title="主题：自动（点击切换）">🌗</button>
@@ -375,21 +380,25 @@
     <div class="wrap">
       <div class="kicker">Independent Developer · Beijing</div>
       <h1 data-en='Hi, I&#39;m <span class="g">KuiGe</span>'>你好，我是 <span class="g">魁歌</span></h1>
-      <p class="sub" data-en="<b>Full-stack Engineer · Startup Mentor · Indie Developer · Open-source Contributor</b>. Ten years of code, from iOS to web and back end — shipped a <b>#1 paid</b> App Store app, and keeps a whole row of <b>free, pure front-end</b> web tools running. Ready out of the box, your data never leaves the device."><b>全栈工程师 · 创业导师 · 独立开发者 · 开源贡献者</b>。写代码 10 年，从 iOS 写到 Web 与后端；做出过 App Store 分类付费榜第一的应用，也维护着一整排<b>免费、纯前端</b>的在线工具 —— 开箱即用，数据永不上传。</p>
+      <p class="tagline" data-en="Turn ideas into products; turn products into assets.">把想法变成产品，把产品变成资产。</p>
+      <p class="sub" data-en="<b>Indie Developer · Full-stack Engineer · Startup Mentor · Open-source Contributor</b>. Ten years of code, from iOS to web and back end — a <b>#1 paid</b> App Store app, a whole row of <b>free, pure front-end</b> web tools, and an honest record of an ordinary developer becoming a one-person team."><b>独立开发者 · 全栈工程师 · 创业导师 · 开源贡献者</b>。写代码 10 年，从 iOS 写到 Web 与后端；做过 App Store 分类付费榜第一的应用，维护着一整排<b>免费、纯前端</b>的在线工具 —— 也记录一个普通开发者成为超级个体的过程。</p>
       <div class="badges">
-        <span data-en="📦 15 web tools">📦 15 个在线工具</span>
+        <span data-en="📦 16 web tools">📦 16 个在线工具</span>
         <span data-en="📱 2 apps on the App Store">📱 2 款上架 App</span>
         <span data-en="📦 130+ open-source repos">📦 130+ 开源仓库</span>
         <span data-en="✍️ Writing on 3 platforms">✍️ 3 个平台写作</span>
       </div>
       <div class="ctas">
-        <a class="btn primary" href="https://x.com/kuige_me" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          <span data-en="Follow me on X (Twitter)">关注我的 X (Twitter)</span>
-        </a>
-        <a class="btn ghost" href="#works">
-          <span data-en="Explore my work">逛逛作品</span>
+        <a class="btn primary" href="#works">
+          <span data-en="See my work">查看我的作品</span>
           <span style="font-size:13px">↓</span>
+        </a>
+        <a class="btn ghost" href="#about">
+          <span data-en="My story">了解我的经历</span>
+        </a>
+        <a class="btn ghost" href="https://x.com/kuige_me" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span data-en="Follow me">关注我</span>
         </a>
       </div>
       <div class="scroll-hint">SCROLL</div>
@@ -400,10 +409,80 @@
   <section class="stats reveal">
     <div class="wrap">
       <div class="grid">
-        <div class="stat"><div class="num" data-count="13">0</div><div class="lab" data-en="Free web tools">免费在线工具</div></div>
+        <div class="stat"><div class="num" data-count="16">0</div><div class="lab" data-en="Free web tools">免费在线工具</div></div>
         <div class="stat"><div class="num"><i>★ </i><span data-count="486">0</span></div><div class="lab">SpeedySwift Stars</div></div>
         <div class="stat"><div class="num"><span data-count="132">0</span><i>+</i></div><div class="lab" data-en="GitHub repositories">GitHub 开源仓库</div></div>
         <div class="stat"><div class="num"><span data-count="17">0</span><i>w+</i></div><div class="lab" data-en="Total article reads">技术文章累计阅读</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 证据 ============ -->
+  <section class="sec" id="proof">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">01 · Track Record</div>
+        <h2 data-en="Not just talking about indie dev">我不只在谈独立开发</h2>
+        <p data-en="Products, tools, open source, writing — each with something to show.">产品、工具、开源、内容 —— 每一样都有拿得出手的东西。</p>
+      </div>
+      <div class="wgrid4">
+        <div class="wcard reveal">
+          <span class="em">📱</span>
+          <h3 data-en="App Store · Paid #1">App Store · 付费榜 Top 1</h3>
+          <span class="st" data-en="Reference chart #1 · Overall #36">参考类付费榜第一 · 总榜第 36</span>
+          <p data-en="InspoCard, built and shipped solo. A limited-free event brought 5,000+ downloads in a single day.">《灵感卡片》独立设计开发上架；限免活动单日下载 5000+，冲进免费榜前三。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="em">🧰</span>
+          <h3 data-en="16 online tools">16 个在线工具</h3>
+          <span class="st" data-en="Free · pure front-end · open source">免费 · 纯前端 · 开源</span>
+          <p data-en="From one tool to a whole matrix — every one solves a real problem, no sign-up, no upload.">从一个工具开始，长成自己的工具矩阵 —— 每一个都在解决真实问题，开箱即用。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="em">📦</span>
+          <h3 data-en="130+ GitHub repositories">130+ 开源仓库</h3>
+          <span class="st" data-en="SpeedySwift · 486 stars">SpeedySwift 486★</span>
+          <p data-en="Long-term maintained open-source projects and technical experiments.">长期维护自己的开源项目与技术实验，欢迎 Fork 与自部署。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="em">✍️</span>
+          <h3 data-en="Writing in public">持续公开写作</h3>
+          <span class="st" data-en="172k+ reads">17w+ 累计阅读</span>
+          <p data-en="Weekly newsletter plus Zhihu and Juejin — products, tech, AI and growth.">公众号周更 + 知乎 + 掘金，记录产品、技术、AI 与个人成长。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 正在做什么 ============ -->
+  <section class="sec" id="now">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">02 · Now</div>
+        <h2 data-en="What I'm building now">正在做什么</h2>
+        <p data-en="Not a finished portfolio — a person who keeps building.">这不是一个已经完成的作品集 —— 我在持续创造。</p>
+      </div>
+      <div class="wgrid4">
+        <div class="wcard reveal">
+          <span class="chipn" data-en="JUST SHIPPED">刚上线</span>
+          <h3>🎬 VidGone</h3>
+          <p data-en="Online video watermark remover — just launched, polishing fast.">视频在线去水印，WebCodecs 硬件加速 —— 刚上线，持续打磨体验。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="chipn" data-en="ONGOING">进行中</span>
+          <h3 data-en="🧰 Tool matrix">🧰 工具矩阵</h3>
+          <p data-en="From 1 to 16 — keep expanding free online tools.">从 1 个到 16 个，继续扩展免费在线工具。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="chipn" data-en="EXPLORING">探索中</span>
+          <h3 data-en="🤖 AI × Content">🤖 AI × 内容</h3>
+          <p data-en="Experiments where AI meets content creation and indie dev.">AI 与内容创作、独立开发的结合实验。</p>
+        </div>
+        <div class="wcard reveal">
+          <span class="chipn">COMING SOON</span>
+          <h3 data-en="📱 Next app">📱 下一款 App</h3>
+          <p data-en="A new iOS product is taking shape.">新的 iOS 产品在构思中。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -412,9 +491,9 @@
   <section class="sec works" id="works">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">01 · Online Tools</div>
+        <div class="kicker">03 · Online Tools</div>
         <h2 data-en="Online Tools">在线工具矩阵</h2>
-        <p data-en="15 free tool sites across four categories. All run purely in the browser — no sign-up, your data never leaves the device.">15 个免费工具站，按场景分为四类。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
+        <p data-en="16 free tool sites across four categories. All run purely in the browser — no sign-up, your data never leaves the device.">16 个免费工具站，按场景分为四类。全部纯前端运行 —— 无需注册，数据不出浏览器。</p>
       </div>
       <div class="filters reveal" id="filters">
         <button class="active" data-filter="all" data-en="All · 16">全部 · 16</button>
@@ -605,7 +684,7 @@
         </a>
 
         <a class="card reveal" data-cat="media" href="https://vidgone.kuige.me/" target="_blank" rel="noopener">
-          <div class="thumb"><span class="rankb rankb">#18</span>
+          <div class="thumb"><span class="rankb rankb">#16</span>
             <div class="ph" style="background:linear-gradient(135deg,#0a1a14,#0f2d22)">🎬</div>
             <img src="https://vidgone.kuige.me/og-image.png" alt="VidGone" loading="lazy" onerror="this.remove()">
           </div>
@@ -617,6 +696,9 @@
         </a>
 
       </div>
+      <div class="morewrap reveal">
+        <button class="btn ghost" id="moreTools" type="button" data-en='Expand all 16 tools ↓'>展开全部 16 个工具 <span style="font-size:12px">↓</span></button>
+      </div>
     </div>
   </section>
 
@@ -624,7 +706,7 @@
   <section class="sec apps" id="apps">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">02 · iOS Apps</div>
+        <div class="kicker">04 · iOS Apps</div>
         <h2 data-en="iOS Apps">上架应用</h2>
         <p data-en="iOS apps designed, built and operated solo. 灵感卡片 (InspoCard) reached #1 paid on the App Store Reference chart and #36 overall.">独立完成设计、开发与运营的 iOS 应用。其中《灵感卡片》曾登 App Store 参考类付费榜第一、总榜第 36。</p>
       </div>
@@ -655,7 +737,7 @@
   <section class="sec oss" id="oss">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">03 · Open Source</div>
+        <div class="kicker">05 · Open Source</div>
         <h2 data-en="Open Source">开源项目</h2>
         <p data-en="130+ repositories on GitHub. Every web tool on this page is open source too — forks and self-hosting welcome.">GitHub 130+ 仓库。本页所有在线工具同样开源，欢迎 Fork 与自部署。</p>
       </div>
@@ -694,7 +776,7 @@
   <section class="sec writing" id="writing">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">04 · Writing</div>
+        <div class="kicker">06 · Writing</div>
         <h2 data-en="Writing">写作与内容</h2>
         <p data-en="Tech and product writing. The newsletter updates weekly, and my Zhihu answers get bookmarked almost as often as they are upvoted.">写技术、写产品。公众号每周更新，知乎回答被收藏的次数几乎和点赞一样多。</p>
       </div>
@@ -728,7 +810,7 @@
   <section class="sec about" id="about">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">05 · About</div>
+        <div class="kicker">07 · About</div>
         <h2 data-en="About Me">关于我</h2>
       </div>
       <div class="cols">
@@ -748,7 +830,7 @@
           <div class="node"><b data-en="iOS Engineer · Beijing">iOS 工程师 · 北京</b><span data-en="10 years deep — architecture & performance">10 年 主业深耕，架构与性能优化</span></div>
           <div class="node"><b data-en="Indie apps shipped">独立开发上架</b><span data-en="灵感卡片 hit #1 paid in App Store Reference">《灵感卡片》登 App Store 参考类付费榜 Top1</span></div>
           <div class="node"><b data-en="Open source">开源之路</b><span data-en="SpeedySwift 486★ · 130+ GitHub repos">SpeedySwift 486★ · GitHub 130+ 仓库</span></div>
-          <div class="node"><b data-en="Web tool suite">工具站矩阵</b><span data-en="2026 · 14 free web tools and counting">2026 · 14 个免费在线工具陆续上线</span></div>
+          <div class="node"><b data-en="Web tool suite">工具站矩阵</b><span data-en="2026 · 16 free web tools and counting">2026 · 16 个免费在线工具陆续上线</span></div>
           <div class="node"><b data-en="Content in progress">内容进行时</b><span data-en="Weekly newsletter · Zhihu · Juejin">公众号周更 · 知乎 · 掘金</span></div>
         </div>
       </div>
@@ -765,11 +847,11 @@
       <div class="faq-list reveal">
         <details open>
           <summary data-en="Who is KuiGe?">魁歌是谁？</summary>
-          <p data-en="KuiGe (GitHub @Tliens) is an iOS engineer and indie developer based in Beijing — 10 years of code, a #1-paid App Store app (InspoCard), and now 14 free online tools plus open-source projects like SpeedySwift.">魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 15 个免费在线工具与 SpeedySwift 等开源项目。</p>
+          <p data-en="KuiGe (GitHub @Tliens) is an iOS engineer and indie developer based in Beijing — 10 years of code, a #1-paid App Store app (InspoCard), and now 14 free online tools plus open-source projects like SpeedySwift.">魁歌（KuiGe，GitHub @Tliens）是常驻北京的 iOS 工程师、独立开发者，写代码 10 年，做出过 App Store 参考类付费榜第一的《灵感卡片》，目前维护 16 个免费在线工具与 SpeedySwift 等开源项目。</p>
         </details>
         <details>
           <summary data-en="What free online tools are on kuige.me?">kuige.me 上有哪些免费在线工具？</summary>
-          <p data-en="13 pure front-end tool sites in four categories: AI &amp; Data (AI Rank, TokenLens); Dev &amp; Debugging (JSON Lens, SSE Inspector, Stream Inspector, the zero-to-live site guide); Media &amp; Creation (PicSqueeze, ShareForge, Rednote Formatter); Rankings &amp; Directories (Indie Gems, GitHub Gems, X Hot List, World Shapers).">共 13 个纯前端工具站，分四类：AI·数据（AI Rank 大模型排行榜、TokenLens Token 计数器）；开发调试（JSON Lens、SSE Inspector、Stream Inspector、魁歌建站指南）；媒体创作（PicSqueeze 图片压缩、ShareForge 分享图生成器、Rednote Formatter 文案排版）；榜单收录（Indie Gems、GitHub Gems、X热榜、群星闪耀）。</p>
+          <p data-en="16 pure front-end tool sites in four categories: AI &amp; Data (AI Rank, TokenLens); Dev &amp; Debugging (JSON Lens, SSE Inspector, Stream Inspector, the site guide); Media &amp; Creation (PicSqueeze, ShareForge, Rednote Formatter, MarkGone, PhotoGems, VidGone); Rankings &amp; Directories (Indie Gems, GitHub Gems, X Hot List, World Shapers).">共 16 个纯前端工具站，分四类：AI·数据（AI Rank、TokenLens）；开发调试（JSON Lens、SSE Inspector、Stream Inspector、魁歌建站指南）；媒体创作（PicSqueeze、ShareForge、Rednote Formatter、MarkGone、PhotoGems、VidGone）；榜单收录（Indie Gems、GitHub Gems、X热榜、群星闪耀）。</p>
         </details>
         <details>
           <summary data-en="Are the tools free? Is my data safe?">这些工具收费吗？数据安全吗？</summary>
@@ -790,9 +872,9 @@
   <!-- ============ 联系 ============ -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="kicker">06 · Contact</div>
-      <h2 style="margin-top:16px" data-en="Say Hello">来找我玩</h2>
-      <p class="sub" data-en="Work together, ask questions, or just say hi — you can find me on any of these.">合作、交流，或者只是打个招呼 —— 这些地方都能找到我。</p>
+      <div class="kicker">08 · Contact</div>
+      <h2 style="margin-top:16px" data-en="Let&#39;s build something interesting">一起做点有意思的东西</h2>
+      <p class="sub" data-en="If you&#39;re building products, doing indie dev or exploring AI — come say hi. Collaboration, questions, or just a hello.">如果你也在做产品、独立开发或 AI 项目，欢迎来找我聊聊 —— 合作、交流，或者只是打个招呼。</p>
       <div class="chips">
         <a class="chip" href="https://x.com/kuige_me" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -847,20 +929,40 @@ const nio = new IntersectionObserver(es => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-count]').forEach(el => nio.observe(el));
 
-/* 工具分类筛选 */
+/* 工具分类筛选（筛选时自动展开全部） */
 const filterBtns = document.querySelectorAll('#filters button');
 filterBtns.forEach(btn => btn.addEventListener('click', () => {
   filterBtns.forEach(b => b.classList.toggle('active', b === btn));
+  unfoldTools(true);
   const f = btn.dataset.filter;
   document.querySelectorAll('.works .card').forEach(card => {
     const show = f === 'all' || card.dataset.cat === f;
     card.classList.toggle('hide', !show);
   });
 }));
+
+/* 工具矩阵：默认展示前 6 张代表作，一键展开全部 */
+const toolGrid = document.querySelector('.works .grid');
+const moreBtn = document.getElementById('moreTools');
+const N_TOOLS = document.querySelectorAll('.works .card').length;
+function unfoldTools(unfold) {
+  toolGrid.classList.toggle('folded', !unfold);
+  document.querySelectorAll('.works .card').forEach(c => c.classList.add('in'));  /* 展开后强制完成进场 */
+  const folded = toolGrid.classList.contains('folded');
+  moreBtn.innerHTML = folded
+    ? '展开全部 ' + N_TOOLS + ' 个工具 <span style="font-size:12px">↓</span>'
+    : '<span data-en="Collapse ↑">收起 <span style="font-size:12px">↑</span></span>';
+  if (folded && moreBtn.dataset.en) moreBtn.dataset.en = 'Expand all ' + N_TOOLS + ' tools ↓';
+}
+toolGrid.classList.add('folded');
+moreBtn.addEventListener('click', () => unfoldTools(toolGrid.classList.contains('folded')));
+unfoldTools(false);  /* 初始：折叠为 6 张代表作 */
 /* 计数自动校准：HTML 里手写的数字是给爬虫的预填，这里按实际卡片数纠偏，防增删卡片后漂移 */
 (function() {
   const n = { all: 0, ai: 0, dev: 0, media: 0, rank: 0 };
   document.querySelectorAll('.works .card').forEach(c => { n.all++; n[c.dataset.cat]++; });
+  const statNum = document.querySelector('.stats .num[data-count]');  /* 数据带第一格 = 工具总数 */
+  if (statNum) statNum.dataset.count = n.all;
   filterBtns.forEach(btn => {
     const f = btn.dataset.filter;
     btn.textContent = btn.textContent.replace(/(\d+)$/, String(n[f]));
@@ -873,14 +975,14 @@ const langBtn = document.getElementById('langBtn');
 const LANG_META = {
   zh: {
     title: '魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作',
-    desc: '独立开发者魁歌（KuiGe）：15 个免费纯前端在线工具、App Store 参考类付费榜 Top1 应用《灵感卡片》、SpeedySwift 等开源项目、公众号《独立开发者基地》与多平台写作。全部开箱即用，数据不出浏览器。',
-    ogDesc: '15 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作 —— 认识自己，成为自己。',
+    desc: '独立开发者魁歌（KuiGe）：16 个免费纯前端在线工具、App Store 参考类付费榜 Top1 应用《灵感卡片》、SpeedySwift 等开源项目、公众号《独立开发者基地》与多平台写作。全部开箱即用，数据不出浏览器。',
+    ogDesc: '16 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · 多平台写作 —— 认识自己，成为自己。',
     locale: 'zh_CN'
   },
   en: {
     title: 'KuiGe 魁歌 · Indie Developer — Online Tools · Apps · Open Source · Writing',
-    desc: 'Indie developer KuiGe (Beijing): 14 free pure front-end online tools, a #1-paid App Store app, SpeedySwift (486 stars) and 130+ open-source repos. No sign-up, no upload — your data never leaves the browser.',
-    ogDesc: '14 free online tools · #1 paid App Store app · 486-star open-source repo · writing across platforms — know yourself, become yourself.',
+    desc: 'Indie developer KuiGe (Beijing): 16 free pure front-end online tools, a #1-paid App Store app, SpeedySwift (486 stars) and 130+ open-source repos. No sign-up, no upload — your data never leaves the browser.',
+    ogDesc: '16 free online tools · #1 paid App Store app · 486-star open-source repo · writing across platforms — know yourself, become yourself.',
     locale: 'en_US'
   }
 };
