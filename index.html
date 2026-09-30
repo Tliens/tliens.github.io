@@ -240,6 +240,12 @@
 
   .wgrid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
   .chipn{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--acc);border:1px solid var(--line);background:var(--soft-bg);border-radius:6px;padding:2px 9px}
+  .story{font-size:12.5px;color:var(--muted);line-height:2}
+  .story b{color:var(--ink);font-weight:700}
+  .story .sep{color:var(--dim);padding:0 4px}
+  .acts{display:flex;gap:14px;margin-top:auto;padding-top:10px}
+  .acts a{font-size:12.5px;color:var(--acc);font-weight:700}
+  .acts a:hover{text-decoration:underline}
   .works .grid.folded .card:nth-child(n+7){display:none}
   .morewrap{display:flex;justify-content:center;margin:26px 0 8px}
   .morewrap .btn{padding:11px 26px;font-size:14px}
@@ -463,11 +469,24 @@
         <p data-en="Not a finished portfolio — a person who keeps building.">这不是一个已经完成的作品集 —— 我在持续创造。</p>
       </div>
       <div class="wgrid4">
-        <a class="wcard reveal linkable" href="https://vidgone.kuige.me/" target="_blank" rel="noopener">
+        <div class="wcard reveal">
           <span class="chipn" data-en="JUST SHIPPED">刚上线</span>
-          <h3>🎬 VidGone <span class="ext" style="padding-top:0">↗</span></h3>
-          <p data-en="Online video watermark remover — just launched, polishing fast.">视频在线去水印，WebCodecs 硬件加速 —— 刚上线，持续打磨体验。</p>
-        </a>
+          <h3>🎬 VidGone <span class="en" data-en="Video watermark remover studio">视频去水印工坊</span></h3>
+          <p class="story" data-en="<b>Screenity went paid</b><span class=&#39;sep&#39;>→</span>decided to build my own<span class=&#39;sep&#39;>→</span>shaped the plan with AI<span class=&#39;sep&#39;>→</span>shipped in <b>3 hours</b><span class=&#39;sep&#39;>→</span>watching real users.">开始：常用录屏工具 Screenity 转向收费<span class="sep">→</span>决定：那自己做一个<span class="sep">→</span>过程：和 AI 聊方案，<b>3 小时做完</b><span class="sep">→</span>现在：已上线，看真实用户反馈。</p>
+          <div class="acts">
+            <a href="https://vidgone.kuige.me/" target="_blank" rel="noopener" data-en="Try VidGone ↗">去用用看 ↗</a>
+            <a href="https://x.com/kuige_me" target="_blank" rel="noopener" data-en="Build story on X ↗">X 上看构建过程 ↗</a>
+          </div>
+        </div>
+        <div class="wcard reveal">
+          <span class="chipn" data-en="JUST SHIPPED">刚上线</span>
+          <h3>🎥 CastLens <span class="en" data-en="魁歌录屏王">魁歌录屏王</span></h3>
+          <p class="story" data-en="<b>Recorders want fees or uploads</b><span class=&#39;sep&#39;>→</span>so: browser-native, fully local<span class=&#39;sep&#39;>→</span>free, no watermark, no sign-up<span class=&#39;sep&#39;>→</span>listening to early users.">现状：录屏工具不是收费就是要传云端<span class="sep">→</span>取舍：纯浏览器本地录制，画面不出设备<span class="sep">→</span>上线：免费 · 无水印 · 免登录<span class="sep">→</span>下一步：听早期用户的真实反馈。</p>
+          <div class="acts">
+            <a href="https://castlens.kuige.me/" target="_blank" rel="noopener" data-en="Try CastLens ↗">去用用看 ↗</a>
+            <a href="https://x.com/kuige_me" target="_blank" rel="noopener" data-en="Build story on X ↗">X 上看构建过程 ↗</a>
+          </div>
+        </div>
         <a class="wcard reveal linkable" href="#works">
           <span class="chipn" data-en="ONGOING">进行中</span>
           <h3 data-en="🧰 Tool matrix">🧰 工具矩阵 <span class="ext" style="padding-top:0">↓</span></h3>
@@ -698,10 +717,10 @@
         <a class="card reveal" data-cat="media" href="https://castlens.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb rankb">#17</span>
             <div class="ph" style="background:linear-gradient(135deg,#2a1512,#151009)">🎥</div>
-            <img src="https://castlens.kuige.me/og-image.png" alt="CastLens" loading="lazy" onerror="this.remove()">
+            <img src="https://castlens.kuige.me/og-image.png" alt="CastLens 魁歌录屏王" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
-            <div class="card-title">CastLens <span class="en" data-en="Online screen recorder">免费在线录屏</span><span class="arrow">↗</span></div>
+            <div class="card-title">CastLens <span class="en" data-en="魁歌录屏王">魁歌录屏王</span><span class="arrow">↗</span></div>
             <p class="card-desc" data-en="Record your screen, a window or a browser tab right in the browser — MP4 output, mic &amp; system audio, pause/resume, nothing uploaded. Codename Huabi.">浏览器里直接录屏：整屏、窗口或标签页，录成 MP4，支持麦克风与系统声音、暂停续录，视频不上传。代号「画壁」。</p>
             <div class="tags"><span data-en="Screen recorder">录屏</span><span data-en="MP4">MP4</span><span data-en="No upload">不上传</span></div>
           </div>
