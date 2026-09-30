@@ -25,6 +25,7 @@
 | 群星闪耀 · 影响世界的人 | https://world-shapers.kuige.me/ | world-shapers |
 | MarkGone · 图片在线去水印 | https://markgone.kuige.me/ | markgone |
 | VidGone · 视频在线去水印 | https://vidgone.kuige.me/ | vidgone |
+| CastLens · 免费在线录屏 | https://castlens.kuige.me/ | castlens |
 | PhotoGems · 免费图片画廊 | https://photogems.kuige.me/ | photogems |
 
 ## 说明
