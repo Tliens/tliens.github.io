@@ -1,0 +1,43 @@
+{
+  "note": "Latest Thoughts（近期思考）数据源。每发一篇 X 长文：1) 封面图存到 covers/ 目录；2) 在 articles 数组最前面加一条（date/url/title/excerpt 必填，title_en/excerpt_en/cover 可选）。页面会优先读取本文件，读取失败时回退到 index.html 内置的同构数据。标题和封面抓取方法：未登录状态下打开 x.com 的文章 status 页，og:description 即标题，og:image 即封面。",
+  "x_profile": "https://x.com/kuige_me",
+  "articles_page": "https://x.com/kuige.me/articles",
+  "articles": [
+    {
+      "date": "2026-09-30",
+      "url": "https://x.com/kuige_me/status/2105309188549198011",
+      "title": "一个 Idea，是怎么在聊天里长出来的？｜从一个插件想法，到半天上线",
+      "title_en": "How an idea grows out of a chat — from plugin idea to shipped in half a day",
+      "excerpt": "Screenity 开始收费那天，我花 3 小时做出了自己的录屏工具——很多 Idea 不是想出来的，是聊出来的。",
+      "excerpt_en": "The day Screenity went paid, I built my own recorder in 3 hours — most ideas aren't thought up, they're talked out.",
+      "cover": "covers/article-1.webp"
+    },
+    {
+      "date": "2026-09-30",
+      "url": "https://x.com/kuige_me/status/2104967047478227411",
+      "title": "平台为什么愿意推你｜我是如何获得百万曝光 - 实操分享",
+      "title_en": "Why the platform wants to push you — how I got a million impressions",
+      "excerpt": "10 年开发、8 年独立开发的实操复盘：成绩与流量如何互为正反馈，百万曝光是怎么来的。",
+      "excerpt_en": "Hands-on notes from 8 years of indie dev: how results and traffic feed each other.",
+      "cover": "covers/article-2.webp"
+    },
+    {
+      "date": "2026-09-29",
+      "url": "https://x.com/kuige_me/status/2104877134682398724",
+      "title": "如何玩转 Github？AI 时代的大宝藏｜世界上最纯粹的同性交友平台",
+      "title_en": "How to master GitHub — a great treasure in the AI era",
+      "excerpt": "写给刚落地 GitHub 的新手：1.7 亿活跃仓库怎么淘，从 build-your-own-x 到 OpenClaw。",
+      "excerpt_en": "For GitHub newcomers: how to mine 170M+ active repos, from build-your-own-x to OpenClaw.",
+      "cover": "covers/article-3.webp"
+    },
+    {
+      "date": "2026-09-29",
+      "url": "https://x.com/kuige_me/status/2104765533761474779",
+      "title": "AI 时代小白零成本建站完全指南",
+      "title_en": "A complete zero-cost website guide for beginners in the AI era",
+      "excerpt": "不会编程、不买服务器：AI 写网页 + GitHub Pages 免费托管，跟着 9 步走，半天上线你的网站。",
+      "excerpt_en": "No coding, no server: AI-written pages on free GitHub Pages hosting — your site live in half a day, in 9 steps.",
+      "cover": "covers/article-4.webp"
+    }
+  ]
+}

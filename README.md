@@ -33,3 +33,13 @@
 - 单文件纯静态页面（`index.html`），无构建、无依赖，直接部署到任意静态托管即可。
 - 卡片缩略图直接引用各作品站点的 `og-image.png`，新增作品时在 `index.html` 的 `.grid` 里复制一张卡片并改链接即可。
 - 旧 Hexo 博客内容备份在 `hexo-blog-2023` 分支。
+
+## 主站 2.0 结构（2026-10 改版）
+
+页面顺序：Hero（主句「把想法变成产品，把产品变成资产」+ X 关注主按钮 + 最近上线横条）→ 01 Now 构建日志 → 02 Latest Thoughts 近期思考（X 长文卡）→ 03 Featured Products 精选八品 → 04 Archive 作品档案（其余工具 + Apps + 开源）→ 05 About → FAQ 品牌问答 → Contact → 数据带。
+
+### 如何更新 X 长文（Latest Thoughts）
+
+1. 编辑 [`articles.json`](articles.json)：封面图存入 `covers/`，在 `articles` 数组最前面加一条 `{ "date", "url", "title", "excerpt", "cover" }`（可附 `title_en` / `excerpt_en`）。
+2. 页面加载时会 `fetch('articles.json')` 渲染；读取失败时回退到 `index.html` 内置的 `THOUGHTS_FALLBACK`（两处保持同步，或至少保证 json 可访问）。
+3. 标题与封面的免登录抓取法：直接打开 `x.com` 的文章 status 页，`og:description` 即完整标题，`og:image` 即封面（`pbs.twimg.com` 链接可另存）；文章发布时间可从 status ID 反推：`(id >> 22) + 1288834974657` 得到毫秒时间戳。
