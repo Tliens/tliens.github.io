@@ -4,6 +4,15 @@
   "articles_page": "https://x.com/kuige.me/articles",
   "articles": [
     {
+      "date": "2026-10-02",
+      "url": "https://x.com/kuige_me/status/2105977686719946855",
+      "title": "为 iPhone Duo 准备你的 App（精简版）｜2000 字讲清 iPhone Duo 适配",
+      "title_en": "Get your app ready for iPhone Duo (condensed) — adaptation in 2000 words",
+      "excerpt": "第一台不给固定画布的 iPhone：resizing、尺寸类分支、双屏迁移——2000 字给 iOS 开发者的适配清单。",
+      "excerpt_en": "The first iPhone without a fixed canvas: resizing, size classes and two-screen migration — an adaptation checklist for iOS developers.",
+      "cover": "covers/article-5.webp"
+    },
+    {
       "date": "2026-09-30",
       "url": "https://x.com/kuige_me/status/2105309188549198011",
       "title": "一个 Idea，是怎么在聊天里长出来的？｜从一个插件想法，到半天上线",
