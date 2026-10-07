@@ -5,6 +5,16 @@
   "articles": [
     {
       "date": "2026-10-07",
+      "url": "/articles/qingxing.html",
+      "src": "mine",
+      "title": "七条清醒法则｜把情绪留给别人，把现在留给自己",
+      "title_en": "Seven rules of clarity — leave emotions to others, keep the present for yourself",
+      "excerpt": "情绪是用来影响他人的，不是左右自己的；公开的言论是用来维护立场的；天下的骗子只有一个伎俩——七条清醒法则，私藏自用。",
+      "excerpt_en": "Emotions are for influencing others, public speech defends positions, and the con artist's only trick is trading your present for a promised future — seven rules of clarity.",
+      "cover": "covers/article-7.webp"
+    },
+    {
+      "date": "2026-10-07",
       "url": "/articles/zhongyong.html",
       "src": "mine",
       "title": "读《中庸》：十五字天阶功法｜从兴奋到失望，再到大善",
