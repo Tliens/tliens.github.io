@@ -40,7 +40,7 @@
 
 ## 主站 2.0 结构（2026-10 改版）
 
-页面顺序：Hero（主句「把想法变成产品，把产品变成资产」+ X 关注主按钮 + 最近上线横条）→ 01 Now 构建日志 → 02 Latest Thoughts 近期思考（X 长文卡）→ 03 Featured Products 精选八品 → 04 Archive 作品档案（其余工具 + Apps + 开源）→ 05 About → FAQ 品牌问答 → Contact → 数据带。
+页面顺序：Hero（主句「把想法变成产品，把产品变成资产」+ X 关注主按钮 + 最近上线横条）→ 01 Now 构建日志 → 02 Latest Thoughts 近期思考（私藏文章 + FEATURED_URL 指定的 X 代表作）→ 03 Featured Products 精选八品 → 04 Archive 作品档案（其余工具 + Apps + 开源）→ 05 About → FAQ 品牌问答 → Contact → 数据带。
 
 ### 如何更新 X 长文（Latest Thoughts）
 
@@ -55,4 +55,4 @@
 1. 封面图存入 `covers/`（`cwebp -q 82 输入图 -o covers/article-N.webp`）。
 2. 全文页建在 `articles/` 下（如 `articles/zhongyong.html`，单文件静态页，风格与 `/articles/` 二级页一致：同一套主题变量、星空背景、页头页脚 + Cloudflare 统计）。
 3. `articles.json` 最前面加一条，加字段 `"src": "mine"`，`url` 填站内绝对路径（如 `/articles/zhongyong.html`），二级页会归到「私藏文章」分类；`articles/index.html` 的 `FALLBACK` 同步加一条。
-4. 新页面加进 `sitemap.xml`。主页 Featured 卡不动（仍由 `FEATURED_URL` 指定 X 代表作）。
+4. 新页面加进 `sitemap.xml`。私藏文章会自动出现在主页 Latest Thoughts（并同步 `index.html` 的 `THOUGHTS_FALLBACK`）；X 长文仍只展示 `FEATURED_URL` 指定的代表作。

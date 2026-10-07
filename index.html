@@ -297,6 +297,7 @@
   .tcard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
   .tcard .dt{font-size:11.5px;letter-spacing:.14em;color:var(--dim);font-weight:700;display:flex;align-items:center;gap:8px}
   .tcard .dt .chipx{font-size:10px;color:var(--ink);border:1px solid var(--line-hi);border-radius:5px;padding:1px 6px;letter-spacing:.06em}
+  .tcard .dt .chipx.mine{color:#0b0e16;background:linear-gradient(135deg,#ffd76a,#ffb347);border-color:transparent}
   .tcard .cov{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);display:block}
   .tcard h3{font-size:14.5px;font-weight:800;line-height:1.45}
   .tcard p{font-size:12.5px;color:var(--muted)}
@@ -1120,10 +1121,12 @@ function applyLang(lang, syncUrl) {
 langBtn.addEventListener('click', () => applyLang(curLang === 'en' ? 'zh' : 'en', true));
 applyLang(curLang, false);
 
-/* Latest Thoughts：渲染 X 长文卡片。先画内置数据（秒开不闪空），再异步拉 articles.json 纠偏 */
-/* 首页只展示这一篇代表作，全部长文在 /articles/ 二级页 */
+/* Latest Thoughts：渲染长文卡片。先画内置数据（秒开不闪空），再异步拉 articles.json 纠偏 */
+/* X 长文只展示 FEATURED_URL 指定的代表作；私藏文章（src:"mine"）全部展示，其余在 /articles/ 二级页 */
 const FEATURED_URL = 'https://x.com/kuige_me/status/2104765533761474779';
 const THOUGHTS_FALLBACK = [
+  { date: '2026-10-07', url: '/articles/qingxing.html', src: 'mine', cover: 'covers/article-7.webp', title: '七条清醒法则｜把情绪留给别人，把现在留给自己', title_en: 'Seven rules of clarity — leave emotions to others, keep the present for yourself', excerpt: '情绪是用来影响他人的，不是左右自己的；公开的言论是用来维护立场的；天下的骗子只有一个伎俩——七条清醒法则，私藏自用。', excerpt_en: 'Emotions are for influencing others, public speech defends positions, and the con artist’s only trick is trading your present for a promised future — seven rules of clarity.' },
+  { date: '2026-10-07', url: '/articles/zhongyong.html', src: 'mine', cover: 'covers/article-6.webp', title: '读《中庸》：十五字天阶功法｜从兴奋到失望，再到大善', title_en: 'Reading the Doctrine of the Mean — a fifteen-character gateway, from excitement to disappointment to great goodness', excerpt: '天命之谓性，率性之谓道，修道之谓教。底层出身读《中庸》：从中和慎独到帝王之术，从兴奋到失望，一年后与「大善」和解。', excerpt_en: 'The Doctrine of the Mean from a grass-roots vantage: zhonghe and shendu, the imperial art of chapter six — from excitement to disappointment to great goodness.' },
   { date: '2026-10-02', url: 'https://x.com/kuige_me/status/2105977686719946855', cover: 'covers/article-5.webp', title: '为 iPhone Duo 准备你的 App（精简版）｜2000 字讲清 iPhone Duo 适配', title_en: 'Get your app ready for iPhone Duo (condensed) — adaptation in 2000 words', excerpt: '第一台不给固定画布的 iPhone：resizing、尺寸类分支、双屏迁移——2000 字给 iOS 开发者的适配清单。', excerpt_en: 'The first iPhone without a fixed canvas: resizing, size classes and two-screen migration — an adaptation checklist for iOS developers.' },
   { date: '2026-09-30', url: 'https://x.com/kuige_me/status/2105309188549198011', cover: 'covers/article-1.webp', title: '一个 Idea，是怎么在聊天里长出来的？｜从一个插件想法，到半天上线', title_en: 'How an idea grows out of a chat — from plugin idea to shipped in half a day', excerpt: 'Screenity 开始收费那天，我花 3 小时做出了自己的录屏工具——很多 Idea 不是想出来的，是聊出来的。', excerpt_en: 'The day Screenity went paid, I built my own recorder in 3 hours — most ideas aren’t thought up, they’re talked out.' },
   { date: '2026-09-30', url: 'https://x.com/kuige_me/status/2104967047478227411', cover: 'covers/article-2.webp', title: '平台为什么愿意推你｜我是如何获得百万曝光 - 实操分享', title_en: 'Why the platform wants to push you — how I got a million impressions', excerpt: '10 年开发、8 年独立开发的实操复盘：成绩与流量如何互为正反馈，百万曝光是怎么来的。', excerpt_en: 'Hands-on notes from 8 years of indie dev: how results and traffic feed each other.' },
@@ -1136,16 +1139,19 @@ const THOUGHTS_FALLBACK = [
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   const card = a => {
     const d = (a.date || '').replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$1 · $2 · $3');
-    return '<a class="tcard reveal" href="' + esc(a.url) + '" target="_blank" rel="noopener">'
+    const mine = a.src === 'mine';
+    const internal = a.url.charAt(0) === '/';
+    return '<a class="tcard reveal" href="' + esc(a.url) + '"' + (internal ? '' : ' target="_blank" rel="noopener"') + '>'
       + (a.cover ? '<img class="cov" src="' + esc(a.cover) + '" alt="' + esc(a.title) + '" loading="lazy">' : '')
-      + '<span class="dt"><span class="chipx">X 长文</span>' + d + '</span>'
+      + '<span class="dt"><span class="chipx' + (mine ? ' mine' : '') + '">' + (mine ? '私藏文章' : 'X 长文') + '</span>' + d + '</span>'
       + '<h3' + (a.title_en ? ' data-en="' + esc(a.title_en) + '"' : '') + '>' + esc(a.title) + '</h3>'
       + '<p' + (a.excerpt_en ? ' data-en="' + esc(a.excerpt_en) + '"' : '') + '>' + esc(a.excerpt) + '</p>'
-      + '<span class="rd" data-en="Read on X ↗">去 X 读全文 ↗</span></a>';
+      + '<span class="rd" data-en="' + (mine ? 'Read essay ↗' : 'Read on X ↗') + '">' + (mine ? '阅读全文 ↗' : '去 X 读全文 ↗') + '</span></a>';
   };
   const paint = list => {
     const featured = list.filter(a => a.url === FEATURED_URL);
-    grid.innerHTML = featured.map(card).join('')
+    const mine = list.filter(a => a.src === 'mine');
+    grid.innerHTML = mine.map(card).join('') + featured.map(card).join('')
       + '<a class="tcard tall reveal" href="/articles/">'
       + '<span class="big" data-en="All essays →">全部长文 →</span>'
       + '<span class="sml" data-en="X essays &amp; my private collection">X 长文 + 私藏文章</span></a>';

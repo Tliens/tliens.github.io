@@ -1,5 +1,5 @@
 {
-  "note": "长文归档数据源（主页 /articles/ 二级页共用）。每发一篇 X 长文：1) 封面图存到 covers/；2) 在 articles 数组最前面加一条（date/url/title/excerpt 必填，title_en/excerpt_en/cover 可选）。私藏文章同样加进来，并加字段 src:\"mine\"，二级页会归到「私藏文章」分类。主页只展示 FEATURED_URL 指定的那一篇，其余都在 /articles/ 二级页。标题和封面抓取：未登录打开 x.com 文章 status 页，og:description 即标题，og:image 即封面。",
+  "note": "长文归档数据源（主页 /articles/ 二级页共用）。每发一篇 X 长文：1) 封面图存到 covers/；2) 在 articles 数组最前面加一条（date/url/title/excerpt 必填，title_en/excerpt_en/cover 可选）。私藏文章同样加进来，并加字段 src:\"mine\"，二级页会归到「私藏文章」分类。主页展示 FEATURED_URL 指定的 X 代表作 + 全部私藏文章，其余 X 长文都在 /articles/ 二级页。标题和封面抓取：未登录打开 x.com 文章 status 页，og:description 即标题，og:image 即封面。",
   "x_profile": "https://x.com/kuige_me",
   "articles_page": "https://x.com/kuige.me/articles",
   "articles": [
