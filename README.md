@@ -30,6 +30,7 @@
 | PhotoGems · 免费图片画廊 | https://photogems.kuige.me/ | photogems |
 | 明史 · 明代历史知识站 | https://ming-history.kuige.me/ | ming-history |
 | IconGems · 图标插画宝库 | https://icongems.kuige.me/ | icongems |
+| SkillGems · AI 智能体技能精选目录 | https://skillgems.kuige.me/ | skillgems |
 
 ## 说明
 
