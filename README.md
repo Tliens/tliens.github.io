@@ -29,6 +29,7 @@
 | CastLens · 免费在线录屏 | https://castlens.kuige.me/ | castlens |
 | PhotoGems · 免费图片画廊 | https://photogems.kuige.me/ | photogems |
 | 明史 · 明代历史知识站 | https://ming-history.kuige.me/ | ming-history |
+| IconGems · 图标插画宝库 | https://icongems.kuige.me/ | icongems |
 
 ## 说明
 
