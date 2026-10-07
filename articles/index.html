@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070a11" id="metaTheme">
+<script>
+(function(){try{var s=localStorage.getItem('kuige-theme')||'auto';var t=s==='auto'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):s;document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();
+</script>
+<title>长文归档 — 魁歌 KuiGe · X 长文与私藏文章</title>
+<meta name="description" content="魁歌的全部长文归档：X 上的构建故事、踩坑复盘，以及私藏的思考长文。独立开发、AI、产品与技术。">
+<meta name="author" content="魁歌 KuiGe">
+<link rel="canonical" href="https://kuige.me/articles/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="魁歌 KuiGe">
+<meta property="og:title" content="长文归档 — 魁歌 KuiGe">
+<meta property="og:description" content="X 构建故事 + 私藏思考长文，一次看全。">
+<meta property="og:url" content="https://kuige.me/articles/">
+<link rel="icon" type="image/png" href="/logo.png">
+<style>
+  :root{ --acc:#5b9dff; --grad:linear-gradient(135deg,#5b9dff,#a78bfa); }
+  html[data-theme="dark"]{
+    --bg:#070a11; --bg-soft:#0d1220; --card:rgba(255,255,255,.028);
+    --line:#1e2840; --line-hi:#31425f;
+    --ink:#eaeffc; --muted:#93a2bd; --dim:#5a6a88;
+    --header-bg:rgba(7,10,17,.72); --soft-bg:rgba(255,255,255,.02);
+    --shadow-soft:0 18px 44px rgba(0,0,0,.45);
+  }
+  html[data-theme="light"]{
+    --bg:#eef2f9; --bg-soft:#ffffff; --card:rgba(255,255,255,.8);
+    --line:#dbe3f0; --line-hi:#b9c8e2;
+    --ink:#1c2432; --muted:#51607a; --dim:#8593ab;
+    --header-bg:rgba(248,250,254,.8); --soft-bg:rgba(20,40,90,.045);
+    --shadow-soft:0 18px 44px rgba(30,50,100,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  html[data-theme="dark"] body{
+    background-image:radial-gradient(1px 1px at 22px 34px,rgba(255,255,255,.85),transparent),radial-gradient(1px 1px at 118px 92px,rgba(255,255,255,.5),transparent),radial-gradient(1.4px 1.4px at 187px 41px,rgba(205,218,255,.75),transparent),radial-gradient(1px 1px at 61px 141px,rgba(255,255,255,.4),transparent),radial-gradient(1.4px 1.4px at 152px 168px,rgba(167,139,250,.65),transparent);
+    background-size:260px 200px;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:var(--header-bg);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px}
+  .brand img{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-hi)}
+  .brand small{font-weight:600;color:var(--dim);font-size:12px}
+  .back{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;transition:.18s}
+  .back:hover{color:var(--ink);border-color:var(--line-hi)}
+  .hero{padding:54px 0 8px}
+  .kicker{font-size:11.5px;letter-spacing:.26em;color:var(--dim);font-weight:700}
+  h1{margin-top:12px;font-size:clamp(26px,4.4vw,38px);font-weight:900;letter-spacing:-.5px}
+  .sub{margin-top:10px;color:var(--muted);font-size:14.5px;max-width:620px}
+  .tabs{display:flex;gap:8px;margin:26px 0 26px;flex-wrap:wrap}
+  .tabs button{font:inherit;font-size:13px;color:var(--muted);background:var(--soft-bg);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer;transition:.18s}
+  .tabs button:hover{color:var(--ink);border-color:var(--line-hi)}
+  .tabs button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700}
+  .alist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;padding-bottom:70px}
+  .acard{display:flex;flex-direction:column;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}
+  .acard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
+  .acard .cov{width:100%;aspect-ratio:21/9;object-fit:cover;border-bottom:1px solid var(--line);background:var(--bg-soft);display:block}
+  .acard .in{padding:14px 16px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .acard .dt{font-size:11px;letter-spacing:.12em;color:var(--dim);font-weight:700;display:flex;align-items:center;gap:8px}
+  .acard .chipx{font-size:10px;color:var(--ink);border:1px solid var(--line-hi);border-radius:5px;padding:1px 7px;letter-spacing:.06em}
+  .acard .chipx.mine{color:#0b0e16;background:linear-gradient(135deg,#ffd76a,#ffb347);border-color:transparent}
+  .acard h3{font-size:15px;font-weight:800;line-height:1.5}
+  .acard p{font-size:12.5px;color:var(--muted);flex:1}
+  .acard .rd{font-size:12px;color:var(--acc);font-weight:700}
+  .empty{color:var(--dim);font-size:13.5px;padding:30px 0;text-align:center;grid-column:1/-1}
+  footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--dim);font-size:12.5px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+  footer a{color:var(--muted)} footer a:hover{color:var(--ink)}
+  @media (max-width:560px){ .alist{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.png" alt="魁歌 logo">魁歌 <small>· 长文归档</small></a>
+    <a class="back" href="/">← 返回主页</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="kicker">ESSAYS · 长文归档</div>
+    <h1>全部长文</h1>
+    <p class="sub">X 上的构建故事与踩坑复盘，加上私藏的思考长文 —— 一次看全。新文首发在 <a href="https://x.com/kuige_me" target="_blank" rel="noopener" style="color:var(--acc)">X @kuige_me</a>，随后归档到这里。</p>
+  </section>
+
+  <div class="tabs" id="tabs">
+    <button class="active" data-f="all">全部</button>
+    <button data-f="x">X 长文</button>
+    <button data-f="mine">私藏文章</button>
+  </div>
+
+  <div class="alist" id="alist"><div class="empty">加载中…</div></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 魁歌 KuiGe · <a href="/">kuige.me</a></span>
+    <a href="https://x.com/kuige_me" target="_blank" rel="noopener">X @kuige_me ↗</a>
+  </div>
+</footer>
+
+<script>
+const FALLBACK = [
+  { date:'2026-10-02', url:'https://x.com/kuige_me/status/2105977686719946855', cover:'../covers/article-5.webp', title:'为 iPhone Duo 准备你的 App（精简版）｜2000 字讲清 iPhone Duo 适配', excerpt:'第一台不给固定画布的 iPhone：resizing、尺寸类分支、双屏迁移——2000 字给 iOS 开发者的适配清单。' },
+  { date:'2026-09-30', url:'https://x.com/kuige_me/status/2105309188549198011', cover:'../covers/article-1.webp', title:'一个 Idea，是怎么在聊天里长出来的？｜从一个插件想法，到半天上线', excerpt:'Screenity 开始收费那天，我花 3 小时做出了自己的录屏工具——很多 Idea 不是想出来的，是聊出来的。' },
+  { date:'2026-09-30', url:'https://x.com/kuige_me/status/2104967047478227411', cover:'../covers/article-2.webp', title:'平台为什么愿意推你｜我是如何获得百万曝光 - 实操分享', excerpt:'10 年开发、8 年独立开发的实操复盘：成绩与流量如何互为正反馈，百万曝光是怎么来的。' },
+  { date:'2026-09-29', url:'https://x.com/kuige_me/status/2104877134682398724', cover:'../covers/article-3.webp', title:'如何玩转 Github？AI 时代的大宝藏｜世界上最纯粹的同性交友平台', excerpt:'写给刚落地 GitHub 的新手：1.7 亿活跃仓库怎么淘，从 build-your-own-x 到 OpenClaw。' },
+  { date:'2026-09-29', url:'https://x.com/kuige_me/status/2104765533761474779', cover:'../covers/article-4.webp', title:'AI 时代小白零成本建站完全指南', excerpt:'不会编程、不买服务器：AI 写网页 + GitHub Pages 免费托管，跟着 9 步走，半天上线你的网站。' }
+];
+const alist = document.getElementById('alist');
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+let LIST = [];
+
+function card(a) {
+  const d = (a.date||'').replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$1 · $2 · $3');
+  const mine = a.src === 'mine';
+  return '<a class="acard" href="' + esc(a.url) + '" target="_blank" rel="noopener">'
+    + (a.cover ? '<img class="cov" src="' + esc(a.cover) + '" alt="" loading="lazy">' : '')
+    + '<div class="in"><span class="dt"><span class="chipx' + (mine ? ' mine' : '') + '">' + (mine ? '私藏文章' : 'X 长文') + '</span>' + d + '</span>'
+    + '<h3>' + esc(a.title) + '</h3><p>' + esc(a.excerpt || '') + '</p>'
+    + '<span class="rd">' + (mine ? '阅读全文 ↗' : '去 X 读全文 ↗') + '</span></div></a>';
+}
+function render(f) {
+  const list = LIST.filter(a => f === 'all' || (f === 'mine' ? a.src === 'mine' : a.src !== 'mine'));
+  alist.innerHTML = list.length ? list.map(card).join('') : '<div class="empty">这一类还没有文章 —— 写好会第一时间归档到这里。</div>';
+}
+document.querySelectorAll('#tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('#tabs button').forEach(x => x.classList.toggle('active', x === b));
+  render(b.dataset.f);
+}));
+
+function use(data) {
+  LIST = (data.articles || []).slice().sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  LIST.forEach(a => { if (a.cover && !/^(https?:|\/|\.\.\/)/.test(a.cover)) a.cover = '../' + a.cover; });
+  render('all');
+}
+use({ articles: FALLBACK });
+fetch('../articles.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(d => {
+  if (d && Array.isArray(d.articles) && d.articles.length) use(d);
+}).catch(() => {});
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "948f2535a9dd4775a436c677b3c950e4"}'></script></body>
+</html>

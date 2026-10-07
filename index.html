@@ -289,14 +289,14 @@
   .fresh .to b{color:var(--acc2)}
 
   /* ---------- 2.0：Latest Thoughts 近期思考 ---------- */
-  .thoughts .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
-  .tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;transition:.22s;display:flex;flex-direction:column;gap:7px}
+  .thoughts .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:14px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:14px 14px 12px;transition:.22s;display:flex;flex-direction:column;gap:6px}
   .tcard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
   .tcard .dt{font-size:11.5px;letter-spacing:.14em;color:var(--dim);font-weight:700;display:flex;align-items:center;gap:8px}
   .tcard .dt .chipx{font-size:10px;color:var(--ink);border:1px solid var(--line-hi);border-radius:5px;padding:1px 6px;letter-spacing:.06em}
-  .tcard .cov{width:100%;aspect-ratio:5/2;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);display:block}
-  .tcard h3{font-size:16px;font-weight:800;line-height:1.45}
-  .tcard p{font-size:13px;color:var(--muted)}
+  .tcard .cov{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--bg-soft);display:block}
+  .tcard h3{font-size:14.5px;font-weight:800;line-height:1.45}
+  .tcard p{font-size:12.5px;color:var(--muted)}
   .tcard .rd{margin-top:auto;padding-top:10px;font-size:13px;color:var(--acc);font-weight:700}
   .tcard:hover .rd{text-decoration:underline}
   .tall{background:linear-gradient(135deg,rgba(91,157,255,.10),rgba(167,139,250,.10));border-style:dashed;align-items:flex-start;justify-content:center;gap:10px}
@@ -525,16 +525,16 @@
       <div class="sec-head reveal">
         <div class="kicker">01 · Latest Thoughts</div>
         <h2 data-en="Latest Thoughts">近期思考</h2>
-        <p data-en="Long-form essays, published first on X. The building story behind every tool, the pitfalls, and what comes next — follow @kuige_me and read the next one the day it ships.">长文首发在 X：每个工具背后的构建故事、踩坑记录与下一步。关注 @kuige_me，下一篇第一时间读到。</p>
+        <p data-en="Long-form essays — build stories from X and my private collection, all archived in one place.">长文一次看全：X 上的构建故事、私藏的思考长文，都在这里归档。</p>
       </div>
       <div class="tgrid" id="thoughtGrid"></div>
       <div class="tfoot reveal">
-        <a class="btn primary" href="https://x.com/kuige_me" target="_blank" rel="noopener">
+        <a class="btn primary" href="/articles/">
+          <span data-en="Read all essays →">阅读全部长文 →</span>
+        </a>
+        <a class="btn ghost" href="https://x.com/kuige_me" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           <span data-en="Follow @kuige_me on X">在 X 关注 @kuige_me</span>
-        </a>
-        <a class="btn ghost" href="https://x.com/kuige_me/articles" target="_blank" rel="noopener">
-          <span data-en="All essays ↗">全部长文 ↗</span>
         </a>
       </div>
       <p class="platline reveal">更早的写作也散落在：<a href="https://www.zhihu.com/people/quinn-63-11" target="_blank" rel="noopener">知乎</a> · 掘金 · 公众号「独立开发者基地」</p>
@@ -1100,6 +1100,8 @@ langBtn.addEventListener('click', () => applyLang(curLang === 'en' ? 'zh' : 'en'
 applyLang(curLang, false);
 
 /* Latest Thoughts：渲染 X 长文卡片。先画内置数据（秒开不闪空），再异步拉 articles.json 纠偏 */
+/* 首页只展示这一篇代表作，全部长文在 /articles/ 二级页 */
+const FEATURED_URL = 'https://x.com/kuige_me/status/2104765533761474779';
 const THOUGHTS_FALLBACK = [
   { date: '2026-10-02', url: 'https://x.com/kuige_me/status/2105977686719946855', cover: 'covers/article-5.webp', title: '为 iPhone Duo 准备你的 App（精简版）｜2000 字讲清 iPhone Duo 适配', title_en: 'Get your app ready for iPhone Duo (condensed) — adaptation in 2000 words', excerpt: '第一台不给固定画布的 iPhone：resizing、尺寸类分支、双屏迁移——2000 字给 iOS 开发者的适配清单。', excerpt_en: 'The first iPhone without a fixed canvas: resizing, size classes and two-screen migration — an adaptation checklist for iOS developers.' },
   { date: '2026-09-30', url: 'https://x.com/kuige_me/status/2105309188549198011', cover: 'covers/article-1.webp', title: '一个 Idea，是怎么在聊天里长出来的？｜从一个插件想法，到半天上线', title_en: 'How an idea grows out of a chat — from plugin idea to shipped in half a day', excerpt: 'Screenity 开始收费那天，我花 3 小时做出了自己的录屏工具——很多 Idea 不是想出来的，是聊出来的。', excerpt_en: 'The day Screenity went paid, I built my own recorder in 3 hours — most ideas aren’t thought up, they’re talked out.' },
@@ -1121,10 +1123,11 @@ const THOUGHTS_FALLBACK = [
       + '<span class="rd" data-en="Read on X ↗">去 X 读全文 ↗</span></a>';
   };
   const paint = list => {
-    grid.innerHTML = list.map(card).join('')
-      + '<a class="tcard tall reveal" href="https://x.com/kuige_me/articles" target="_blank" rel="noopener">'
+    const featured = list.filter(a => a.url === FEATURED_URL);
+    grid.innerHTML = featured.map(card).join('')
+      + '<a class="tcard tall reveal" href="/articles/">'
       + '<span class="big" data-en="All essays →">全部长文 →</span>'
-      + '<span class="sml" data-en="The long-form archive lives on X">长文档案都在 X 上</span></a>';
+      + '<span class="sml" data-en="X essays &amp; my private collection">X 长文 + 私藏文章</span></a>';
     grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
     applyLang(curLang, false);  /* 给动态内容补双语状态 */
   };
