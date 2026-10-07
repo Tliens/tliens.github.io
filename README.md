@@ -8,14 +8,12 @@
 
 | 作品 | 地址 | 仓库 |
 |---|---|---|
-| AI Rank · 大模型排行榜 | https://ai-model-rank.kuige.me/ | ai-model-rank |
-| AI Hot Board · AI 热榜 | https://ai-hot-board.kuige.me/ | ai-hot-board |
+| AI Rank · 大模型排行榜 + AI 热榜资讯 | https://ai-model-rank.kuige.me/ | ai-model-rank |
 | TokenLens · Token 计数器 | https://tokenlens.kuige.me/ | TokenLens |
 | JSON Lens · JSON 工具箱 | https://jsonlens.kuige.me/ | jsonlens |
 | SSE Inspector · SSE 调试器 | https://sse-inspector.kuige.me/ | sse-inspector |
-| Stream Inspector · 直播拉流调试 | https://stream-inspector.kuige.me/ | stream-inspector |
+| Stream Inspector · 流媒体调试工具箱（拉流 + 音频分析） | https://stream-inspector.kuige.me/ | stream-inspector |
 | 魁歌建站指南 · 零基础 9 步建站教程 | https://fast-site.kuige.me/ | fast-site |
-| Audio Inspector · 在线音频分析 | https://audio-inspector.kuige.me/ | audio-inspector |
 | PicSqueeze · 图片压缩 | https://picsqueeze.kuige.me/ | picsqueeze |
 | ShareForge · 分享图生成器 | https://shareforge.kuige.me/ | shareforge |
 | Rednote Formatter · 文案排版 | https://rednote-formatter.kuige.me/ | rednote-formatter |
@@ -31,6 +29,8 @@
 | 明史 · 明代历史知识站 | https://ming-history.kuige.me/ | ming-history |
 | IconGems · 图标插画宝库 | https://icongems.kuige.me/ | icongems |
 | SkillGems · AI 智能体技能精选目录 | https://skillgems.kuige.me/ | skillgems |
+
+> 2026-09-28 合并：AI Hot Board（AI 热榜）并入 [AI Rank](https://ai-model-rank.kuige.me/) 的热榜资讯板块；Audio Inspector（在线音频分析）并入 [Stream Inspector](https://stream-inspector.kuige.me/) 的音频分析工具页（`/audio.html`）。原域名保留为跳转页，不再单列。
 
 ## 说明
 
