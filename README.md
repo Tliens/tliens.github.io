@@ -23,6 +23,7 @@
 | Indie Gems · 独立开发者作品收录 | https://indie-gems.kuige.me/ | indie-gems |
 | GitHub Gems · 宝藏开源项目导航 | https://github-gems.kuige.me/ | github-gems |
 | 群星闪耀 · 影响世界的人 | https://world-shapers.kuige.me/ | world-shapers |
+| SongGems · 免费 CC 音乐播放器 | https://songgems.kuige.me/ | songgems |
 | MarkGone · 图片在线去水印 | https://markgone.kuige.me/ | markgone |
 | VidGone · 视频在线去水印 | https://vidgone.kuige.me/ | vidgone |
 | CastLens · 免费在线录屏 | https://castlens.kuige.me/ | castlens |
