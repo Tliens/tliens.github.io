@@ -47,3 +47,12 @@
 1. 编辑 [`articles.json`](articles.json)：封面图存入 `covers/`，在 `articles` 数组最前面加一条 `{ "date", "url", "title", "excerpt", "cover" }`（可附 `title_en` / `excerpt_en`）。
 2. 页面加载时会 `fetch('articles.json')` 渲染；读取失败时回退到 `index.html` 内置的 `THOUGHTS_FALLBACK`（两处保持同步，或至少保证 json 可访问）。
 3. 标题与封面的免登录抓取法：直接打开 `x.com` 的文章 status 页，`og:description` 即完整标题，`og:image` 即封面（`pbs.twimg.com` 链接可另存）；文章发布时间可从 status ID 反推：`(id >> 22) + 1288834974657` 得到毫秒时间戳。
+
+### 如何发布私藏文章（src: "mine"）
+
+不发在 X 上的个人长文走这条路径：
+
+1. 封面图存入 `covers/`（`cwebp -q 82 输入图 -o covers/article-N.webp`）。
+2. 全文页建在 `articles/` 下（如 `articles/zhongyong.html`，单文件静态页，风格与 `/articles/` 二级页一致：同一套主题变量、星空背景、页头页脚 + Cloudflare 统计）。
+3. `articles.json` 最前面加一条，加字段 `"src": "mine"`，`url` 填站内绝对路径（如 `/articles/zhongyong.html`），二级页会归到「私藏文章」分类；`articles/index.html` 的 `FALLBACK` 同步加一条。
+4. 新页面加进 `sitemap.xml`。主页 Featured 卡不动（仍由 `FEATURED_URL` 指定 X 代表作）。

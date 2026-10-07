@@ -4,6 +4,16 @@
   "articles_page": "https://x.com/kuige.me/articles",
   "articles": [
     {
+      "date": "2026-10-07",
+      "url": "/articles/zhongyong.html",
+      "src": "mine",
+      "title": "读《中庸》：十五字天阶功法｜从兴奋到失望，再到大善",
+      "title_en": "Reading the Doctrine of the Mean — a fifteen-character gateway, from excitement to disappointment to great goodness",
+      "excerpt": "天命之谓性，率性之谓道，修道之谓教。底层出身读《中庸》：从中和慎独到帝王之术，从兴奋到失望，一年后与「大善」和解。",
+      "excerpt_en": "The Doctrine of the Mean from a grass-roots vantage: zhonghe and shendu, the imperial art of chapter six — from excitement to disappointment to great goodness.",
+      "cover": "covers/article-6.webp"
+    },
+    {
       "date": "2026-10-02",
       "url": "https://x.com/kuige_me/status/2105977686719946855",
       "title": "为 iPhone Duo 准备你的 App（精简版）｜2000 字讲清 iPhone Duo 适配",
