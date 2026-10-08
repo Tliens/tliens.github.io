@@ -29,6 +29,7 @@
 | 明史 · 明代历史知识站 | https://ming-history.kuige.me/ | ming-history |
 | IconGems · 图标插画宝库 | https://icongems.kuige.me/ | icongems |
 | SkillGems · AI 智能体技能精选目录 | https://skillgems.kuige.me/ | skillgems |
+| CollageMill · 图片拼图排版 | https://collagemill.kuige.me/ | collagemill |
 
 > 2026-09-28 合并：AI Hot Board（AI 热榜）并入 [AI Rank](https://ai-model-rank.kuige.me/) 的热榜资讯板块；Audio Inspector（在线音频分析）并入 [Stream Inspector](https://stream-inspector.kuige.me/) 的音频分析工具页（`/audio.html`）。原域名保留为跳转页，不再单列。
 
