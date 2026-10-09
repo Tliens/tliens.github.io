@@ -28,8 +28,8 @@
 <meta name="twitter:title" content="魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作">
 <meta name="twitter:description" content="21 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · X @kuige_me 公开构建。">
 <meta name="twitter:image" content="https://kuige.me/og-image.png?v=20261002">
-<link rel="icon" type="image/png" href="/favicon.png?v=2">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" href="/favicon.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -261,8 +261,8 @@
   .card:hover{transform:translateY(-5px);border-color:var(--line-hi);box-shadow:var(--shadow-card)}
   .thumb{position:relative;aspect-ratio:1200/630;background:var(--bg-soft);overflow:hidden}
   .thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-size:52px}
-  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10% 27%;display:block;transition:.35s;filter:drop-shadow(0 10px 20px rgba(0,0,0,.16))}
-  .card:hover .thumb img{transform:scale(1.07)}
+  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
+  .card:hover .thumb img{transform:scale(1.045)}
   .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
   .card-title{font-size:16.5px;font-weight:800;display:flex;align-items:center;gap:8px}
   .card-title .arrow{margin-left:auto;color:var(--dim);transition:.2s;font-size:15px}
@@ -335,6 +335,7 @@
   .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px}
   .arow{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 15px;transition:.18s}
   .arow:hover{transform:translateY(-2px);border-color:var(--line-hi);background:var(--hover-bg)}
+  .arow .ico img{width:100%;height:100%;object-fit:cover;border-radius:22%;display:block}
   .arow .ico{flex:none;width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:19px;border:1px solid var(--line)}
   .arow .tx{flex:1;min-width:0}
   .arow .tt{font-size:14px;font-weight:800;display:flex;align-items:center;gap:7px}
@@ -464,7 +465,7 @@
 
 <header class="top kg-top">
   <div class="wrap kg-top-in">
-    <a class="brand kg-brand" href="#top"><img src="/favicon.png?v=2" alt="魁歌吉祥物">魁歌</a>
+    <a class="brand kg-brand" href="#top"><img src="/favicon.png?v=3" alt="魁歌吉祥物">魁歌</a>
     <nav class="mid kg-nav">
       <a href="#thoughts" data-en="Thoughts">思考</a>
       <a href="#featured" data-en="Featured">精选</a>
@@ -557,7 +558,7 @@
         <a class="card reveal" href="https://xhot.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#1a1622,#0d0a14)">🔥</div>
-            <img src="https://xhot.kuige.me/favicon.png?v=2" alt="X Hot List" loading="lazy" onerror="this.remove()">
+            <img src="https://xhot.kuige.me/og-image.png" alt="X Hot List" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">X热榜 <span class="en" data-en="X/Twitter creator rankings">X/Twitter 博主排名</span><span class="arrow">↗</span></div>
@@ -570,7 +571,7 @@
         <a class="card reveal" href="https://fast-site.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#141b2e,#0d1320)">🚀</div>
-            <img src="https://fast-site.kuige.me/favicon.png?v=2" alt="魁歌建站" loading="lazy" onerror="this.remove()">
+            <img src="https://fast-site.kuige.me/og-image.png" alt="魁歌建站" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">魁歌建站指南 <span class="en" data-en="A zero-to-live website guide">零基础 9 步建站教程</span><span class="arrow">↗</span></div>
@@ -583,7 +584,7 @@
         <a class="card reveal" href="https://github-gems.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0d2117,#0a1610)">🧭</div>
-            <img src="https://github-gems.kuige.me/favicon.png?v=2" alt="GitHub Gems" loading="lazy" onerror="this.remove()">
+            <img src="https://github-gems.kuige.me/og-image.png" alt="GitHub Gems" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">GitHub Gems <span class="en" data-en="GitHub hall of fame">封神榜</span><span class="arrow">↗</span></div>
@@ -596,7 +597,7 @@
         <a class="card reveal" href="https://shareforge.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#1e1b3a,#12101f)">🎨</div>
-            <img src="https://shareforge.kuige.me/favicon.png?v=2" alt="ShareForge" loading="lazy" onerror="this.remove()">
+            <img src="https://shareforge.kuige.me/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">ShareForge <span class="en" data-en="Share image generator">分享图生成器</span><span class="arrow">↗</span></div>
@@ -609,7 +610,7 @@
         <a class="card reveal" href="https://markgone.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0b1626,#123245)">🌀</div>
-            <img src="https://markgone.kuige.me/favicon.png?v=2" alt="MarkGone" loading="lazy" onerror="this.remove()">
+            <img src="https://markgone.kuige.me/og-image.png" alt="MarkGone" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">MarkGone <span class="en" data-en="Image watermark remover studio">图片去水印工坊</span><span class="arrow">↗</span></div>
@@ -622,7 +623,7 @@
         <a class="card reveal" href="https://picsqueeze.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#3a2a12,#1d160a)">🗜️</div>
-            <img src="https://picsqueeze.kuige.me/favicon.png?v=2" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
+            <img src="https://picsqueeze.kuige.me/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">PicSqueeze <span class="en" data-en="Extreme image compression studio">图片极致压缩工坊</span><span class="arrow">↗</span></div>
@@ -635,7 +636,7 @@
         <a class="card reveal" href="https://vidgone.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0a1a14,#0f2d22)">🎬</div>
-            <img src="https://vidgone.kuige.me/favicon.png?v=2" alt="VidGone" loading="lazy" onerror="this.remove()">
+            <img src="https://vidgone.kuige.me/og-image.png" alt="VidGone" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">VidGone <span class="en" data-en="Video watermark remover studio">视频去水印工坊</span><span class="arrow">↗</span></div>
@@ -648,7 +649,7 @@
         <a class="card reveal" href="https://castlens.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#2a1512,#151009)">🎥</div>
-            <img src="https://castlens.kuige.me/favicon.png?v=2" alt="CastLens 魁歌录屏王" loading="lazy" onerror="this.remove()">
+            <img src="https://castlens.kuige.me/og-image.png" alt="CastLens 魁歌录屏王" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">CastLens <span class="en" data-en="魁歌录屏王">魁歌录屏王</span><span class="arrow">↗</span></div>
@@ -673,7 +674,7 @@
       <div class="arch-head reveal"><span class="n">TOOLS</span>在线工具 · 其余 13 个<span class="c" data-en="All free · pure front-end · open source">全部免费 · 纯前端 · 开源</span></div>
       <div class="rgrid">
         <a class="arow reveal" href="https://skillgems.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#122547,#0a1128)">📜</span>
+          <span class="ico"><img src="https://skillgems.kuige.me/favicon.png?v=3" alt="SkillGems" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">SkillGems <span class="en" data-en="AI agent skills directory">AI 技能精选目录</span></span>
             <span class="ds">42 个精选 AI 智能体技能（SKILL.md）：官方出品与社区精品，双语介绍 + 安装指南 + GitHub 直达，附 catalog.json 与 llms.txt 供 AI 调用。</span>
@@ -682,7 +683,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://icongems.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#0c2a26,#0a1614)">🧩</span>
+          <span class="ico"><img src="https://icongems.kuige.me/favicon.png?v=3" alt="IconGems" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">IconGems <span class="en" data-en="Free icon & illustration library">图标插画宝库</span></span>
             <span class="ds">10 万+ 大厂开源图标聚合搜索：一键下载 SVG/PNG、复制 React/Vue 代码，附免费插画库导航与 llms.txt（供 AI 调用）。</span>
@@ -691,7 +692,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://ming-history.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#7a1f1f,#3d0d12)">🏮</span>
+          <span class="ico"><img src="https://ming-history.kuige.me/favicon.png?v=3" alt="明史" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">明史 <span class="en" data-en="Ming Dynasty, interactive">明代历史知识站</span></span>
             <span class="ds">188 页交互明史：拖动 276 年的疆域地图、权力消长长卷、十六帝与大事年表。</span>
@@ -700,7 +701,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://indie-gems.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#141b3a,#0d1020)">💎</span>
+          <span class="ico"><img src="https://indie-gems.kuige.me/favicon.png?v=3" alt="Indie Gems" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">Indie Gems <span class="en" data-en="Indie works directory">独立作品收录</span></span>
             <span class="ds">全球 solo 开发者作品目录：App、游戏、工具，免费申请收录。</span>
@@ -709,7 +710,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://jsonlens.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#26321c,#131b12)">🧬</span>
+          <span class="ico"><img src="https://jsonlens.kuige.me/favicon.png?v=3" alt="JSON Lens" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">JSON Lens <span class="en" data-en="Smart JSON formatter">JSON 智能格式化</span></span>
             <span class="ds">格式化、校验、树形查看，支持 Unescape 与 JSONPath。</span>
@@ -719,7 +720,7 @@
         </a>
 
         <a class="arow reveal" href="https://ai-model-rank.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#1a2340,#101726)">🏆</span>
+          <span class="ico"><img src="https://ai-model-rank.kuige.me/favicon.png?v=3" alt="AI Rank" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">AI Rank <span class="en" data-en="LLM leaderboard">大模型排行榜</span></span>
             <span class="ds">LMArena 盲测分、API 价格与上下文窗口实时对比 + AI 热榜。</span>
@@ -728,7 +729,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://rednote-formatter.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#3a1218,#1f0a0d)">📋</span>
+          <span class="ico"><img src="https://rednote-formatter.kuige.me/favicon.png?v=3" alt="Rednote Formatter" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">Rednote Formatter <span class="en" data-en="MoZhen copy formatter">墨阵文案排版</span></span>
             <span class="ds">小红书/朋友圈文案排版：emoji 分隔、话题标签、居中防折叠。</span>
@@ -737,7 +738,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://tokenlens.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#12303a,#0e1a26)">🔢</span>
+          <span class="ico"><img src="https://tokenlens.kuige.me/favicon.png?v=3" alt="TokenLens" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">TokenLens <span class="en" data-en="Token workshop">词元工坊</span></span>
             <span class="ds">基于 js-tiktoken 的 Token 计数与 API 成本估算。</span>
@@ -747,7 +748,7 @@
         </a>
 
         <a class="arow reveal" href="https://stream-inspector.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#1c2a3a,#10161f)">🧰</span>
+          <span class="ico"><img src="https://stream-inspector.kuige.me/favicon.png?v=3" alt="Stream Inspector" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">Stream Inspector <span class="en" data-en="Streaming debug toolbox">流媒体调试工具箱</span></span>
             <span class="ds">直播拉流调试（HLS·FLV·DASH·WebRTC）+ 音频分析。</span>
@@ -756,7 +757,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://sse-inspector.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#3a1a2a,#1c1017)">📡</span>
+          <span class="ico"><img src="https://sse-inspector.kuige.me/favicon.png?v=3" alt="SSE Inspector" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">SSE Inspector <span class="en" data-en="SSE debugger">SSE 调试器</span></span>
             <span class="ds">连接 SSE 端点，实时查看事件流、请求头与原始帧。</span>
@@ -765,7 +766,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://world-shapers.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#2b2416,#171308)">✦</span>
+          <span class="ico"><img src="https://world-shapers.kuige.me/favicon.png?v=3" alt="World Shapers" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">群星闪耀 <span class="en" data-en="People who shaped the world">影响世界的人</span></span>
             <span class="ds">人物学习百科：跨领域人物与史实，仅供学习参考。</span>
@@ -775,7 +776,7 @@
         </a>
 
         <a class="arow reveal" href="https://photogems.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#1c2a33,#101a20)">🏛️</span>
+          <span class="ico"><img src="https://photogems.kuige.me/favicon.png?v=3" alt="PhotoGems" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">PhotoGems <span class="en" data-en="Photo gallery">图片画廊</span></span>
             <span class="ds">按合集精选的图片画廊，在线看原图、免费下载。</span>
@@ -784,7 +785,7 @@
           <span class="go">↗</span>
         </a>
         <a class="arow reveal" href="https://collagemill.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#152a3d,#0a1420)">🖼️</span>
+          <span class="ico"><img src="https://collagemill.kuige.me/favicon.png?v=3" alt="CollageMill" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">CollageMill <span class="en" data-en="Photo collage maker">图片拼图排版</span></span>
             <span class="ds">1–25 张照片拼成一版：12 种样式、倾斜/弯曲/立方体变形，精美边框，纯本地导出。</span>
@@ -794,7 +795,7 @@
         </a>
 
         <a class="arow reveal" href="https://songgems.kuige.me/" target="_blank" rel="noopener">
-          <span class="ico" style="background:linear-gradient(135deg,#43277c,#1e1038)">🎵</span>
+          <span class="ico"><img src="https://songgems.kuige.me/favicon.png?v=3" alt="SongGems" loading="lazy" onerror="this.parentNode.textContent='▶'"></span>
           <span class="tx">
             <span class="tt">SongGems <span class="en" data-en="Free CC music player">免费 CC 音乐播放器</span></span>
             <span class="ds">独立音乐人创作共用曲库：搜索、歌单、收藏，逐曲展示授权署名，默认过滤非商业曲目。</span>
@@ -980,7 +981,7 @@
 
 <footer class="kg-foot">
   <div class="kg-foot-in">
-    <img src="/favicon.png?v=2" alt="魁歌吉祥物">
+    <img src="/favicon.png?v=3" alt="魁歌吉祥物">
     <p class="kg-foot-brand">魁歌 KuiGe · 独立开发者</p>
     <p class="kg-foot-motto" data-en="Know yourself · Find yourself · Accept yourself · Nurture yourself · Become yourself">认识自己 · 找到自己 · 接受自己 · 养育自己 · 成为自己</p>
     <nav class="kg-foot-links">
