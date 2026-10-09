@@ -261,8 +261,8 @@
   .card:hover{transform:translateY(-5px);border-color:var(--line-hi);box-shadow:var(--shadow-card)}
   .thumb{position:relative;aspect-ratio:1200/630;background:var(--bg-soft);overflow:hidden}
   .thumb .ph{position:absolute;inset:0;display:grid;place-items:center;font-size:52px}
-  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:.35s}
-  .card:hover .thumb img{transform:scale(1.045)}
+  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10% 27%;display:block;transition:.35s;filter:drop-shadow(0 10px 20px rgba(0,0,0,.16))}
+  .card:hover .thumb img{transform:scale(1.07)}
   .card .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
   .card-title{font-size:16.5px;font-weight:800;display:flex;align-items:center;gap:8px}
   .card-title .arrow{margin-left:auto;color:var(--dim);transition:.2s;font-size:15px}
@@ -281,20 +281,18 @@
   .filters button:hover{color:var(--ink);border-color:var(--line-hi);transform:translateY(-1px)}
   .filters button.active{color:#fff;background:var(--grad);border-color:transparent;font-weight:700;box-shadow:0 6px 20px rgba(91,157,255,.32)}
 
-  /* 横向滑动排：近期思考 / 正在做什么 / 精选作品 —— 只有一排，横向滑动查看更多 */
-  .thoughts .tgrid,.wgrid4,.featured .fgrid{
+  /* 横向滑动排：近期思考 / 精选作品 —— 只有一排，横向滑动查看更多 */
+  .thoughts .tgrid,.featured .fgrid{
     display:flex;gap:16px;align-items:stretch;
     overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;
     padding:4px 4px 12px;-webkit-overflow-scrolling:touch;
     scrollbar-width:thin;scrollbar-color:var(--line-hi) transparent;
   }
-  .thoughts .tgrid::-webkit-scrollbar,.wgrid4::-webkit-scrollbar,.featured .fgrid::-webkit-scrollbar{height:6px}
-  .thoughts .tgrid::-webkit-scrollbar-thumb,.wgrid4::-webkit-scrollbar-thumb,.featured .fgrid::-webkit-scrollbar-thumb{background:var(--line-hi);border-radius:99px}
-  .thoughts .tgrid::-webkit-scrollbar-track,.wgrid4::-webkit-scrollbar-track,.featured .fgrid::-webkit-scrollbar-track{background:transparent}
+  .thoughts .tgrid::-webkit-scrollbar,.featured .fgrid::-webkit-scrollbar{height:6px}
+  .thoughts .tgrid::-webkit-scrollbar-thumb,.featured .fgrid::-webkit-scrollbar-thumb{background:var(--line-hi);border-radius:99px}
+  .thoughts .tgrid::-webkit-scrollbar-track,.featured .fgrid::-webkit-scrollbar-track{background:transparent}
   .thoughts .tgrid>*{flex:0 0 278px;scroll-snap-align:start}
-  .wgrid4>*{flex:0 0 306px;scroll-snap-align:start}
   .featured .fgrid>*{flex:0 0 356px;scroll-snap-align:start}
-  .wgrid4{margin-bottom:6px}
 
   /* ---------- 2.0：Hero 最近上线横条 ---------- */
   .fresh{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;align-items:center;margin-top:26px;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--soft-bg);font-size:13px;color:var(--muted)}
@@ -346,13 +344,6 @@
   .arow .go{flex:none;color:var(--dim);font-size:13px}
   .arow:hover .go{color:var(--acc)}
 
-  .chipn{align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.1em;color:var(--acc);border:1px solid var(--line);background:var(--soft-bg);border-radius:6px;padding:2px 9px}
-  .story{font-size:12.5px;color:var(--muted);line-height:2}
-  .story b{color:var(--ink);font-weight:700}
-  .story .sep{color:var(--dim);padding:0 4px}
-  .acts{display:flex;gap:14px;margin-top:auto;padding-top:10px}
-  .acts a{font-size:12.5px;color:var(--acc);font-weight:700}
-  .acts a:hover{text-decoration:underline}
 
   /* ---------- App 卡片 ---------- */
   .apps .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
@@ -379,17 +370,6 @@
   .repo p{font-size:13.5px;color:var(--muted);flex:1}
   .repo .lang{font-size:12px;color:var(--dim)}
   .repo .lang::before{content:"●";color:var(--acc);margin-right:6px;font-size:10px}
-
-  /* ---------- 写作 ---------- */
-  .writing .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-  .wcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.22s;display:flex;flex-direction:column;gap:6px;position:relative}
-  .wcard:hover{transform:translateY(-4px);border-color:var(--line-hi);box-shadow:var(--shadow-soft)}
-  .wcard .em{font-size:24px}
-  .wcard h3{font-size:15.5px;font-weight:800}
-  .wcard .st{font-size:12.5px;color:var(--acc2);font-weight:700}
-  .wcard p{font-size:13px;color:var(--muted)}
-  .wcard .ext{margin-top:auto;padding-top:10px;font-size:12.5px;color:var(--dim)}
-  .wcard a .ext, .wcard.linkable .ext{color:var(--acc)}
 
   /* ---------- 关于 ---------- */
   .about .cols{display:grid;grid-template-columns:1.5fr 1fr;gap:20px}
@@ -449,8 +429,7 @@
   @media (max-width:560px){
     .hero{padding:72px 0 44px}
     .thoughts .tgrid>*{flex-basis:262px}
-    .wgrid4>*{flex-basis:284px}
-    .featured .fgrid>*{flex-basis:314px}
+      .featured .fgrid>*{flex-basis:314px}
     nav.side a .txt{display:none}
     nav.side a{padding:6px 10px}
   }
@@ -488,7 +467,6 @@
     <a class="brand kg-brand" href="#top"><img src="/favicon.png?v=2" alt="魁歌吉祥物">魁歌</a>
     <nav class="mid kg-nav">
       <a href="#thoughts" data-en="Thoughts">思考</a>
-      <a href="#now" data-en="Now">在造</a>
       <a href="#featured" data-en="Featured">精选</a>
       <a href="#archive" data-en="Archive">档案</a>
       <a href="#about" data-en="About">关于</a>
@@ -566,57 +544,11 @@
     </div>
   </section>
 
-  <!-- ============ 正在做什么 ============ -->
-  <section class="sec" id="now">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <div class="kicker">02 · Now</div>
-        <h2 data-en="What I'm building now">正在做什么</h2>
-        <p data-en="Not a finished portfolio — a person who keeps building.">这不是一个已经完成的作品集 —— 我在持续创造。</p>
-      </div>
-      <div class="wgrid4">
-        <div class="wcard reveal">
-          <span class="chipn" data-en="JUST SHIPPED">刚上线</span>
-          <h3>🎬 VidGone <span class="en" data-en="Video watermark remover studio">视频去水印工坊</span></h3>
-          <p class="story" data-en="<b>Every video watermark remover wants sign-up and payment</b><span class=&#39;sep&#39;>→</span>so I built a <b>free, no-sign-up</b> one<span class=&#39;sep&#39;>→</span>ready out of the box, fully local<span class=&#39;sep&#39;>→</span>watching real users.">现状：视频去水印网站都要<b>注册登录、付费使用</b><span class="sep">→</span>决定：自己搞一个<b>免费、无注册</b>的<span class="sep">→</span>上线：开箱即用，纯本地处理<span class="sep">→</span>现在：看真实用户反馈。</p>
-          <div class="acts">
-            <a href="https://vidgone.kuige.me/" target="_blank" rel="noopener" data-en="Try VidGone ↗">去用用看 ↗</a>
-            <a href="https://x.com/kuige_me" target="_blank" rel="noopener" data-en="Build story on X ↗">X 上看构建过程 ↗</a>
-          </div>
-        </div>
-        <div class="wcard reveal">
-          <span class="chipn" data-en="JUST SHIPPED">刚上线</span>
-          <h3>🎥 CastLens <span class="en" data-en="魁歌录屏王">魁歌录屏王</span></h3>
-          <p class="story" data-en="<b>Recorders want fees or uploads</b><span class=&#39;sep&#39;>→</span>so: browser-native, fully local<span class=&#39;sep&#39;>→</span>free, no watermark, no sign-up<span class=&#39;sep&#39;>→</span>listening to early users.">现状：录屏工具不是收费就是要传云端<span class="sep">→</span>取舍：纯浏览器本地录制，画面不出设备<span class="sep">→</span>上线：免费 · 无水印 · 免登录<span class="sep">→</span>下一步：听早期用户的真实反馈。</p>
-          <div class="acts">
-            <a href="https://castlens.kuige.me/" target="_blank" rel="noopener" data-en="Try CastLens ↗">去用用看 ↗</a>
-            <a href="https://x.com/kuige_me" target="_blank" rel="noopener" data-en="Build story on X ↗">X 上看构建过程 ↗</a>
-          </div>
-        </div>
-        <a class="wcard reveal linkable" href="#featured">
-          <span class="chipn" data-en="ONGOING">进行中</span>
-          <h3 data-en="🧰 Tool matrix">🧰 工具矩阵 <span class="ext" style="padding-top:0">↓</span></h3>
-          <p data-en="From 1 to 22 — keep expanding free online tools.">从 1 个到 22 个，继续扩展免费在线工具。</p>
-        </a>
-        <div class="wcard reveal">
-          <span class="chipn" data-en="EXPLORING">探索中</span>
-          <h3 data-en="🤖 AI × Content">🤖 AI × 内容</h3>
-          <p data-en="Experiments where AI meets content creation and indie dev.">AI 与内容创作、独立开发的结合实验。</p>
-        </div>
-        <div class="wcard reveal">
-          <span class="chipn">COMING SOON</span>
-          <h3 data-en="📱 Next app">📱 下一款 App</h3>
-          <p data-en="A new iOS product is taking shape.">新的 iOS 产品在构思中。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ Featured Products 精选作品 ============ -->
   <section class="sec featured" id="featured">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">03 · Featured Products</div>
+        <div class="kicker">02 · Featured Products</div>
         <h2 data-en="Featured Products">精选作品</h2>
         <p data-en="Eight free tools I&#39;m actively shipping and promoting — each was born from a real question. All pure front-end: no sign-up, no upload.">正在主推的 8 个免费工具 —— 每一个都来自一个真实的问题。全部纯前端：免注册、不上传。</p>
       </div>
@@ -625,7 +557,7 @@
         <a class="card reveal" href="https://xhot.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#1a1622,#0d0a14)">🔥</div>
-            <img src="https://xhot.kuige.me/og-image.png" alt="X Hot List" loading="lazy" onerror="this.remove()">
+            <img src="https://xhot.kuige.me/favicon.png?v=2" alt="X Hot List" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">X热榜 <span class="en" data-en="X/Twitter creator rankings">X/Twitter 博主排名</span><span class="arrow">↗</span></div>
@@ -638,7 +570,7 @@
         <a class="card reveal" href="https://fast-site.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#141b2e,#0d1320)">🚀</div>
-            <img src="https://fast-site.kuige.me/og-image.png" alt="魁歌建站" loading="lazy" onerror="this.remove()">
+            <img src="https://fast-site.kuige.me/favicon.png?v=2" alt="魁歌建站" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">魁歌建站指南 <span class="en" data-en="A zero-to-live website guide">零基础 9 步建站教程</span><span class="arrow">↗</span></div>
@@ -651,7 +583,7 @@
         <a class="card reveal" href="https://github-gems.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0d2117,#0a1610)">🧭</div>
-            <img src="https://github-gems.kuige.me/og-image.png" alt="GitHub Gems" loading="lazy" onerror="this.remove()">
+            <img src="https://github-gems.kuige.me/favicon.png?v=2" alt="GitHub Gems" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">GitHub Gems <span class="en" data-en="GitHub hall of fame">封神榜</span><span class="arrow">↗</span></div>
@@ -664,7 +596,7 @@
         <a class="card reveal" href="https://shareforge.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#1e1b3a,#12101f)">🎨</div>
-            <img src="https://shareforge.kuige.me/og-image.png" alt="ShareForge" loading="lazy" onerror="this.remove()">
+            <img src="https://shareforge.kuige.me/favicon.png?v=2" alt="ShareForge" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">ShareForge <span class="en" data-en="Share image generator">分享图生成器</span><span class="arrow">↗</span></div>
@@ -677,7 +609,7 @@
         <a class="card reveal" href="https://markgone.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0b1626,#123245)">🌀</div>
-            <img src="https://markgone.kuige.me/og-image.png" alt="MarkGone" loading="lazy" onerror="this.remove()">
+            <img src="https://markgone.kuige.me/favicon.png?v=2" alt="MarkGone" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">MarkGone <span class="en" data-en="Image watermark remover studio">图片去水印工坊</span><span class="arrow">↗</span></div>
@@ -690,7 +622,7 @@
         <a class="card reveal" href="https://picsqueeze.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#3a2a12,#1d160a)">🗜️</div>
-            <img src="https://picsqueeze.kuige.me/og-image.png" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
+            <img src="https://picsqueeze.kuige.me/favicon.png?v=2" alt="PicSqueeze" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">PicSqueeze <span class="en" data-en="Extreme image compression studio">图片极致压缩工坊</span><span class="arrow">↗</span></div>
@@ -703,7 +635,7 @@
         <a class="card reveal" href="https://vidgone.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#0a1a14,#0f2d22)">🎬</div>
-            <img src="https://vidgone.kuige.me/og-image.png" alt="VidGone" loading="lazy" onerror="this.remove()">
+            <img src="https://vidgone.kuige.me/favicon.png?v=2" alt="VidGone" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">VidGone <span class="en" data-en="Video watermark remover studio">视频去水印工坊</span><span class="arrow">↗</span></div>
@@ -716,7 +648,7 @@
         <a class="card reveal" href="https://castlens.kuige.me/" target="_blank" rel="noopener">
           <div class="thumb"><span class="rankb feat" data-en="✦ FEATURED">✦ 主推</span>
             <div class="ph" style="background:linear-gradient(135deg,#2a1512,#151009)">🎥</div>
-            <img src="https://castlens.kuige.me/og-image.png" alt="CastLens 魁歌录屏王" loading="lazy" onerror="this.remove()">
+            <img src="https://castlens.kuige.me/favicon.png?v=2" alt="CastLens 魁歌录屏王" loading="lazy" onerror="this.remove()">
           </div>
           <div class="body">
             <div class="card-title">CastLens <span class="en" data-en="魁歌录屏王">魁歌录屏王</span><span class="arrow">↗</span></div>
@@ -734,7 +666,7 @@
   <section class="sec archive" id="archive">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">04 · Archive</div>
+        <div class="kicker">03 · Archive</div>
         <h2 data-en="Full Archive">作品档案</h2>
         <p data-en="The long tail of the matrix — every bit as free, pure front-end and open source as the featured eight.">工具矩阵的其余部分 —— 与精选八品同样免费、纯前端、开源；长尾，但常有人在用。</p>
       </div>
@@ -940,7 +872,7 @@
   <section class="sec about" id="about">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">05 · About</div>
+        <div class="kicker">04 · About</div>
         <h2 data-en="About Me">关于我</h2>
       </div>
       <div class="cols">
@@ -1013,7 +945,7 @@
   <!-- ============ 联系 ============ -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <div class="kicker">06 · Contact</div>
+      <div class="kicker">05 · Contact</div>
       <h2 style="margin-top:16px" data-en="Let&#39;s build something interesting">一起做点有意思的东西</h2>
       <p class="sub" data-en="If you&#39;re building products, doing indie dev or exploring AI — come say hi. Collaboration, questions, or just a hello.">如果你也在做产品、独立开发或 AI 项目，欢迎来找我聊聊 —— 合作、交流，或者只是打个招呼。</p>
       <div class="chips">
