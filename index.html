@@ -28,8 +28,8 @@
 <meta name="twitter:title" content="魁歌 KuiGe · 独立开发者 — 在线工具 · App · 开源 · 写作">
 <meta name="twitter:description" content="21 个免费在线工具 · App Store 付费榜 Top1 应用 · 486★ 开源库 · X @kuige_me 公开构建。">
 <meta name="twitter:image" content="https://kuige.me/og-image.png?v=20261002">
-<link rel="icon" type="image/png" href="/logo.png">
-<link rel="apple-touch-icon" href="/logo.png">
+<link rel="icon" type="image/png" href="/favicon.png?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -432,13 +432,7 @@
   .faq-list details[open] summary::after{transform:rotate(45deg)}
   .faq-list details p{padding:0 20px 18px;color:var(--muted);font-size:14.5px;line-height:1.85}
 
-  /* ---------- 页脚 ---------- */
-  footer{border-top:1px solid var(--line);padding:28px 0 36px}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;color:var(--dim);font-size:13px}
-  footer .links{display:flex;gap:16px}
-  footer a{color:var(--muted)}
-  footer a:hover{color:var(--ink)}
-  footer .motto-line{width:100%;text-align:center;font-family:var(--serif);font-size:12.5px;letter-spacing:.28em;color:var(--dim);margin-bottom:6px}
+  /* ---------- 页脚（kg-foot，样式见页尾站群基座） ---------- */
 
   /* ---------- 滚动进场 ---------- */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -460,14 +454,39 @@
     nav.side a .txt{display:none}
     nav.side a{padding:6px 10px}
   }
+
+  /* ── KuiGe 站群统一基座 ───────────────────── */
+  :root{--kg-ink:#1f2430;--kg-sub:#6b7280;--kg-accent:#f2603c;--kg-line:#e8e6e1;--kg-bg:#faf9f7}
+  .kg-top{position:sticky;top:0;z-index:60;background:rgba(250,249,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--kg-line)}
+  html[data-theme="dark"] .kg-top{background:rgba(7,10,17,.72);border-bottom-color:var(--line)}
+  .kg-top-in{max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .kg-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--kg-ink);font-weight:700;font-size:17px}
+  .kg-brand img{width:32px;height:32px;border-radius:9px;display:block}
+  .kg-brand small{font-weight:500;color:var(--kg-sub);font-size:12px}
+  .kg-nav{display:flex;align-items:center;gap:14px;font-size:14px}
+  .kg-nav a{color:var(--kg-sub);text-decoration:none}
+  .kg-nav a:hover{color:var(--kg-ink)}
+  .kg-entry{background:var(--kg-ink);color:#fff!important;padding:6px 14px;border-radius:999px;text-decoration:none;font-size:13px}
+  .kg-entry:hover{background:var(--kg-accent)}
+  .kg-foot{background:var(--kg-bg);border-top:1px solid var(--kg-line);color:var(--kg-sub);font-size:13px;margin-top:0}
+  html[data-theme="dark"] .kg-foot{background:var(--bg-soft);border-top-color:var(--line)}
+  .kg-foot-in{max-width:1120px;margin:0 auto;padding:36px 20px 28px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .kg-foot img{width:44px;height:44px;border-radius:12px;margin-bottom:2px}
+  .kg-foot-brand{color:var(--kg-ink);font-weight:700;font-size:15px;margin:0}
+  .kg-foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px}
+  .kg-foot-links a{color:var(--kg-sub);text-decoration:none}
+  .kg-foot-links a:hover{color:var(--kg-accent)}
+  .kg-foot-copy{margin:4px 0 0;color:#9ca3af;font-size:12px}
+  .kg-foot-motto{font-family:var(--serif);letter-spacing:.28em;color:var(--dim);margin:2px 0 0}
+  @media(max-width:640px){.kg-nav a:not(.kg-entry){display:none}}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top"><img class="logo" src="/logo.png" alt="魁歌 logo">魁歌</a>
-    <nav class="mid">
+<header class="top kg-top">
+  <div class="wrap kg-top-in">
+    <a class="brand kg-brand" href="#top"><img src="/favicon.png?v=2" alt="魁歌吉祥物">魁歌</a>
+    <nav class="mid kg-nav">
       <a href="#thoughts" data-en="Thoughts">思考</a>
       <a href="#now" data-en="Now">在造</a>
       <a href="#featured" data-en="Featured">精选</a>
@@ -1027,14 +1046,19 @@
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="motto-line" data-en="Know yourself · Find yourself · Accept yourself · Nurture yourself · Become yourself">认识自己 · 找到自己 · 接受自己 · 养育自己 · 成为自己</div>
-    <span data-en="© 2026 KuiGe 魁歌 · Indie Developer">© 2026 魁歌 KuiGe · 独立开发者</span>
-    <div class="links">
+<footer class="kg-foot">
+  <div class="kg-foot-in">
+    <img src="/favicon.png?v=2" alt="魁歌吉祥物">
+    <p class="kg-foot-brand">魁歌 KuiGe · 独立开发者</p>
+    <p class="kg-foot-motto" data-en="Know yourself · Find yourself · Accept yourself · Nurture yourself · Become yourself">认识自己 · 找到自己 · 接受自己 · 养育自己 · 成为自己</p>
+    <nav class="kg-foot-links">
+      <a href="https://icongems.kuige.me/" target="_blank" rel="noopener">IconGems</a>
+      <a href="https://github-gems.kuige.me/" target="_blank" rel="noopener">GitHub Gems</a>
+      <a href="https://ai-model-rank.kuige.me/" target="_blank" rel="noopener">AI Rank</a>
       <a href="https://github.com/Tliens" target="_blank" rel="noopener">GitHub</a>
       <a href="https://x.com/kuige_me" target="_blank" rel="noopener">X (Twitter)</a>
-    </div>
+    </nav>
+    <p class="kg-foot-copy" data-en="© 2026 KuiGe 魁歌 · Indie Developer · Built with AI">© 2026 魁歌 KuiGe · 独立开发者 · 用 AI 构建</p>
   </div>
 </footer>
 
