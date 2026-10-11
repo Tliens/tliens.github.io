@@ -31,6 +31,7 @@
 | SkillGems · AI 智能体技能精选目录 | https://skillgems.kuige.me/ | skillgems |
 | CollageMill · 图片拼图排版 | https://collagemill.kuige.me/ | collagemill |
 | MockLens · 带壳截图 | https://mocklens.kuige.me/ | mocklens |
+| 魁歌电子书转换 · 电子书格式转换（本地） | https://ebook-converter.kuige.me/ | ebook-converter |
 
 > 2026-09-28 合并：AI Hot Board（AI 热榜）并入 [AI Rank](https://ai-model-rank.kuige.me/) 的热榜资讯板块；Audio Inspector（在线音频分析）并入 [Stream Inspector](https://stream-inspector.kuige.me/) 的音频分析工具页（`/audio.html`）。原域名保留为跳转页，不再单列。
 
