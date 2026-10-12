@@ -38,14 +38,18 @@
 ## 说明
 
 - 单文件纯静态页面（`index.html`），无构建、无依赖，直接部署到任意静态托管即可。
-- 卡片缩略图直接引用各作品站点的 `og-image.png`，新增作品时在 `index.html` 的 `.grid` 里复制一张卡片并改链接即可。
+- 工具卡片图标直接引用各作品站点的 `favicon.png`（吉祥物，圆角规范 v3），新增作品时在对应分类的 `.tools-grid` 里复制一张 `.tool` 卡片并改链接/关键词（`data-kw`，中英关键词都写，供首页搜索）即可。
 - 旧 Hexo 博客内容备份在 `hexo-blog-2023` 分支。
 
-## 主站 2.0 结构（2026-10 改版）
+## 主站 3.0 结构（2026-10-12 改版：在线工具站版式）
 
-页面顺序：Hero（主句「把想法变成产品，把产品变成资产」+ X 关注主按钮 + 最近上线横条）→ 01 Now 构建日志 → 02 Latest Thoughts 近期思考（私藏文章 + FEATURED_URL 指定的 X 代表作）→ 03 Featured Products 精选八品 → 04 Archive 作品档案（其余工具 + Apps + 开源）→ 05 About → FAQ 品牌问答 → Contact → 数据带。
+页面顺序：Hero（紧凑：「魁歌工具箱」主句 + 信任徽章，第一屏即见工具）→ 吸顶分类导航条（`.catbar`）→ 七个分类区块（`#dev` 开发 5 / `#image` 图片 5 / `#video` 视频 2 / `#ai` AI 2 / `#docs` 文档文案 2 / `#media` 设计媒体 3 / `#discover` 榜单阅读 5，共 24 个工具）→ Apps 上架应用 → 开源项目 → 底部保留介绍（关于我 + 长文写作入口 + FAQ + 联系方式 + 数据带）。
 
-### 如何更新 X 长文（Latest Thoughts）
+- 双语：沿用 `data-en` 机制；`LANG_META` 内置 title/description 中英文案。
+- SEO：`ItemList` JSON-LD（24 项）与 `FAQPage` 保持不变；新增作品时同步加一条 `ListItem` 并更新 `.tool` 卡片、`#cbNum` 初始值与数据带 `data-count`。
+- 「近期思考」区块已从主页移除（长文入口保留在底部「关于我」的写作行），归档页 `/articles/` 与 `articles.json` 机制不变。
+
+### 如何更新 X 长文（归档页 /articles/）
 
 1. 编辑 [`articles.json`](articles.json)：封面图存入 `covers/`，在 `articles` 数组最前面加一条 `{ "date", "url", "title", "excerpt", "cover" }`（可附 `title_en` / `excerpt_en`）。
 2. 页面加载时会 `fetch('articles.json')` 渲染；读取失败时回退到 `index.html` 内置的 `THOUGHTS_FALLBACK`（两处保持同步，或至少保证 json 可访问）。
@@ -58,4 +62,4 @@
 1. 封面图存入 `covers/`（`cwebp -q 82 输入图 -o covers/article-N.webp`）。
 2. 全文页建在 `articles/` 下（如 `articles/zhongyong.html`，单文件静态页，风格与 `/articles/` 二级页一致：同一套主题变量、星空背景、页头页脚 + Cloudflare 统计）。
 3. `articles.json` 最前面加一条，加字段 `"src": "mine"`，`url` 填站内绝对路径（如 `/articles/zhongyong.html`），二级页会归到「私藏文章」分类；`articles/index.html` 的 `FALLBACK` 同步加一条。
-4. 新页面加进 `sitemap.xml`。私藏文章会自动出现在主页 Latest Thoughts（并同步 `index.html` 的 `THOUGHTS_FALLBACK`）；X 长文仍只展示 `FEATURED_URL` 指定的代表作。
+4. 新页面加进 `sitemap.xml`。私藏文章会自动出现在归档页 `/articles/`（同步 `articles/index.html` 的 `FALLBACK`）；主页不再渲染长文列表，入口在底部「关于我」的写作行。
