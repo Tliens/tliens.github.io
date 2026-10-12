@@ -10,6 +10,7 @@
 </script>
 <title>魁歌工具箱 · KuiGe Tools — 24 个免费在线工具导航｜编程开发 · 图片视频 · AI · 文档转换</title>
 <meta name="description" content="魁歌工具箱（KuiGe Tools）：24 个免费在线工具聚合导航 —— 编程开发、图片处理、视频工具、AI 排行、电子书转换与文案排版。全部纯前端运行：免注册、不上传、数据不出浏览器，单文件开源可自部署。">
+<meta name="keywords" content="免费在线工具,在线工具箱,开发者工具,JSON格式化,Token计数器,SSE调试,直播拉流调试,图片压缩,图片去水印,视频去水印,网页录屏,图片拼图,带壳截图,电子书格式转换,文案排版,小红书排版,大模型排行榜,AI技能,免费图标库,CC音乐,开源项目导航,魁歌,KuiGe Tools,free online tools">
 <meta name="author" content="魁歌 KuiGe">
 <link rel="canonical" href="https://kuige.me/">
 <link rel="alternate" hreflang="zh" href="https://kuige.me/">
@@ -406,13 +407,6 @@
   /* ---------- 工具站版式：搜索框 / 分类条 / 工具卡 ---------- */
   .hero-tools{padding:54px 0 26px}
   .hero-tools .badges{margin-top:22px}
-  .catbar{position:sticky;top:62px;z-index:18;background:var(--header-bg);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .cb-in{max-width:1100px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:7px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-  .cb-in::-webkit-scrollbar{display:none}
-  .cb-in a{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 13px;transition:.18s;white-space:nowrap}
-  .cb-in a:hover{color:var(--ink);border-color:var(--line-hi);background:var(--hover-bg)}
-  .cb-cnt{margin-left:auto;flex:none;font-size:12.5px;color:var(--dim);white-space:nowrap}
-  .cb-cnt b{color:var(--ink);font-size:14px;font-variant-numeric:tabular-nums}
   .cat-sec{padding:44px 0 8px}
   .cat-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
   .cat-head .cico{flex:none;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:var(--soft-bg);border:1px solid var(--line)}
@@ -443,7 +437,6 @@
     .hero-tools .badges{display:none}
     .cat-head .tt p{display:none}
     .cat-head .cico{width:38px;height:38px;font-size:19px}
-    .cb-in{padding:8px 16px}
   }
 
   /* ---------- 页脚（kg-foot，样式见页尾站群基座） ---------- */
@@ -542,19 +535,6 @@
     <div class="hero-noise" aria-hidden="true"></div>
   </section>
 
-  <!-- ============ 分类导航条 ============ -->
-  <div class="catbar" id="catbar">
-    <div class="cb-in">
-      <a href="#dev">🧑‍💻 <span data-en="Dev">开发工具</span></a>
-      <a href="#image">🖼️ <span data-en="Image">图片工具</span></a>
-      <a href="#video">🎬 <span data-en="Video">视频工具</span></a>
-      <a href="#ai">🤖 <span>AI</span></a>
-      <a href="#docs">📄 <span data-en="Docs">文档文案</span></a>
-      <a href="#media">🎨 <span data-en="Media">设计媒体</span></a>
-      <a href="#discover">🧭 <span data-en="Discover">榜单阅读</span></a>
-      <span class="cb-cnt"><b id="cbNum">24</b> <span data-en="tools">个工具</span></span>
-    </div>
-  </div>
 
   <!-- ============ 开发工具 ============ -->
   <section class="sec cat-sec" id="dev">
